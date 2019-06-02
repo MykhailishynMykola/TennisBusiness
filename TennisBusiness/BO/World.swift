@@ -12,13 +12,14 @@ class World {
     // MARK: - Properties
     
     private var matches: [Match] = []
+    private var timer: Timer?
     
     
     
     // MARK: - Init
     
     init() {
-        Timer.every(0.1) { [weak self] in
+        timer = Timer.every(0.1) { [weak self] in
             guard let `self` = self else {
                 return
             }
@@ -27,6 +28,11 @@ class World {
                 match.handleNext()
             }
         }
+    }
+    
+    deinit {
+        timer?.invalidate()
+        timer = nil
     }
     
     

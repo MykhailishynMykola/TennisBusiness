@@ -12,7 +12,7 @@ class Set {
     var identifier: Int
     var status: Status = .inProgress
     var points: (Int, Int) = (0, 0)
-    var games: [Game] = [Game(identifier: 1, isTiebreak: false)]
+    var games: [Game]
     
     var gamesFirstWin: Int {
         return games.filter { $0.status == .firstWin }.count
@@ -25,7 +25,8 @@ class Set {
     
     // MARK: - Init
     
-    init(identifier: Int) {
+    init(identifier: Int, firstGameServeTurn: ServeTurn) {
         self.identifier = identifier
+        self.games = [Game(identifier: 1, isTiebreak: false, serveTurn: firstGameServeTurn)]
     }
 }

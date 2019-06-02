@@ -8,9 +8,13 @@
 
 class Ability {
     var skill: AbilityValue
+    var serve: AbilityValue
+    var returnOfServe: AbilityValue
     
-    init(skill: AbilityValue) {
+    init(skill: AbilityValue, serve: AbilityValue, returnOfServe: AbilityValue) {
         self.skill = skill
+        self.serve = serve
+        self.returnOfServe = returnOfServe
     }
 }
 

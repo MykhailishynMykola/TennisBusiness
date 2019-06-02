@@ -8,13 +8,14 @@
 
 class Match {
     // MARK: - Properties
-    
+
     let identifier: Int
     let firstPlayer: Player
     let secondPlayer: Player
     let setsToWin: Int
     var isFinished: Bool = false
-    private var sets: [Set] = [Set(identifier: 1)]
+    var serveTurn: ServeTurn
+    private var sets: [Set]
     
     
     
@@ -25,6 +26,9 @@ class Match {
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer
         self.setsToWin = setsToWin
+        let serveTurn: ServeTurn = Bool.random() ? .firstPlayer : .secondPlayer
+        self.serveTurn = serveTurn
+        self.sets = [Set(identifier: 1, firstGameServeTurn: serveTurn)]
     }
     
     
@@ -37,8 +41,9 @@ class Match {
             print("Error: Can't find current set or game for match \(identifier)")
             return
         }
-        print("ololo game\(currentGame.identifier) \(currentGame.points.0.rawValue):\(currentGame.points.1.rawValue) ( \(currentGame.tiebreakPoints.0):\(currentGame.tiebreakPoints.1) )")
-        let nextResult = calculateNextResult(for: currentGame)
+        let serveDescription = serveTurn == .firstPlayer || serveTurn == .firstPlayerNextServe ? "1" : "2"
+        print("ololo game\(currentGame.identifier) \(currentGame.points.0.rawValue):\(currentGame.points.1.rawValue) ( \(currentGame.tiebreakPoints.0):\(currentGame.tiebreakPoints.1) servePlayer\(serveDescription)")
+        let nextResult = calculateNextResult()
         guard !currentGame.isTiebreak else {
             handleNextTiebreak(with: nextResult, currentGame: currentGame, currentSet: currentSet)
             return
@@ -72,11 +77,13 @@ class Match {
     // MARK: - Private
     
     private func createNewGame(withIdentifier identifier: Int, currentSet: Set) {
+        var nextServeTurn = serveTurn.next(isTiebreak: false)
         switch (currentSet.gamesFirstWin, currentSet.gamesSecondWin) {
         case (6, 6):
-            currentSet.games.append(Game(identifier: identifier, isTiebreak: true))
+            nextServeTurn = nextServeTurn.next(isTiebreak: true)
+            currentSet.games.append(Game(identifier: identifier, isTiebreak: true, serveTurn: nextServeTurn))
         case (6, 5), (5, 6):
-            currentSet.games.append(Game(identifier: identifier, isTiebreak: false))
+            currentSet.games.append(Game(identifier: identifier, isTiebreak: false, serveTurn: nextServeTurn))
         case (7, 5), (7, 6), (6, _):
             currentSet.status = .firstWin
             createNewSet(with: currentSet.identifier + 1)
@@ -84,8 +91,9 @@ class Match {
             currentSet.status = .secondWin
             createNewSet(with: currentSet.identifier + 1)
         default:
-            currentSet.games.append(Game(identifier: identifier, isTiebreak: false))
+            currentSet.games.append(Game(identifier: identifier, isTiebreak: false, serveTurn: nextServeTurn))
         }
+        serveTurn = nextServeTurn
         print("ololo \(currentSet.gamesFirstWin) \(currentSet.gamesSecondWin)")
     }
     
@@ -96,16 +104,18 @@ class Match {
             isFinished = true
             return
         }
-        sets.append(Set(identifier: identifier))
+        serveTurn = serveTurn.next(isTiebreak: false)
+        sets.append(Set(identifier: identifier, firstGameServeTurn: serveTurn))
     }
     
     private func handleNextTiebreak(with status: Status, currentGame: Game, currentSet: Set) {
+        serveTurn = serveTurn.next(isTiebreak: true)
         let points = currentGame.tiebreakPoints
         switch status {
-        case .firstWin where points.0 >= 7 && points.1 < 6:
+        case .firstWin where points.0 >= 7 && (points.0-points.1) == 2:
             currentGame.status = .firstWin
             createNewGame(withIdentifier: currentGame.identifier + 1, currentSet: currentSet)
-        case .secondWin where points.1 >= 7 && points.0 < 6:
+        case .secondWin where points.1 >= 7 && (points.1-points.0) == 2:
             currentGame.status = .secondWin
             createNewGame(withIdentifier: currentGame.identifier + 1, currentSet: currentSet)
         case .firstWin:
@@ -138,10 +148,21 @@ class Match {
         }
     }
     
-    private func calculateNextResult(for game: Game) -> Status {
-        let skillDiff = firstPlayer.ability.skill.doubleValue - secondPlayer.ability.skill.doubleValue
+    private func calculateNextResult() -> Status {
+        let firstPlayerAbility = firstPlayer.ability
+        let secondPlayerAbility = secondPlayer.ability
+        
+        let skillDiff = firstPlayerAbility.skill.doubleValue - secondPlayerAbility.skill.doubleValue
+        let serveDiff: Double
+        let constantServeAdvantage: Double = 0.5
+        if serveTurn.isFirstPlayerServe {
+            serveDiff = constantServeAdvantage + firstPlayerAbility.serve.doubleValue - secondPlayerAbility.returnOfServe.doubleValue
+        }
+        else {
+            serveDiff = -(constantServeAdvantage + secondPlayerAbility.serve.doubleValue - firstPlayerAbility.returnOfServe.doubleValue)
+        }
         let random = Int.random(from: 1, to: 100)
-        let firstPlayerAdvantage = Double(random) + skillDiff * 5
+        let firstPlayerAdvantage = Double(random) + skillDiff * 10 + serveDiff * 10
         return firstPlayerAdvantage > 50 ? .firstWin : .secondWin
     }
 }
