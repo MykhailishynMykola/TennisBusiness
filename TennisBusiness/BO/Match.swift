@@ -9,7 +9,7 @@
 class Match {
     // MARK: - Properties
 
-    let identifier: Int
+    let identifier: String
     let firstPlayer: Player
     let secondPlayer: Player
     let setsToWin: Int
@@ -21,7 +21,7 @@ class Match {
     
     // MARK: - Init
     
-    init(identifier: Int, firstPlayer: Player, secondPlayer: Player, setsToWin: Int) {
+    init(identifier: String, firstPlayer: Player, secondPlayer: Player, setsToWin: Int) {
         self.identifier = identifier
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer

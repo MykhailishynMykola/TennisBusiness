@@ -11,19 +11,27 @@ import Foundation
 class World {
     // MARK: - Properties
     
-    private var matches: [Match] = []
+    let identifier: String
+    let players: [String: Player]
+    private let speed: Double
+    private let createdAt: Date
+    private var matches: [String: Match] = [:]
     private var timer: Timer?
     
     
     
     // MARK: - Init
     
-    init() {
+    init(identifier: String, speed: Double, createdAt: Date, players: [String: Player]) {
+        self.identifier = identifier
+        self.speed = speed
+        self.createdAt = createdAt
+        self.players = players
         timer = Timer.every(0.1) { [weak self] in
             guard let `self` = self else {
                 return
             }
-            self.matches.forEach { match in
+            self.matches.forEach { _, match in
                 guard !match.isFinished else { return }
                 match.handleNext()
             }
@@ -39,7 +47,7 @@ class World {
     
     // MARK: - Public
     
-    func add(matches: [Match]) {
-        self.matches.append(contentsOf: matches)
+    func add(matches: [String: Match]) {
+        self.matches.merge(matches) { (current, _) in current }
     }
 }
