@@ -83,16 +83,9 @@ class ViewController: UIViewController {
                 }
                 var matches: [String: Match] = [:]
                 for matchDocument in matchDocuments {
-                    let matchData = matchDocument.data()
-                    guard let matchIdentifier = matchData["identifier"] as? String,
-                        let setsToWin = matchData["setsToWin"] as? Int,
-                        let player1Identifier = matchData["player1"] as? String,
-                        let player2Identifier = matchData["player2"] as? String,
-                        let player1 = world.players[player1Identifier],
-                        let player2 = world.players[player2Identifier] else {
-                            return
+                    guard let newMatch = Match(snapshot: matchDocument, world: world) else {
+                        return
                     }
-                    let newMatch = Match(identifier: matchIdentifier, firstPlayer: player1, secondPlayer: player2, setsToWin: setsToWin)
                     matches[matchDocument.documentID] = newMatch
                 }
                 world.add(matches: matches)
