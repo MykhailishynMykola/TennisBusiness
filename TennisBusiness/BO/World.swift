@@ -15,8 +15,16 @@ class World {
     let players: [String: Player]
     private let speed: Double
     private let createdAt: Date
-    private var matches: [String: Match] = [:]
-    private var timer: Timer?
+    private var matches: [String: Match] = [:] {
+        didSet {
+            let matchesToCalculation = matches.filter { !$0.value.isFinished }
+            matchesToCalculation.forEach { _, match in
+                while !match.isFinished {
+                    match.handleNext()
+                }
+            }
+        }
+    }
     
     
     
@@ -27,20 +35,6 @@ class World {
         self.speed = speed
         self.createdAt = createdAt
         self.players = players
-        timer = Timer.every(0.1) { [weak self] in
-            guard let `self` = self else {
-                return
-            }
-            self.matches.forEach { _, match in
-                guard !match.isFinished else { return }
-                match.handleNext()
-            }
-        }
-    }
-    
-    deinit {
-        timer?.invalidate()
-        timer = nil
     }
     
     

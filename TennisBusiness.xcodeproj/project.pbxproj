@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		01B3D7EBCF90ED13B601A9A5 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */; };
+		CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */; };
+		CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819EA22AA5E750038B173 /* UserMainViewController.swift */; };
+		CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */; };
+		CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3819EE22AA61B30038B173 /* UserMain.storyboard */; };
+		CE3819F122AA62460038B173 /* ScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F022AA62460038B173 /* ScreenViewController.swift */; };
+		CE3819F322AA670F0038B173 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F222AA670F0038B173 /* AppConfig.swift */; };
+		CE3819F522AA67270038B173 /* GeneralConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F422AA67270038B173 /* GeneralConfig.swift */; };
+		CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */; };
 		CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B6C22A289CF006182FA /* SwiftyTimer.swift */; };
 		CE5B5B7022A289F3006182FA /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B6F22A289F3006182FA /* World.swift */; };
 		CE5B5B7222A28A9B006182FA /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B7122A28A9B006182FA /* Match.swift */; };
@@ -19,7 +27,7 @@
 		CE5B5B7E22A290A1006182FA /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B7D22A290A1006182FA /* Status.swift */; };
 		CE5B5B8122A2945B006182FA /* Int+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B8022A2945B006182FA /* Int+Convenience.swift */; };
 		CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73CE6422A281DC00A05111 /* AppDelegate.swift */; };
-		CE73CE6722A281DC00A05111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73CE6622A281DC00A05111 /* ViewController.swift */; };
+		CE73CE6722A281DC00A05111 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73CE6622A281DC00A05111 /* MainViewController.swift */; };
 		CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE73CE6822A281DC00A05111 /* Main.storyboard */; };
 		CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE73CE6B22A281DD00A05111 /* Assets.xcassets */; };
 		CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE73CE6D22A281DD00A05111 /* LaunchScreen.storyboard */; };
@@ -34,6 +42,14 @@
 		1A2968B2AC00BE5CE09CA667 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C801026047E4CE8E8173351D /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
+		CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMainViewController.swift; sourceTree = "<group>"; };
+		CE3819EA22AA5E750038B173 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
+		CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMain.storyboard; sourceTree = "<group>"; };
+		CE3819EE22AA61B30038B173 /* UserMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserMain.storyboard; sourceTree = "<group>"; };
+		CE3819F022AA62460038B173 /* ScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewController.swift; sourceTree = "<group>"; };
+		CE3819F222AA670F0038B173 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		CE3819F422AA67270038B173 /* GeneralConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConfig.swift; sourceTree = "<group>"; };
+		CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppConfig+Snapshot.swift"; sourceTree = "<group>"; };
 		CE5B5B6C22A289CF006182FA /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		CE5B5B6F22A289F3006182FA /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		CE5B5B7122A28A9B006182FA /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -46,7 +62,7 @@
 		CE5B5B8022A2945B006182FA /* Int+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Convenience.swift"; sourceTree = "<group>"; };
 		CE73CE6122A281DC00A05111 /* TennisBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE73CE6422A281DC00A05111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE73CE6622A281DC00A05111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE73CE6622A281DC00A05111 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE73CE6922A281DC00A05111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE73CE6B22A281DD00A05111 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE73CE6E22A281DD00A05111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +95,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE3819E622AA5D080038B173 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE73CE6D22A281DD00A05111 /* LaunchScreen.storyboard */,
+				CE73CE6822A281DC00A05111 /* Main.storyboard */,
+				CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */,
+				CE3819EE22AA61B30038B173 /* UserMain.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CE3819E722AA5D8B0038B173 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE73CE6622A281DC00A05111 /* MainViewController.swift */,
+				CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */,
+				CE3819EA22AA5E750038B173 /* UserMainViewController.swift */,
+				CE3819F022AA62460038B173 /* ScreenViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		CE5B5B6B22A289BA006182FA /* Third party */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +137,8 @@
 				CE5B5B7322A28B18006182FA /* Player.swift */,
 				CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */,
 				CE5B5B7522A28B85006182FA /* Ability.swift */,
+				CE3819F222AA670F0038B173 /* AppConfig.swift */,
+				CE3819F422AA67270038B173 /* GeneralConfig.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -132,18 +172,17 @@
 		CE73CE6322A281DC00A05111 /* TennisBusiness */ = {
 			isa = PBXGroup;
 			children = (
-				CECE3DBB22A7EA3E00398E96 /* General */,
-				CE5B5B7F22A29439006182FA /* Extensions */,
-				CE5B5B6E22A289DD006182FA /* BO */,
-				CE5B5B6B22A289BA006182FA /* Third party */,
 				CE73CE6422A281DC00A05111 /* AppDelegate.swift */,
-				CEE4935E22A559340060BF70 /* Parsing */,
-				CE73CE6622A281DC00A05111 /* ViewController.swift */,
-				CE73CE6822A281DC00A05111 /* Main.storyboard */,
 				CE73CE6B22A281DD00A05111 /* Assets.xcassets */,
-				CE73CE6D22A281DD00A05111 /* LaunchScreen.storyboard */,
-				CE73CE7022A281DD00A05111 /* Info.plist */,
+				CE5B5B6E22A289DD006182FA /* BO */,
+				CE5B5B7F22A29439006182FA /* Extensions */,
+				CECE3DBB22A7EA3E00398E96 /* General */,
 				CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */,
+				CE73CE7022A281DD00A05111 /* Info.plist */,
+				CEE4935E22A559340060BF70 /* Parsing */,
+				CE3819E622AA5D080038B173 /* Storyboards */,
+				CE5B5B6B22A289BA006182FA /* Third party */,
+				CE3819E722AA5D8B0038B173 /* ViewControllers */,
 			);
 			path = TennisBusiness;
 			sourceTree = "<group>";
@@ -161,6 +200,7 @@
 			children = (
 				CEE4935F22A559520060BF70 /* Player+Snapshot.swift */,
 				CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */,
+				CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -236,6 +276,8 @@
 				CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */,
 				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
+				CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */,
+				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
 				CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,14 +349,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5B5B7822A28C4F006182FA /* Set.swift in Sources */,
+				CE3819F322AA670F0038B173 /* AppConfig.swift in Sources */,
 				CE5B5B7A22A28C77006182FA /* Game.swift in Sources */,
 				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
+				CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */,
+				CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */,
 				CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */,
 				CE5B5B8122A2945B006182FA /* Int+Convenience.swift in Sources */,
+				CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */,
 				CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */,
-				CE73CE6722A281DC00A05111 /* ViewController.swift in Sources */,
+				CE73CE6722A281DC00A05111 /* MainViewController.swift in Sources */,
 				CE5B5B7E22A290A1006182FA /* Status.swift in Sources */,
 				CE5B5B7022A289F3006182FA /* World.swift in Sources */,
 				CE5B5B7622A28B85006182FA /* Ability.swift in Sources */,
@@ -322,6 +368,8 @@
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
 				CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */,
+				CE3819F522AA67270038B173 /* GeneralConfig.swift in Sources */,
+				CE3819F122AA62460038B173 /* ScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

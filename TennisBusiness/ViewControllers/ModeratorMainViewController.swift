@@ -1,16 +1,17 @@
 //
-//  ViewController.swift
+//  ModeratorMainViewController.swift
 //  TennisBusiness
 //
-//  Created by user on 6/1/19.
+//  Created by user on 6/7/19.
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
 import UIKit
 import FirebaseFirestore
 
-class ViewController: UIViewController {
-    private var database: Firestore!
+class ModeratorMainViewController: ScreenViewController {
+    // MARK: - Properties
+    
     private var expectedWorldsCount: Int = 0
     
     private var worlds: [String: World] = [:] {
@@ -22,9 +23,12 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        database = Firestore.firestore()
         loadData()
     }
     
@@ -93,4 +97,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

@@ -15,6 +15,7 @@ class Match {
     let setsToWin: Int
     var isFinished: Bool = false
     var serveTurn: ServeTurn
+    private(set) var result: String = ""
     private var sets: [Set]
     
     
@@ -44,6 +45,8 @@ class Match {
         let serveDescription = serveTurn == .firstPlayer || serveTurn == .firstPlayerNextServe ? "1" : "2"
         print("ololo game\(currentGame.identifier) \(currentGame.points.0.rawValue):\(currentGame.points.1.rawValue) ( \(currentGame.tiebreakPoints.0):\(currentGame.tiebreakPoints.1) servePlayer\(serveDescription)")
         let nextResult = calculateNextResult()
+        let currentResult = nextResult == .firstWin ? "f" : "s"
+        result = "\(result)\(currentResult)"
         guard !currentGame.isTiebreak else {
             handleNextTiebreak(with: nextResult, currentGame: currentGame, currentSet: currentSet)
             return
@@ -102,6 +105,8 @@ class Match {
         let secondSetsWin = sets.filter { $0.status == .secondWin }.count
         if firstSetsWin == setsToWin || secondSetsWin == setsToWin {
             isFinished = true
+            print("ololo \(result)")
+            print("ololo \(DeviceInfo.deviceId)")
             return
         }
         serveTurn = serveTurn.next(isTiebreak: false)
