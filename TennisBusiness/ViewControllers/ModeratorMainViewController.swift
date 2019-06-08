@@ -8,20 +8,12 @@
 
 import UIKit
 import FirebaseFirestore
+import PromiseKit
 
 class ModeratorMainViewController: ScreenViewController {
     // MARK: - Properties
     
-    private var expectedWorldsCount: Int = 0
-    
-    private var worlds: [String: World] = [:] {
-        didSet {
-            guard worlds.count == expectedWorldsCount else {
-                return
-            }
-            parseMatches()
-        }
-    }
+    private var worlds: [World] = []
     
     
     
@@ -29,71 +21,112 @@ class ModeratorMainViewController: ScreenViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        loadWorlds()
+            .then { [weak self] worlds -> Void in
+                guard let `self` = self else { throw NSError.cancelledError() }
+                self.worlds = worlds
+                
+                for world in worlds {
+                    self.loadMatches(for: world).then { matches -> Void in
+                        world.matches.append(contentsOf: matches)
+                    }
+                }
+        }
     }
     
     
     
     // MARK: - Private
     
-    private func loadData() {
-        database.collection("worlds").getDocuments { [weak self] (worldsSnapshot, error) in
-            guard let worldDocuments = worldsSnapshot?.documents,
-                error == nil else {
-                    return
+    private func loadWorlds() -> Promise<[World]> {
+        return Promise(resolvers: { (fulfill, reject) in
+            let collectionReference: CollectionReference = database.collection("worlds")
+            collectionReference.getDocuments { (worldsSnapshot, error) in
+                if let error = error {
+                    return reject(error)
+                }
+                guard let worldDocuments = worldsSnapshot?.documents else {
+                    return reject(NSError.cancelledError())
+                }
+                fulfill(worldDocuments)
             }
-            self?.expectedWorldsCount = worldDocuments.count
-            for worldDocument in worldDocuments {
-                self?.parseWorld(worldDocument)
+            })
+            .then { [weak self] (worldDocuments: [QueryDocumentSnapshot]) -> Promise<[World]> in
+                guard let `self` = self else { throw NSError.cancelledError() }
+                var worldPromises: [Promise<World>] = []
+                for worldDocument in worldDocuments {
+                    worldPromises.append(self.loadWorld(from: worldDocument))
+                }
+                return collectSuccesses(worldPromises)
             }
+            .then { worlds -> Promise<[World]> in
+                return Promise(value: worlds)
         }
     }
     
-    private func parseWorld(_ document: QueryDocumentSnapshot) {
-        guard document.exists else { return }
-        let worldIdentifier = document.documentID
-        let worldData = document.data()
-        guard let speed = worldData["speed"] as? Double,
-            let createdAt = worldData["createdAt"] as? Timestamp else {
-                return
-        }
-        let playersReference = database.collection("worlds").document(document.documentID).collection("players")
-        playersReference.getDocuments { [weak self] (playerSnapshot, error) in
-            guard let playerDocuments = playerSnapshot?.documents,
-                error == nil else {
-                    return
-            }
-            var players: [String: Player] = [:]
-            for playerDocument in playerDocuments {
-                guard playerDocument.exists,
-                    let player = Player(snapshot: playerDocument) else {
-                        return
-                }
-                players[playerDocument.documentID] = player
-            }
-            let newWorld = World(identifier: worldIdentifier,
-                                 speed: speed,
-                                 createdAt: createdAt.dateValue(),
-                                 players: players)
-            self?.worlds[worldIdentifier] = newWorld
-        }
-    }
-    
-    private func parseMatches() {
-        for (identifier, world) in worlds {
-            database.collection("worlds").document(identifier).collection("matches").getDocuments { (matchesSnapshot, error) in
-                guard let matchDocuments = matchesSnapshot?.documents else {
-                    return
-                }
-                var matches: [String: Match] = [:]
-                for matchDocument in matchDocuments {
-                    guard let newMatch = Match(snapshot: matchDocument, world: world) else {
-                        return
+    private func loadWorld(from document: QueryDocumentSnapshot) -> Promise<World> {
+        return Promise(resolvers: { (fulfill, reject) in
+                guard document.exists else { throw NSError.cancelledError() }
+                let playersReference = database
+                    .collection("worlds")
+                    .document(document.documentID)
+                    .collection("players")
+                playersReference.getDocuments { (playerSnapshot, error) in
+                    if let error = error {
+                        return reject(error)
                     }
-                    matches[matchDocument.documentID] = newMatch
+                    guard let playerDocuments = playerSnapshot?.documents else {
+                        return reject(NSError.cancelledError())
+                    }
+                    fulfill(playerDocuments)
                 }
-                world.add(matches: matches)
+            })
+            .then { [weak self] (playerDocuments: [QueryDocumentSnapshot]) -> Promise<[Player]> in
+                guard let `self` = self else { throw NSError.cancelledError() }
+                var playerPromises: [Promise<Player>] = []
+                for playerDocument in playerDocuments {
+                    playerPromises.append(self.loadPlayer(from: playerDocument))
+                }
+                return collectSuccesses(playerPromises)
             }
+            .then { players -> Promise<World> in
+                let worldIdentifier = document.documentID
+                let worldData = document.data()
+                guard let speed = worldData["speed"] as? Double,
+                    let createdAt = worldData["createdAt"] as? Timestamp else {
+                        throw NSError.cancelledError()
+                }
+                let newWorld = World(identifier: worldIdentifier,
+                                     speed: speed,
+                                     createdAt: createdAt.dateValue(),
+                                     players: players)
+                return Promise(value: newWorld)
         }
+    }
+    
+    private func loadPlayer(from document: QueryDocumentSnapshot) -> Promise<Player> {
+        return Promise(resolvers: { (fulfill, reject) in
+            guard document.exists,
+                let player = Player(snapshot: document) else {
+                    return reject(NSError.cancelledError())
+            }
+            fulfill(player)
+        })
+    }
+    
+    private func loadMatches(for world: World) -> Promise<[Match]> {
+        return Promise(resolvers: { (fulfill, reject) in
+            database
+                .collection("worlds")
+                .document(world.identifier)
+                .collection("matches")
+                .getDocuments { (matchesSnapshot, error) in
+                guard let matchDocuments = matchesSnapshot?.documents else {
+                    return reject(NSError.cancelledError())
+                }
+                let matches = matchDocuments.compactMap { Match(snapshot: $0, world: world) }
+                fulfill(matches)
+            }
+        })
     }
 }

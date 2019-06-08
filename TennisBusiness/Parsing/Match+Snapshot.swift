@@ -15,8 +15,8 @@ extension Match {
             let setsToWin = matchData["setsToWin"] as? Int,
             let player1Identifier = matchData["player1"] as? String,
             let player2Identifier = matchData["player2"] as? String,
-            let player1 = world.players[player1Identifier],
-            let player2 = world.players[player2Identifier] else {
+            let player1 = world.players.first(where: { $0.identifier == player1Identifier }),
+            let player2 = world.players.first(where: { $0.identifier == player2Identifier }) else {
                 return nil
         }
         self.init(identifier: matchIdentifier, firstPlayer: player1, secondPlayer: player2, setsToWin: setsToWin)

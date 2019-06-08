@@ -16,6 +16,7 @@
 		CE3819F322AA670F0038B173 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F222AA670F0038B173 /* AppConfig.swift */; };
 		CE3819F522AA67270038B173 /* GeneralConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F422AA67270038B173 /* GeneralConfig.swift */; };
 		CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */; };
+		CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819F822ABDFB60038B173 /* Promise+Combinators.swift */; };
 		CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B6C22A289CF006182FA /* SwiftyTimer.swift */; };
 		CE5B5B7022A289F3006182FA /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B6F22A289F3006182FA /* World.swift */; };
 		CE5B5B7222A28A9B006182FA /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B5B7122A28A9B006182FA /* Match.swift */; };
@@ -50,6 +51,7 @@
 		CE3819F222AA670F0038B173 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		CE3819F422AA67270038B173 /* GeneralConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConfig.swift; sourceTree = "<group>"; };
 		CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppConfig+Snapshot.swift"; sourceTree = "<group>"; };
+		CE3819F822ABDFB60038B173 /* Promise+Combinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Combinators.swift"; sourceTree = "<group>"; };
 		CE5B5B6C22A289CF006182FA /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		CE5B5B6F22A289F3006182FA /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		CE5B5B7122A28A9B006182FA /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5B5B8022A2945B006182FA /* Int+Convenience.swift */,
+				CE3819F822ABDFB60038B173 /* Promise+Combinators.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -308,6 +312,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -366,6 +371,7 @@
 				CE5B5B7622A28B85006182FA /* Ability.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
+				CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
 				CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */,
 				CE3819F522AA67270038B173 /* GeneralConfig.swift in Sources */,

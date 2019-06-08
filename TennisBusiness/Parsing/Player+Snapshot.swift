@@ -11,8 +11,7 @@ import FirebaseFirestore
 extension Player {
     convenience init?(snapshot: QueryDocumentSnapshot) {
         let playerData = snapshot.data()
-        guard let identifier = playerData["identifier"] as? String,
-            let name = playerData["name"] as? String,
+        guard let name = playerData["name"] as? String,
             let abilityDict = playerData["ability"] as? [String: Double],
             let skillValue = abilityDict["skill"],
             let serveValue = abilityDict["serve"],
@@ -22,6 +21,6 @@ extension Player {
         let ability = Ability(skill: AbilityValue(value: skillValue),
                               serve: AbilityValue(value: serveValue),
                               returnOfServe: AbilityValue(value: returnValue))
-        self.init(identifier: identifier, name: name, ability: ability)
+        self.init(identifier: snapshot.documentID, name: name, ability: ability)
     }
 }

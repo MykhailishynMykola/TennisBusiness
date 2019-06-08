@@ -8,5 +8,6 @@ target 'TennisBusiness' do
   # Pods for TennisBusiness
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
+pod 'PromiseKit/CorePromise', '~> 4.5.2'
 
 end
