@@ -9,9 +9,20 @@
 import UIKit
 
 class ScreenViewController: UIViewController {
-    func presentViewController(withIdentifier identifier: String, storyboardIdentifier: String? = nil) {
+    @discardableResult func presentViewController(withIdentifier identifier: String, storyboardIdentifier: String? = nil, fromNavigation: Bool = false) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboardIdentifier ?? identifier, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: identifier)
-        present(controller, animated: true, completion: nil)
+        guard fromNavigation else {
+            present(controller, animated: true, completion: nil)
+            return controller
+        }
+        if let navigationController = navigationController {
+            navigationController.pushViewController(controller, animated: true)
+        }
+        else {
+            let navigationController = UINavigationController(rootViewController: controller)
+            present(navigationController, animated: true)
+        }
+        return controller
     }
 }

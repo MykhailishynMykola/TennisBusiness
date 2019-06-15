@@ -29,7 +29,7 @@ class MainViewController: ScreenViewController {
             }
             let appConfig = AppConfig(snapshots: documents)
             if let currentDeviceId = DeviceInfo.deviceId, appConfig.general?.moderatorDevices.contains(currentDeviceId) ?? false {
-                self?.presentViewController(withIdentifier: "ModeratorMain")
+                self?.presentViewController(withIdentifier: "ModeratorMain", fromNavigation: true)
             }
             else {
                 self?.presentViewController(withIdentifier: "UserMain")

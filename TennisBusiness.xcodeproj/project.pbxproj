@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		01B3D7EBCF90ED13B601A9A5 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */; };
+		CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C222B0FE710006AF31 /* DataManager.swift */; };
+		CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */; };
+		CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C822B10F550006AF31 /* WorldViewController.swift */; };
+		CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */; };
 		CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */; };
 		CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819EA22AA5E750038B173 /* UserMainViewController.swift */; };
 		CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */; };
@@ -43,6 +47,10 @@
 		1A2968B2AC00BE5CE09CA667 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C801026047E4CE8E8173351D /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
+		CE0845C222B0FE710006AF31 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
+		CE0845C822B10F550006AF31 /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
+		CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorWorld.storyboard; sourceTree = "<group>"; };
 		CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EA22AA5E750038B173 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMain.storyboard; sourceTree = "<group>"; };
@@ -97,6 +105,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE0845C522B103D50006AF31 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE3819E622AA5D080038B173 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +120,7 @@
 				CE73CE6822A281DC00A05111 /* Main.storyboard */,
 				CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */,
 				CE3819EE22AA61B30038B173 /* UserMain.storyboard */,
+				CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -115,6 +132,7 @@
 				CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */,
 				CE3819EA22AA5E750038B173 /* UserMainViewController.swift */,
 				CE3819F022AA62460038B173 /* ScreenViewController.swift */,
+				CE0845C822B10F550006AF31 /* WorldViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -141,6 +159,7 @@
 				CE5B5B7522A28B85006182FA /* Ability.swift */,
 				CE3819F222AA670F0038B173 /* AppConfig.swift */,
 				CE3819F422AA67270038B173 /* GeneralConfig.swift */,
+				CE0845C222B0FE710006AF31 /* DataManager.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -186,6 +205,7 @@
 				CE3819E622AA5D080038B173 /* Storyboards */,
 				CE5B5B6B22A289BA006182FA /* Third party */,
 				CE3819E722AA5D8B0038B173 /* ViewControllers */,
+				CE0845C522B103D50006AF31 /* Views */,
 			);
 			path = TennisBusiness;
 			sourceTree = "<group>";
@@ -280,6 +300,7 @@
 				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
 				CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */,
+				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
 				CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */,
 			);
@@ -354,11 +375,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5B5B7822A28C4F006182FA /* Set.swift in Sources */,
+				CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */,
 				CE3819F322AA670F0038B173 /* AppConfig.swift in Sources */,
 				CE5B5B7A22A28C77006182FA /* Game.swift in Sources */,
 				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
+				CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */,
 				CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */,
 				CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */,
 				CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */,
@@ -373,6 +396,7 @@
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
 				CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
+				CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */,
 				CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */,
 				CE3819F522AA67270038B173 /* GeneralConfig.swift in Sources */,
 				CE3819F122AA62460038B173 /* ScreenViewController.swift in Sources */,

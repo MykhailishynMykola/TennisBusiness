@@ -12,6 +12,7 @@ class World {
     // MARK: - Properties
     
     let identifier: String
+    let name: String
     let players: [Player]
     let speed: Double
     let createdAt: Date
@@ -26,12 +27,19 @@ class World {
         }
     }
     
+    var currentWorldDate: Date {
+        let currentDate = Date()
+        let diff = currentDate.timeIntervalSince(createdAt)
+        return createdAt + diff * speed
+    }
+    
     
     
     // MARK: - Init
     
-    init(identifier: String, speed: Double, createdAt: Date, players: [Player]) {
+    init(identifier: String, name: String, speed: Double, createdAt: Date, players: [Player]) {
         self.identifier = identifier
+        self.name = name
         self.speed = speed
         self.createdAt = createdAt
         self.players = players
