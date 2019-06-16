@@ -11,7 +11,13 @@ class Ability {
     var serve: AbilityValue
     var returnOfServe: AbilityValue
     
-    init(skill: AbilityValue, serve: AbilityValue, returnOfServe: AbilityValue) {
+    init(skill: Double, serve: Double, returnOfServe: Double) {
+        self.skill = AbilityValue(value: skill)
+        self.serve = AbilityValue(value: serve)
+        self.returnOfServe = AbilityValue(value: returnOfServe)
+    }
+    
+    private init(skill: AbilityValue, serve: AbilityValue, returnOfServe: AbilityValue) {
         self.skill = skill
         self.serve = serve
         self.returnOfServe = returnOfServe

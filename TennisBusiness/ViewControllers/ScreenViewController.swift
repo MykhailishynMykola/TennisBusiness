@@ -9,6 +9,8 @@
 import UIKit
 
 class ScreenViewController: UIViewController {
+    let dataManager: DataManager = DataManagerImp()
+    
     @discardableResult func presentViewController(withIdentifier identifier: String, storyboardIdentifier: String? = nil, fromNavigation: Bool = false) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboardIdentifier ?? identifier, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: identifier)

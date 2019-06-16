@@ -42,6 +42,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PD-8Y-RJZ">
+                                <rect key="frame" x="20" y="164" width="93" height="30"/>
+                                <color key="backgroundColor" red="0.99921449348794056" green="0.99942404029999998" blue="0.70510726320935591" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Create match"/>
+                                <connections>
+                                    <action selector="createMatchPressed:" destination="AaA-LI-r1Y" eventType="touchUpInside" id="OcO-ix-qAD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTT-tU-oeu">
+                                <rect key="frame" x="20" y="204" width="92" height="30"/>
+                                <color key="backgroundColor" red="0.99921449350000002" green="0.99942404029999998" blue="0.70510726319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Create player"/>
+                                <connections>
+                                    <action selector="createPlayerPressed:" destination="AaA-LI-r1Y" eventType="touchUpInside" id="yd1-wg-Vfv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -49,10 +65,14 @@
                             <constraint firstItem="bCX-DD-97O" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="8bl-ce-u7C"/>
                             <constraint firstItem="fR2-Ac-dsF" firstAttribute="top" secondItem="455-6M-WSc" secondAttribute="top" constant="20" id="FmB-oB-fKy"/>
                             <constraint firstItem="fR2-Ac-dsF" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="MJx-kj-Dbu"/>
+                            <constraint firstItem="9PD-8Y-RJZ" firstAttribute="top" secondItem="uE8-dQ-iTS" secondAttribute="bottom" constant="10" id="RVf-0p-ON4"/>
                             <constraint firstItem="bCX-DD-97O" firstAttribute="top" secondItem="fR2-Ac-dsF" secondAttribute="bottom" constant="10" id="Ta1-5k-uzs"/>
                             <constraint firstItem="uE8-dQ-iTS" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="YcW-hL-dZg"/>
                             <constraint firstItem="uE8-dQ-iTS" firstAttribute="top" secondItem="qyT-gB-6QH" secondAttribute="bottom" constant="10" id="a3P-zv-qRq"/>
                             <constraint firstItem="qyT-gB-6QH" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="beC-pb-GKK"/>
+                            <constraint firstItem="zTT-tU-oeu" firstAttribute="top" secondItem="9PD-8Y-RJZ" secondAttribute="bottom" constant="10" id="kWU-za-abQ"/>
+                            <constraint firstItem="9PD-8Y-RJZ" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="lkT-76-EhH"/>
+                            <constraint firstItem="zTT-tU-oeu" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="zaP-17-hQv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="455-6M-WSc"/>
                     </view>

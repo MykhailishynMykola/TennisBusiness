@@ -18,9 +18,9 @@ extension Player {
             let returnValue = abilityDict["return"] else {
                 return nil
         }
-        let ability = Ability(skill: AbilityValue(value: skillValue),
-                              serve: AbilityValue(value: serveValue),
-                              returnOfServe: AbilityValue(value: returnValue))
+        let ability = Ability(skill: skillValue,
+                              serve: serveValue,
+                              returnOfServe: returnValue)
         self.init(identifier: snapshot.documentID, name: name, ability: ability)
     }
 }

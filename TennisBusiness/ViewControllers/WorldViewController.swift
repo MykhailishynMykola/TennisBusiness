@@ -47,4 +47,20 @@ class WorldViewController: ScreenViewController {
         guard let world = world else { return }
         currentTimeLabel.text = "Time: \(world.currentWorldDate)"
     }
+    
+    
+    
+    // MARK: - Actions
+    
+    @IBAction private func createMatchPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func createPlayerPressed(_ sender: Any) {
+        guard let createPlayerController = presentViewController(withIdentifier: "CreatePlayer", fromNavigation: true) as? CreatePlayerScreenViewController,
+            let world = world else {
+            return
+        }
+        createPlayerController.update(with: world)
+    }
 }

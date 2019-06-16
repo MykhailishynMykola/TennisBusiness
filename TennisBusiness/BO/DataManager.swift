@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 protocol DataManager {
     func getWorlds() -> Promise<[World]>
+    
+    func createPlayer(with name: String, ability: Ability, worldIdentifier: String) -> Promise<Player>
 }
 
 
@@ -29,6 +31,29 @@ class DataManagerImp: DataManager {
                 }
                 return Promise(value: worlds)
         }
+    }
+    
+    func createPlayer(with name: String, ability: Ability, worldIdentifier: String) -> Promise<Player> {
+        let abilityData: [String: Any] = ["skill": ability.skill.doubleValue,
+                                      "serve": ability.serve.doubleValue,
+                                      "return": ability.returnOfServe.doubleValue]
+        let newPlayerData: [String: Any] = ["name": name, "ability": abilityData]
+        return Promise(resolvers: { (fulfill, reject) in
+            var newPlayerReference: DocumentReference? = nil
+            newPlayerReference = database.collection("worlds")
+                .document(worldIdentifier)
+                .collection("players")
+                .addDocument(data: newPlayerData) { error in
+                    guard error == nil,
+                        let newPlayerIdentifier = newPlayerReference?.documentID else {
+                            print("Error: Failed to create a new player.")
+                            if let error = error { reject(error) }
+                            return
+                    }
+                    let newPlayer = Player(identifier: newPlayerIdentifier, name: name, ability: ability)
+                    fulfill(newPlayer)
+            }
+        })
     }
     
     

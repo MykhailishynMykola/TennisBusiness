@@ -41,6 +41,8 @@
 		CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */; };
 		CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */; };
 		CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935F22A559520060BF70 /* Player+Snapshot.swift */; };
+		CEFF017322B662430066EC76 /* CreatePlayerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */; };
+		CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFF017422B662850066EC76 /* CreatePlayer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServeTurn.swift; sourceTree = "<group>"; };
 		CEE4935F22A559520060BF70 /* Player+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Snapshot.swift"; sourceTree = "<group>"; };
+		CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerScreenViewController.swift; sourceTree = "<group>"; };
+		CEFF017422B662850066EC76 /* CreatePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePlayer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */,
 				CE3819EE22AA61B30038B173 /* UserMain.storyboard */,
 				CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */,
+				CEFF017422B662850066EC76 /* CreatePlayer.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				CE3819EA22AA5E750038B173 /* UserMainViewController.swift */,
 				CE3819F022AA62460038B173 /* ScreenViewController.swift */,
 				CE0845C822B10F550006AF31 /* WorldViewController.swift */,
+				CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
 				CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */,
+				CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,7 @@
 				CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */,
 				CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */,
 				CE5B5B8122A2945B006182FA /* Int+Convenience.swift in Sources */,
+				CEFF017322B662430066EC76 /* CreatePlayerScreenViewController.swift in Sources */,
 				CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */,
 				CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */,
 				CE73CE6722A281DC00A05111 /* MainViewController.swift in Sources */,

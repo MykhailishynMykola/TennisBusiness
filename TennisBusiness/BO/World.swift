@@ -13,9 +13,9 @@ class World {
     
     let identifier: String
     let name: String
-    let players: [Player]
     let speed: Double
     let createdAt: Date
+    var players: [Player]
     var matches: [Match] = [] {
         didSet {
             let matchesToCalculation = matches.filter { !$0.isFinished }

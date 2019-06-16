@@ -21,7 +21,6 @@ class ModeratorMainViewController: ScreenViewController, UITableViewDelegate, UI
     // MARK: - Properties
     
     @IBOutlet private weak var tableView: UITableView!
-    private var dataManager: DataManager = DataManagerImp()
     
     private var worlds: [World] = [] {
         didSet {
