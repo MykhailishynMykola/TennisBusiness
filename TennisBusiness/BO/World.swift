@@ -16,16 +16,7 @@ class World {
     let speed: Double
     let createdAt: Date
     var players: [Player]
-    var matches: [Match] = [] {
-        didSet {
-            let matchesToCalculation = matches.filter { !$0.isFinished }
-            matchesToCalculation.forEach { match in
-                while !match.isFinished {
-                    match.handleNext()
-                }
-            }
-        }
-    }
+    var matches: [Match]
     
     var currentWorldDate: Date {
         let currentDate = Date()
@@ -37,12 +28,13 @@ class World {
     
     // MARK: - Init
     
-    init(identifier: String, name: String, speed: Double, createdAt: Date, players: [Player]) {
+    init(identifier: String, name: String, speed: Double, createdAt: Date, players: [Player], matches: [Match]) {
         self.identifier = identifier
         self.name = name
         self.speed = speed
         self.createdAt = createdAt
         self.players = players
+        self.matches = matches
     }
 }
 

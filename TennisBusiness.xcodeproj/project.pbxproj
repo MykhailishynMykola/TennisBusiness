@@ -43,6 +43,7 @@
 		CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935F22A559520060BF70 /* Player+Snapshot.swift */; };
 		CEFF017322B662430066EC76 /* CreatePlayerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */; };
 		CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFF017422B662850066EC76 /* CreatePlayer.storyboard */; };
+		CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017622B687B40066EC76 /* CalculationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		CEE4935F22A559520060BF70 /* Player+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Snapshot.swift"; sourceTree = "<group>"; };
 		CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerScreenViewController.swift; sourceTree = "<group>"; };
 		CEFF017422B662850066EC76 /* CreatePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePlayer.storyboard; sourceTree = "<group>"; };
+		CEFF017622B687B40066EC76 /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		CE5B5B6E22A289DD006182FA /* BO */ = {
 			isa = PBXGroup;
 			children = (
+				CEFF017822B687C00066EC76 /* Manager */,
 				CE5B5B6F22A289F3006182FA /* World.swift */,
 				CE5B5B7122A28A9B006182FA /* Match.swift */,
 				CE5B5B7722A28C4F006182FA /* Set.swift */,
@@ -165,7 +168,6 @@
 				CE5B5B7522A28B85006182FA /* Ability.swift */,
 				CE3819F222AA670F0038B173 /* AppConfig.swift */,
 				CE3819F422AA67270038B173 /* GeneralConfig.swift */,
-				CE0845C222B0FE710006AF31 /* DataManager.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -232,6 +234,15 @@
 				CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */,
 			);
 			path = Parsing;
+			sourceTree = "<group>";
+		};
+		CEFF017822B687C00066EC76 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF017622B687B40066EC76 /* CalculationManager.swift */,
+				CE0845C222B0FE710006AF31 /* DataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		FCA79D431BD20E1C974671AE /* Frameworks */ = {
@@ -402,6 +413,7 @@
 				CE5B5B7622A28B85006182FA /* Ability.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
+				CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */,
 				CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
 				CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */,

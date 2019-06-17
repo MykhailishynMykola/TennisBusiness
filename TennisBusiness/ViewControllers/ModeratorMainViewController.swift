@@ -22,8 +22,11 @@ class ModeratorMainViewController: ScreenViewController, UITableViewDelegate, UI
     
     @IBOutlet private weak var tableView: UITableView!
     
+    private var calculationManager: CalculationManager?
+    
     private var worlds: [World] = [] {
         didSet {
+            calculationManager?.start(with: worlds)
             tableView.reloadData()
         }
     }
@@ -34,6 +37,7 @@ class ModeratorMainViewController: ScreenViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calculationManager = CalculationManagerImp(dataManager: dataManager)
         dataManager.getWorlds().then { [weak self] worlds in
             self?.worlds = worlds
         }

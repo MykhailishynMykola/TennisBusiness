@@ -13,6 +13,8 @@ protocol DataManager {
     func getWorlds() -> Promise<[World]>
     
     func createPlayer(with name: String, ability: Ability, worldIdentifier: String) -> Promise<Player>
+    
+    func setMatchResult(_ match: Match, worldIdentifier: String) -> Promise<Void>
 }
 
 
@@ -22,15 +24,6 @@ class DataManagerImp: DataManager {
     
     func getWorlds() -> Promise<[World]> {
         return loadWorlds()
-            .then { [weak self] worlds -> Promise<[World]> in
-                guard let `self` = self else { throw NSError.cancelledError() }
-                for world in worlds {
-                    self.loadMatches(for: world).then { matches -> Void in
-                        world.matches.append(contentsOf: matches)
-                    }
-                }
-                return Promise(value: worlds)
-        }
     }
     
     func createPlayer(with name: String, ability: Ability, worldIdentifier: String) -> Promise<Player> {
@@ -53,6 +46,23 @@ class DataManagerImp: DataManager {
                     let newPlayer = Player(identifier: newPlayerIdentifier, name: name, ability: ability)
                     fulfill(newPlayer)
             }
+        })
+    }
+    
+    func setMatchResult(_ match: Match, worldIdentifier: String) -> Promise<Void> {
+        return Promise(resolvers: { (fulfill, reject) in
+            let matchReference: DocumentReference = database.collection("worlds")
+                .document(worldIdentifier)
+                .collection("matches")
+                .document(match.identifier)
+            let data: [String: Any] = ["result": match.result]
+            return matchReference.setData(data, merge: true, completion: { error in
+                if let error = error {
+                    reject(error)
+                    return
+                }
+                fulfill(())
+            })
         })
     }
     
@@ -111,20 +121,25 @@ class DataManagerImp: DataManager {
                 }
                 return collectSuccesses(playerPromises)
             }
-            .then { players -> Promise<World> in
+            .then { [weak self] players -> Promise<World> in
+                guard let `self` = self else { throw NSError.cancelledError() }
                 let worldIdentifier = document.documentID
-                let worldData = document.data()
-                guard let speed = worldData["speed"] as? Double,
-                    let createdAt = worldData["createdAt"] as? Timestamp,
-                    let name = worldData["name"] as? String else {
-                        throw NSError.cancelledError()
+                return self.loadMatches(forWorldIdentifier: worldIdentifier, players: players)
+                    .then { matches -> Promise<World> in
+                        let worldData = document.data()
+                        guard let speed = worldData["speed"] as? Double,
+                            let createdAt = worldData["createdAt"] as? Timestamp,
+                            let name = worldData["name"] as? String else {
+                                throw NSError.cancelledError()
+                        }
+                        let newWorld = World(identifier: worldIdentifier,
+                                             name: name,
+                                             speed: speed,
+                                             createdAt: createdAt.dateValue(),
+                                             players: players,
+                                             matches: matches)
+                        return Promise(value: newWorld)
                 }
-                let newWorld = World(identifier: worldIdentifier,
-                                     name: name,
-                                     speed: speed,
-                                     createdAt: createdAt.dateValue(),
-                                     players: players)
-                return Promise(value: newWorld)
         }
     }
     
@@ -138,17 +153,17 @@ class DataManagerImp: DataManager {
         })
     }
     
-    private func loadMatches(for world: World) -> Promise<[Match]> {
+    private func loadMatches(forWorldIdentifier identifier: String, players: [Player]) -> Promise<[Match]> {
         return Promise(resolvers: { (fulfill, reject) in
             database
                 .collection("worlds")
-                .document(world.identifier)
+                .document(identifier)
                 .collection("matches")
                 .getDocuments { (matchesSnapshot, error) in
                     guard let matchDocuments = matchesSnapshot?.documents else {
                         return reject(NSError.cancelledError())
                     }
-                    let matches = matchDocuments.compactMap { Match(snapshot: $0, world: world) }
+                    let matches = matchDocuments.compactMap { Match(snapshot: $0, players: players) }
                     fulfill(matches)
             }
         })

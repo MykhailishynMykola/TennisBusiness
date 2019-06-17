@@ -6,6 +6,8 @@
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
+import Foundation
+
 class Match {
     // MARK: - Properties
 
@@ -13,20 +15,28 @@ class Match {
     let firstPlayer: Player
     let secondPlayer: Player
     let setsToWin: Int
-    var isFinished: Bool = false
+    let eventDate: Date
     var serveTurn: ServeTurn
-    private(set) var result: String = ""
+    
+    var isFinished: Bool {
+        return !result.isEmpty
+    }
+    
+    private(set) var result: String
+    private(set) var intermediateResult: String = ""
     private var sets: [Set]
     
     
     
     // MARK: - Init
     
-    init(identifier: String, firstPlayer: Player, secondPlayer: Player, setsToWin: Int) {
+    init(identifier: String, firstPlayer: Player, secondPlayer: Player, setsToWin: Int, eventDate: Date, result: String) {
         self.identifier = identifier
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer
         self.setsToWin = setsToWin
+        self.eventDate = eventDate
+        self.result = result
         let serveTurn: ServeTurn = Bool.random() ? .firstPlayer : .secondPlayer
         self.serveTurn = serveTurn
         self.sets = [Set(identifier: 1, firstGameServeTurn: serveTurn)]
@@ -36,17 +46,27 @@ class Match {
     
     // MARK: - Public
     
-    func handleNext() {
+    func calculateResult() {
+        guard !isFinished else { return }
+        while !isFinished {
+            handleNext()
+        }
+        return
+    }
+    
+    
+    // MARK: - Private
+    
+    private func handleNext() {
         guard let currentSet = sets.first(where: { $0.status == .inProgress }),
             let currentGame = currentSet.games.first(where: { $0.status == .inProgress }) else {
             print("Error: Can't find current set or game for match \(identifier)")
             return
         }
         let serveDescription = serveTurn == .firstPlayer || serveTurn == .firstPlayerNextServe ? "1" : "2"
-        print("ololo game\(currentGame.identifier) \(currentGame.points.0.rawValue):\(currentGame.points.1.rawValue) ( \(currentGame.tiebreakPoints.0):\(currentGame.tiebreakPoints.1) servePlayer\(serveDescription)")
         let nextResult = calculateNextResult()
         let currentResult = nextResult == .firstWin ? "f" : "s"
-        result = "\(result)\(currentResult)"
+        intermediateResult = "\(intermediateResult)\(currentResult)"
         guard !currentGame.isTiebreak else {
             handleNextTiebreak(with: nextResult, currentGame: currentGame, currentSet: currentSet)
             return
@@ -75,10 +95,6 @@ class Match {
         }
     }
     
-    
-    
-    // MARK: - Private
-    
     private func createNewGame(withIdentifier identifier: Int, currentSet: Set) {
         var nextServeTurn = serveTurn.next(isTiebreak: false)
         switch (currentSet.gamesFirstWin, currentSet.gamesSecondWin) {
@@ -97,16 +113,13 @@ class Match {
             currentSet.games.append(Game(identifier: identifier, isTiebreak: false, serveTurn: nextServeTurn))
         }
         serveTurn = nextServeTurn
-        print("ololo \(currentSet.gamesFirstWin) \(currentSet.gamesSecondWin)")
     }
     
     private func createNewSet(with identifier: Int) {
         let firstSetsWin = sets.filter { $0.status == .firstWin }.count
         let secondSetsWin = sets.filter { $0.status == .secondWin }.count
         if firstSetsWin == setsToWin || secondSetsWin == setsToWin {
-            isFinished = true
-            print("ololo \(result)")
-            print("ololo \(DeviceInfo.deviceId)")
+            result = intermediateResult
             return
         }
         serveTurn = serveTurn.next(isTiebreak: false)
