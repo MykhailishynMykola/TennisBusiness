@@ -57,6 +57,7 @@ class CalculationManagerImp: CalculationManager {
             if diff < timeBeroreCalculation  {
                 match.calculateResult()
                 dataManager.setMatchResult(match, worldIdentifier: world.identifier)
+                    .catch { _ in }
             }
         }
     }

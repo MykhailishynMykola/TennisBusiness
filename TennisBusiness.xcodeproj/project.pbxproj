@@ -12,6 +12,10 @@
 		CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */; };
 		CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C822B10F550006AF31 /* WorldViewController.swift */; };
 		CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */; };
+		CE21631022D0B4BE000A14BA /* Date+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */; };
+		CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */; };
+		CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */; };
+		CE21631622D0CE11000A14BA /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631522D0CE11000A14BA /* GlobalConstants.swift */; };
 		CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */; };
 		CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819EA22AA5E750038B173 /* UserMainViewController.swift */; };
 		CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */; };
@@ -54,6 +58,10 @@
 		CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
 		CE0845C822B10F550006AF31 /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
 		CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorWorld.storyboard; sourceTree = "<group>"; };
+		CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Convenience.swift"; sourceTree = "<group>"; };
+		CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchScreenViewController.swift; sourceTree = "<group>"; };
+		CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateMatch.storyboard; sourceTree = "<group>"; };
+		CE21631522D0CE11000A14BA /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EA22AA5E750038B173 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMain.storyboard; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 				CE3819EE22AA61B30038B173 /* UserMain.storyboard */,
 				CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */,
 				CEFF017422B662850066EC76 /* CreatePlayer.storyboard */,
+				CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -141,6 +150,7 @@
 				CE3819F022AA62460038B173 /* ScreenViewController.swift */,
 				CE0845C822B10F550006AF31 /* WorldViewController.swift */,
 				CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */,
+				CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 				CE5B5B7522A28B85006182FA /* Ability.swift */,
 				CE3819F222AA670F0038B173 /* AppConfig.swift */,
 				CE3819F422AA67270038B173 /* GeneralConfig.swift */,
+				CE21631522D0CE11000A14BA /* GlobalConstants.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 			children = (
 				CE5B5B8022A2945B006182FA /* Int+Convenience.swift */,
 				CE3819F822ABDFB60038B173 /* Promise+Combinators.swift */,
+				CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */,
 				CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */,
 				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
@@ -404,13 +417,16 @@
 				CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */,
 				CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */,
 				CE5B5B8122A2945B006182FA /* Int+Convenience.swift in Sources */,
+				CE21631622D0CE11000A14BA /* GlobalConstants.swift in Sources */,
 				CEFF017322B662430066EC76 /* CreatePlayerScreenViewController.swift in Sources */,
 				CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */,
+				CE21631022D0B4BE000A14BA /* Date+Convenience.swift in Sources */,
 				CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */,
 				CE73CE6722A281DC00A05111 /* MainViewController.swift in Sources */,
 				CE5B5B7E22A290A1006182FA /* Status.swift in Sources */,
 				CE5B5B7022A289F3006182FA /* World.swift in Sources */,
 				CE5B5B7622A28B85006182FA /* Ability.swift in Sources */,
+				CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
 				CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */,

@@ -28,7 +28,7 @@ class WorldViewController: ScreenViewController {
         guard let world = world else { return }
         nameLabel.text = "Name: \(world.name)"
         speedLabel.text = "Speed: \(world.speed)"
-        createdAtLabel.text = "Created at: \(world.createdAt)"
+        createdAtLabel.text = "Created at: \(world.createdAt.stringWithSeconds())"
         updateCurrentTime()
         timer = Timer.every(1) { [weak self] in
             self?.updateCurrentTime()
@@ -43,9 +43,13 @@ class WorldViewController: ScreenViewController {
         self.world = world
     }
     
+    
+    
+    // MARK: - Private
+    
     private func updateCurrentTime() {
         guard let world = world else { return }
-        currentTimeLabel.text = "Time: \(world.currentWorldDate)"
+        currentTimeLabel.text = "Time: \(world.currentWorldDate.stringWithSeconds())"
     }
     
     
@@ -53,7 +57,11 @@ class WorldViewController: ScreenViewController {
     // MARK: - Actions
     
     @IBAction private func createMatchPressed(_ sender: Any) {
-        
+        guard let createMatchController = presentViewController(withIdentifier: "CreateMatch", fromNavigation: true) as? CreateMatchScreenViewController,
+            let world = world else {
+                return
+        }
+        createMatchController.update(with: world)
     }
     
     @IBAction func createPlayerPressed(_ sender: Any) {

@@ -53,7 +53,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
         dataManager.createPlayer(with: name, ability: ability, worldIdentifier: worldIdentifier)
             .then { [weak self] player -> Void in
                 self?.world?.players.append(player)
-                self?.dismiss(animated: true, completion: nil)
+                self?.navigationController?.popViewController(animated: true)
         }
     }
 }

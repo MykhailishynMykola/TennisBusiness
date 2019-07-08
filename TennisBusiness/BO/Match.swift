@@ -63,7 +63,6 @@ class Match {
             print("Error: Can't find current set or game for match \(identifier)")
             return
         }
-        let serveDescription = serveTurn == .firstPlayer || serveTurn == .firstPlayerNextServe ? "1" : "2"
         let nextResult = calculateNextResult()
         let currentResult = nextResult == .firstWin ? "f" : "s"
         intermediateResult = "\(intermediateResult)\(currentResult)"
