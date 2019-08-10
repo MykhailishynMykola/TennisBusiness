@@ -18,8 +18,14 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     @IBOutlet private weak var setsToWinTextField: UITextField!
     @IBOutlet private weak var dateTextField: UITextField!
     
+    private let firstPlayerPickerView = UIPickerView()
+    private let secondPlayerPickerView = UIPickerView()
+    private let setsToWinPickerView = UIPickerView()
+    private let datePickerView = UIDatePicker()
+    
     private var world: World?
     private var timer: Timer?
+    private var selected: (firstPlayer: Player?, secondPlayer: Player?, setsToWin: Int?, date: Date?) = (nil, nil, nil, nil)
     
     private var datePickerToolbar: UIToolbar {
         let toolbar = UIToolbar()
@@ -30,11 +36,6 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
         toolbar.setItems([doneButton, spaceButton, cancelButton], animated: false)
         return toolbar
     }
-    
-    private let firstPlayerPickerView = UIPickerView()
-    private let secondPlayerPickerView = UIPickerView()
-    private let setsToWinPickerView = UIPickerView()
-    private let datePickerView = UIDatePicker()
     
     
     
@@ -110,12 +111,16 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if firstPlayerTextField.inputView == pickerView {
             firstPlayerTextField.text = world?.players[row].name
+            selected = (world?.players[row], selected.secondPlayer, selected.setsToWin, selected.date)
         }
         else if secondPlayerTextField.inputView == pickerView {
             secondPlayerTextField.text = world?.players[row].name
+            selected = (selected.firstPlayer, world?.players[row], selected.setsToWin, selected.date)
         }
         else if setsToWinTextField.inputView == pickerView {
-            setsToWinTextField.text = "\(GlobalConstants.setsToWinTypes[row])"
+            let setsToWin = GlobalConstants.setsToWinTypes[row]
+            setsToWinTextField.text = "\(setsToWin)"
+            selected = (selected.firstPlayer, selected.secondPlayer, setsToWin, selected.date)
         }
     }
     
@@ -126,6 +131,10 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     private func updateCurrentTime() {
         guard let world = world else { return }
         currentTimeLabel.text = "Time: \(world.currentWorldDate.stringWithSeconds())"
+        if selected.date == nil {
+            datePickerView.minimumDate = world.currentWorldDate
+            datePickerView.date = world.currentWorldDate
+        }
     }
     
     private func configuteTextField(_ textField: UITextField, with pickerView: UIPickerView) {
@@ -136,7 +145,8 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     
     private func configuteDateField(_ textField: UITextField, with pickerView: UIDatePicker) {
         textField.inputAccessoryView = datePickerToolbar
-        pickerView.datePickerMode = .date
+        pickerView.datePickerMode = .dateAndTime
+        pickerView.addTarget(self, action: #selector(datePickerChangedValue), for: .valueChanged)
         textField.inputView = pickerView
     }
     
@@ -145,7 +155,18 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     // MARK: - Actions
     
     @IBAction private func createMatchPressed(_ sender: Any) {
-        
+        guard let firstPlayer = selected.firstPlayer,
+            let secondPlayer = selected.secondPlayer,
+            let setsToWin = selected.setsToWin,
+            let date = selected.date,
+            let worldIdentifier = world?.identifier else {
+                return
+        }
+        dataManager.createMatch(firstPlayer: firstPlayer, secondPlayer: secondPlayer, setsToWin: setsToWin, date: date, worldIdentifier: worldIdentifier)
+            .then { [weak self] match -> Void in
+                self?.world?.matches.append(match)
+                self?.navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc private func datePickerDone() {
@@ -158,5 +179,9 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     
     @objc private func datePickerCancelled() {
         view.endEditing(true)
+    }
+    
+    @objc private func datePickerChangedValue() {
+        selected = (selected.firstPlayer, selected.secondPlayer, selected.setsToWin, datePickerView.date)
     }
 }

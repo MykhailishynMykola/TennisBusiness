@@ -16,7 +16,7 @@ class CalculationManagerImp: CalculationManager {
     // MARK: - Inner
     
     private struct Constants {
-        static let calculationTimeBeforeMatch: TimeInterval = 3600 // 1 min
+        static let calculationTimeBeforeMatch: TimeInterval = 3 * 60 // 3 min
     }
     
     

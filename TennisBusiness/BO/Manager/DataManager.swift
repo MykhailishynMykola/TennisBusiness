@@ -13,6 +13,7 @@ protocol DataManager {
     func getWorlds() -> Promise<[World]>
     
     func createPlayer(with name: String, ability: Ability, worldIdentifier: String) -> Promise<Player>
+    func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String) -> Promise<Match>
     
     func setMatchResult(_ match: Match, worldIdentifier: String) -> Promise<Void>
 }
@@ -45,6 +46,35 @@ class DataManagerImp: DataManager {
                     }
                     let newPlayer = Player(identifier: newPlayerIdentifier, name: name, ability: ability)
                     fulfill(newPlayer)
+            }
+        })
+    }
+    
+    func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String) -> Promise<Match> {
+        let newMatchData: [String: Any] = ["player1": firstPlayer.identifier,
+                                           "player2": secondPlayer.identifier,
+                                           "setsToWin": setsToWin,
+                                           "eventDate": Timestamp(date: date),
+                                           "result": ""]
+        return Promise(resolvers: { (fulfill, reject) in
+            var newMatchReference: DocumentReference? = nil
+            newMatchReference = database.collection("worlds")
+                .document(worldIdentifier)
+                .collection("matches")
+                .addDocument(data: newMatchData) { error in
+                    guard error == nil,
+                        let newMatchIdentifier = newMatchReference?.documentID else {
+                            print("Error: Failed to create a new match.")
+                            if let error = error { reject(error) }
+                            return
+                    }
+                    let newMatch = Match(identifier: newMatchIdentifier,
+                                         firstPlayer: firstPlayer,
+                                         secondPlayer: secondPlayer,
+                                         setsToWin: setsToWin,
+                                         eventDate: date,
+                                         result: "")
+                    fulfill(newMatch)
             }
         })
     }
