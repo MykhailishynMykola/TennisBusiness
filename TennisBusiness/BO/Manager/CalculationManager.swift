@@ -49,6 +49,10 @@ class CalculationManagerImp: CalculationManager {
         }
     }
     
+    
+    
+    // MARK: - Private
+    
     private func check(_ world: World) {
         let unfinishedMatches = world.matches.filter { !$0.isFinished }
         for match in unfinishedMatches {

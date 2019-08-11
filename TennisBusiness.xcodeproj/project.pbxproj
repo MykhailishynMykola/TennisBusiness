@@ -40,6 +40,9 @@
 		CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE73CE6822A281DC00A05111 /* Main.storyboard */; };
 		CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE73CE6B22A281DD00A05111 /* Assets.xcassets */; };
 		CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE73CE6D22A281DD00A05111 /* LaunchScreen.storyboard */; };
+		CEA167EB22FF0716008EC5E9 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA167EA22FF0716008EC5E9 /* Countries.json */; };
+		CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */; };
+		CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA167EE22FF089D008EC5E9 /* Country.swift */; };
 		CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */; };
 		CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */; };
 		CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */; };
@@ -88,6 +91,9 @@
 		CE73CE6B22A281DD00A05111 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE73CE6E22A281DD00A05111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE73CE7022A281DD00A05111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA167EA22FF0716008EC5E9 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesDataManager.swift; sourceTree = "<group>"; };
+		CEA167EE22FF089D008EC5E9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Snapshot.swift"; sourceTree = "<group>"; };
 		CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				CE3819F222AA670F0038B173 /* AppConfig.swift */,
 				CE3819F422AA67270038B173 /* GeneralConfig.swift */,
 				CE21631522D0CE11000A14BA /* GlobalConstants.swift */,
+				CEA167EE22FF089D008EC5E9 /* Country.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -214,13 +221,11 @@
 		CE73CE6322A281DC00A05111 /* TennisBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				CEA167E922FF06FD008EC5E9 /* Resources */,
 				CE73CE6422A281DC00A05111 /* AppDelegate.swift */,
-				CE73CE6B22A281DD00A05111 /* Assets.xcassets */,
 				CE5B5B6E22A289DD006182FA /* BO */,
 				CE5B5B7F22A29439006182FA /* Extensions */,
 				CECE3DBB22A7EA3E00398E96 /* General */,
-				CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */,
-				CE73CE7022A281DD00A05111 /* Info.plist */,
 				CEE4935E22A559340060BF70 /* Parsing */,
 				CE3819E622AA5D080038B173 /* Storyboards */,
 				CE5B5B6B22A289BA006182FA /* Third party */,
@@ -228,6 +233,17 @@
 				CE0845C522B103D50006AF31 /* Views */,
 			);
 			path = TennisBusiness;
+			sourceTree = "<group>";
+		};
+		CEA167E922FF06FD008EC5E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEA167EA22FF0716008EC5E9 /* Countries.json */,
+				CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */,
+				CE73CE6B22A281DD00A05111 /* Assets.xcassets */,
+				CE73CE7022A281DD00A05111 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		CECE3DBB22A7EA3E00398E96 /* General */ = {
@@ -253,6 +269,7 @@
 			children = (
 				CEFF017622B687B40066EC76 /* CalculationManager.swift */,
 				CE0845C222B0FE710006AF31 /* DataManager.swift */,
+				CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -333,6 +350,7 @@
 				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
 				CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */,
+				CEA167EB22FF0716008EC5E9 /* Countries.json in Resources */,
 				CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +429,8 @@
 				CE5B5B7A22A28C77006182FA /* Game.swift in Sources */,
 				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
+				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
+				CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */,
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
 				CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */,
 				CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */,
@@ -584,7 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H64Q29NA74;
-				INFOPLIST_FILE = TennisBusiness/Info.plist;
+				INFOPLIST_FILE = TennisBusiness/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,7 +623,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H64Q29NA74;
-				INFOPLIST_FILE = TennisBusiness/Info.plist;
+				INFOPLIST_FILE = TennisBusiness/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
