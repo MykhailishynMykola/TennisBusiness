@@ -37,10 +37,14 @@ class ModeratorMainViewController: ScreenViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        calculationManager = CalculationManagerImp(dataManager: dataManager)
         dataManager.getWorlds().then { [weak self] worlds in
             self?.worlds = worlds
         }
+    }
+    
+    override func setupDependencies() {
+        super.setupDependencies()
+        calculationManager = resolver.resolve(CalculationManager.self)
     }
     
     
