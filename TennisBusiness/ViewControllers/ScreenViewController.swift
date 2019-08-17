@@ -7,9 +7,30 @@
 //
 
 import UIKit
+import Swinject
 
 class ScreenViewController: UIViewController {
-    let dataManager: DataManager = DataManagerImp()
+    // MARK: - Properties
+    
+    let resolver = DIContainer.defaultResolver
+    var dataManager: DataManager!
+    
+    
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupDependencies()
+    }
+    
+    
+    
+    // MARK: - Public
+    
+    func setupDependencies() {
+        dataManager = resolver.resolve(DataManager.self)
+    }
     
     @discardableResult func presentViewController(withIdentifier identifier: String, storyboardIdentifier: String? = nil, fromNavigation: Bool = false) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboardIdentifier ?? identifier, bundle: nil)

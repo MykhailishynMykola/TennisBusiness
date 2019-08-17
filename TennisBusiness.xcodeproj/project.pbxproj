@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01B3D7EBCF90ED13B601A9A5 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */; };
+		CE04F152230808D10048771A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F151230808D10048771A /* DIContainer.swift */; };
+		CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15523080B6C0048771A /* ManagersAssembly.swift */; };
+		CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15723080BE10048771A /* ResolverInitializable.swift */; };
 		CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C222B0FE710006AF31 /* DataManager.swift */; };
 		CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */; };
 		CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C822B10F550006AF31 /* WorldViewController.swift */; };
@@ -57,6 +60,9 @@
 		1A2968B2AC00BE5CE09CA667 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C801026047E4CE8E8173351D /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
+		CE04F151230808D10048771A /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		CE04F15523080B6C0048771A /* ManagersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersAssembly.swift; sourceTree = "<group>"; };
+		CE04F15723080BE10048771A /* ResolverInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverInitializable.swift; sourceTree = "<group>"; };
 		CE0845C222B0FE710006AF31 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
 		CE0845C822B10F550006AF31 /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +131,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE04F15323080AC30048771A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE04F15423080AED0048771A /* DI */,
+				CEE4935E22A559340060BF70 /* Parsing */,
+				CE5B5B6E22A289DD006182FA /* BO */,
+				CEFF017822B687C00066EC76 /* Managers */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE04F15423080AED0048771A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CE04F151230808D10048771A /* DIContainer.swift */,
+				CE04F15523080B6C0048771A /* ManagersAssembly.swift */,
+				CE04F15723080BE10048771A /* ResolverInitializable.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		CE0845C522B103D50006AF31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +199,6 @@
 		CE5B5B6E22A289DD006182FA /* BO */ = {
 			isa = PBXGroup;
 			children = (
-				CEFF017822B687C00066EC76 /* Manager */,
 				CE5B5B6F22A289F3006182FA /* World.swift */,
 				CE5B5B7122A28A9B006182FA /* Match.swift */,
 				CE5B5B7722A28C4F006182FA /* Set.swift */,
@@ -221,12 +247,9 @@
 		CE73CE6322A281DC00A05111 /* TennisBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				CE04F15323080AC30048771A /* Model */,
 				CEA167E922FF06FD008EC5E9 /* Resources */,
-				CE73CE6422A281DC00A05111 /* AppDelegate.swift */,
-				CE5B5B6E22A289DD006182FA /* BO */,
-				CE5B5B7F22A29439006182FA /* Extensions */,
 				CECE3DBB22A7EA3E00398E96 /* General */,
-				CEE4935E22A559340060BF70 /* Parsing */,
 				CE3819E622AA5D080038B173 /* Storyboards */,
 				CE5B5B6B22A289BA006182FA /* Third party */,
 				CE3819E722AA5D8B0038B173 /* ViewControllers */,
@@ -249,6 +272,8 @@
 		CECE3DBB22A7EA3E00398E96 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				CE5B5B7F22A29439006182FA /* Extensions */,
+				CE73CE6422A281DC00A05111 /* AppDelegate.swift */,
 				CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */,
 			);
 			path = General;
@@ -264,14 +289,14 @@
 			path = Parsing;
 			sourceTree = "<group>";
 		};
-		CEFF017822B687C00066EC76 /* Manager */ = {
+		CEFF017822B687C00066EC76 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				CEFF017622B687B40066EC76 /* CalculationManager.swift */,
 				CE0845C222B0FE710006AF31 /* DataManager.swift */,
 				CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		FCA79D431BD20E1C974671AE /* Frameworks */ = {
@@ -371,6 +396,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -384,6 +410,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -424,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5B5B7822A28C4F006182FA /* Set.swift in Sources */,
+				CE04F152230808D10048771A /* DIContainer.swift in Sources */,
 				CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */,
 				CE3819F322AA670F0038B173 /* AppConfig.swift in Sources */,
 				CE5B5B7A22A28C77006182FA /* Game.swift in Sources */,
@@ -431,6 +459,7 @@
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
 				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
 				CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */,
+				CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */,
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
 				CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */,
 				CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */,
@@ -446,6 +475,7 @@
 				CE5B5B7E22A290A1006182FA /* Status.swift in Sources */,
 				CE5B5B7022A289F3006182FA /* World.swift in Sources */,
 				CE5B5B7622A28B85006182FA /* Ability.swift in Sources */,
+				CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */,
 				CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,

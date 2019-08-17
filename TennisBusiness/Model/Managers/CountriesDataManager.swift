@@ -8,12 +8,14 @@
 
 import Foundation
 
-class CountriesDataManager {
-    static let shared = CountriesDataManager()
-    
+protocol CountriesDataManager {
+    var countries: [Country] { get }
+}
+
+final class CountriesDataManagerImp: CountriesDataManager {
     var countries: [Country] = []
     
-    private init() {
+    init() {
         guard let url = Bundle.main.url(forResource: "Countries", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let jsonResult = try? JSONSerialization.jsonObject(with: data),

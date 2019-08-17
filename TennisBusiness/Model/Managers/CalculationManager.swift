@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import Swinject
 
 protocol CalculationManager {
     func start(with worlds: [World])
 }
 
-class CalculationManagerImp: CalculationManager {
+final class CalculationManagerImp: CalculationManager, ResolverInitializable {
     // MARK: - Inner
     
     private struct Constants {
@@ -33,6 +34,18 @@ class CalculationManagerImp: CalculationManager {
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
+    }
+    
+    
+    
+    // MARK: - ResolverInitializable
+    
+    convenience init?(resolver: Resolver) {
+        guard let dataManager = resolver.resolve(DataManager.self) else {
+            print("Warning: Failed to initilize all needed dependencies!")
+            return nil
+        }
+        self.init(dataManager: dataManager)
     }
     
     

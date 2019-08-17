@@ -93,11 +93,13 @@ PODS:
   - nanopb/encode (0.3.901)
   - PromiseKit/CorePromise (4.5.2)
   - Protobuf (3.8.0)
+  - Swinject (2.6.1)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - PromiseKit/CorePromise (~> 4.5.2)
+  - Swinject
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -116,6 +118,7 @@ SPEC REPOS:
     - nanopb
     - PromiseKit
     - Protobuf
+    - Swinject
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -133,7 +136,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
+  Swinject: b624462f47b635a64f89a60a247baa5fccec14e1
 
-PODFILE CHECKSUM: a324875458b38de6c1ff7211804933422c0bd785
+PODFILE CHECKSUM: b0b13340c56e4aef62a6ff6eea59a267c1c63be9
 
 COCOAPODS: 1.5.3
