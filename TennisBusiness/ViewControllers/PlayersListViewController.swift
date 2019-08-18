@@ -9,12 +9,16 @@
 import UIKit
 
 class PlayersListViewController: ScreenViewController {
-    // MARK: - Properties
+    // MARK: - Inner
     
     private struct Constants {
         static let playerCellReuseIdentifier = "playerCell"
     }
 
+    
+    
+    // MARK: - Properties
+    
     @IBOutlet private weak var tableView: UITableView!
     
     private var players: [Player] = [] {
@@ -31,8 +35,6 @@ class PlayersListViewController: ScreenViewController {
     func update(with players: [Player]) {
         self.players = players
     }
-    
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -50,8 +52,6 @@ extension PlayersListViewController: UITableViewDataSource {
         cell.update(with: player)
         return cell
     }
-    
-    
 }
 
 // MARK: - UITableViewDelegate

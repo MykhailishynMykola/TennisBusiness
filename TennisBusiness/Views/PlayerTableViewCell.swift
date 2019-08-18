@@ -9,7 +9,7 @@
 import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
-     // MARK: - Properties
+    // MARK: - Properties
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var returnLabel: UILabel!
