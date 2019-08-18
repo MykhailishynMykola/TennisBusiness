@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		01B3D7EBCF90ED13B601A9A5 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */; };
+		0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EFB823094AC900D76DB4 /* PlayersList.storyboard */; };
+		0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */; };
+		0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */; };
 		CE04F152230808D10048771A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F151230808D10048771A /* DIContainer.swift */; };
 		CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15523080B6C0048771A /* ManagersAssembly.swift */; };
 		CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15723080BE10048771A /* ResolverInitializable.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0489EFB823094AC900D76DB4 /* PlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayersList.storyboard; sourceTree = "<group>"; };
+		0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
+		0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		1A2968B2AC00BE5CE09CA667 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C801026047E4CE8E8173351D /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */,
+				0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 				CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */,
 				CEFF017422B662850066EC76 /* CreatePlayer.storyboard */,
 				CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */,
+				0489EFB823094AC900D76DB4 /* PlayersList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 				CE0845C822B10F550006AF31 /* WorldViewController.swift */,
 				CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */,
 				CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */,
+				0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -370,6 +379,7 @@
 				CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */,
 				CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */,
 				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
+				0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
 				CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */,
 				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
@@ -389,36 +399,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2903D69963B8E0CA1A985257 /* [CP] Check Pods Manifest.lock */ = {
@@ -458,6 +447,7 @@
 				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
 				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
+				0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */,
 				CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */,
 				CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */,
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
@@ -475,6 +465,7 @@
 				CE5B5B7E22A290A1006182FA /* Status.swift in Sources */,
 				CE5B5B7022A289F3006182FA /* World.swift in Sources */,
 				CE5B5B7622A28B85006182FA /* Ability.swift in Sources */,
+				0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */,
 				CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */,
 				CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
