@@ -2,7 +2,7 @@
 //  Promise+Combinators.swift
 //  3Ready
 //
-//  Created by user on 8/1/19.
+//  Created by Nikolay Mikhailishin on 8/1/19.
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 

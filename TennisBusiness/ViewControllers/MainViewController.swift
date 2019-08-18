@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  TennisBusiness
 //
-//  Created by user on 6/1/19.
+//  Created by Nikolay Mikhailishin on 6/1/19.
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
