@@ -2,7 +2,7 @@
 //  PlayerTableViewCell.swift
 //  TennisBusiness
 //
-//  Created by Mac on 8/18/19.
+//  Created by Valeiia Tarasenko on 8/18/19.
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
