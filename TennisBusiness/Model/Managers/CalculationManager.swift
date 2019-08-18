@@ -54,6 +54,7 @@ final class CalculationManagerImp: CalculationManager, ResolverInitializable {
     
     func start(with worlds: [World]) {
         self.worlds = worlds
+        timer?.invalidate()
         timer = Timer.every(1) { [weak self] in
             guard let `self` = self else { return }
             for world in self.worlds {

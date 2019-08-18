@@ -1,5 +1,5 @@
 //
-//  Snapshot+JSON.swift
+//  Player+Snapshot.swift
 //  TennisBusiness
 //
 //  Created by user on 6/3/19.
