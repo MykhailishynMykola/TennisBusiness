@@ -64,11 +64,19 @@ class WorldViewController: ScreenViewController {
         createMatchController.update(with: world)
     }
     
-    @IBAction func createPlayerPressed(_ sender: Any) {
+    @IBAction private func createPlayerPressed(_ sender: Any) {
         guard let createPlayerController = presentViewController(withIdentifier: "CreatePlayer", fromNavigation: true) as? CreatePlayerScreenViewController,
             let world = world else {
             return
         }
         createPlayerController.update(with: world)
+    }
+    
+    @IBAction private func viewPlayersPressed(_ sender: Any) {
+        guard let playersListViewController = presentViewController(withIdentifier: "PlayersList", fromNavigation: true) as? PlayersListViewController,
+            let players = world?.players else {
+                return
+        }
+        playersListViewController.update(with: players)
     }
 }

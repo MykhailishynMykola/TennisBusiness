@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,6 +58,14 @@
                                     <action selector="createPlayerPressed:" destination="AaA-LI-r1Y" eventType="touchUpInside" id="yd1-wg-Vfv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iur-7W-40H">
+                                <rect key="frame" x="20" y="244" width="87" height="30"/>
+                                <color key="backgroundColor" red="0.99921449350000002" green="0.99942404029999998" blue="0.70510726319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="View players"/>
+                                <connections>
+                                    <action selector="viewPlayersPressed:" destination="AaA-LI-r1Y" eventType="touchUpInside" id="zYM-4o-kUa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -67,9 +75,11 @@
                             <constraint firstItem="fR2-Ac-dsF" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="MJx-kj-Dbu"/>
                             <constraint firstItem="9PD-8Y-RJZ" firstAttribute="top" secondItem="uE8-dQ-iTS" secondAttribute="bottom" constant="10" id="RVf-0p-ON4"/>
                             <constraint firstItem="bCX-DD-97O" firstAttribute="top" secondItem="fR2-Ac-dsF" secondAttribute="bottom" constant="10" id="Ta1-5k-uzs"/>
+                            <constraint firstItem="iur-7W-40H" firstAttribute="top" secondItem="zTT-tU-oeu" secondAttribute="bottom" constant="10" id="Tug-bl-AaF"/>
                             <constraint firstItem="uE8-dQ-iTS" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="YcW-hL-dZg"/>
                             <constraint firstItem="uE8-dQ-iTS" firstAttribute="top" secondItem="qyT-gB-6QH" secondAttribute="bottom" constant="10" id="a3P-zv-qRq"/>
                             <constraint firstItem="qyT-gB-6QH" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="beC-pb-GKK"/>
+                            <constraint firstItem="iur-7W-40H" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="k5Y-JG-DkS"/>
                             <constraint firstItem="zTT-tU-oeu" firstAttribute="top" secondItem="9PD-8Y-RJZ" secondAttribute="bottom" constant="10" id="kWU-za-abQ"/>
                             <constraint firstItem="9PD-8Y-RJZ" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="lkT-76-EhH"/>
                             <constraint firstItem="zTT-tU-oeu" firstAttribute="leading" secondItem="455-6M-WSc" secondAttribute="leading" constant="20" id="zaP-17-hQv"/>
