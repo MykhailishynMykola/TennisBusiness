@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01B3D7EBCF90ED13B601A9A5 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */; };
 		0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EFB823094AC900D76DB4 /* PlayersList.storyboard */; };
 		0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */; };
 		0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */; };
+		2ECD159E776257E57A97E844 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */; };
 		CE04F152230808D10048771A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F151230808D10048771A /* DIContainer.swift */; };
 		CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15523080B6C0048771A /* ManagersAssembly.swift */; };
 		CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15723080BE10048771A /* ResolverInitializable.swift */; };
@@ -63,9 +63,9 @@
 		0489EFB823094AC900D76DB4 /* PlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayersList.storyboard; sourceTree = "<group>"; };
 		0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
 		0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
-		1A2968B2AC00BE5CE09CA667 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
-		5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C801026047E4CE8E8173351D /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
+		34A5D2C3DBAA86A178014839 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
+		67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71782DB39C0A3A93A051FFEE /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
 		CE04F151230808D10048771A /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		CE04F15523080B6C0048771A /* ManagersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersAssembly.swift; sourceTree = "<group>"; };
 		CE04F15723080BE10048771A /* ResolverInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverInitializable.swift; sourceTree = "<group>"; };
@@ -121,18 +121,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B3D7EBCF90ED13B601A9A5 /* Pods_TennisBusiness.framework in Frameworks */,
+				2ECD159E776257E57A97E844 /* Pods_TennisBusiness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CF57CA692D9A5DED50DDB04 /* Pods */ = {
+		68FE1D342568E247DC03C03E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A2968B2AC00BE5CE09CA667 /* Pods-TennisBusiness.debug.xcconfig */,
-				C801026047E4CE8E8173351D /* Pods-TennisBusiness.release.xcconfig */,
+				67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF9B84293D9DC289DF4F2D18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34A5D2C3DBAA86A178014839 /* Pods-TennisBusiness.debug.xcconfig */,
+				71782DB39C0A3A93A051FFEE /* Pods-TennisBusiness.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -182,7 +190,7 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		CE3819E722AA5D8B0038B173 /* ViewControllers */ = {
+		CE3819E722AA5D8B0038B173 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
 				CE73CE6622A281DC00A05111 /* MainViewController.swift */,
@@ -194,7 +202,7 @@
 				CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */,
 				0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */,
 			);
-			path = ViewControllers;
+			path = "View controllers";
 			sourceTree = "<group>";
 		};
 		CE5B5B6B22A289BA006182FA /* Third party */ = {
@@ -240,8 +248,8 @@
 			children = (
 				CE73CE6322A281DC00A05111 /* TennisBusiness */,
 				CE73CE6222A281DC00A05111 /* Products */,
-				0CF57CA692D9A5DED50DDB04 /* Pods */,
-				FCA79D431BD20E1C974671AE /* Frameworks */,
+				BF9B84293D9DC289DF4F2D18 /* Pods */,
+				68FE1D342568E247DC03C03E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,7 +269,7 @@
 				CECE3DBB22A7EA3E00398E96 /* General */,
 				CE3819E622AA5D080038B173 /* Storyboards */,
 				CE5B5B6B22A289BA006182FA /* Third party */,
-				CE3819E722AA5D8B0038B173 /* ViewControllers */,
+				CE3819E722AA5D8B0038B173 /* View controllers */,
 				CE0845C522B103D50006AF31 /* Views */,
 			);
 			path = TennisBusiness;
@@ -308,14 +316,6 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		FCA79D431BD20E1C974671AE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5C1B96902092CE5FE53631E0 /* Pods_TennisBusiness.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -323,11 +323,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE73CE7322A281DD00A05111 /* Build configuration list for PBXNativeTarget "TennisBusiness" */;
 			buildPhases = (
-				2903D69963B8E0CA1A985257 /* [CP] Check Pods Manifest.lock */,
+				DF163A25EBB37A0DC871076E /* [CP] Check Pods Manifest.lock */,
 				CE73CE5D22A281DC00A05111 /* Sources */,
 				CE73CE5E22A281DC00A05111 /* Frameworks */,
 				CE73CE5F22A281DC00A05111 /* Resources */,
-				042C89F9E71458D4E0566637 /* [CP] Embed Pods Frameworks */,
+				17EA5700E363BE69C01D95C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,24 +393,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		042C89F9E71458D4E0566637 /* [CP] Embed Pods Frameworks */ = {
+		17EA5700E363BE69C01D95C5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2903D69963B8E0CA1A985257 /* [CP] Check Pods Manifest.lock */ = {
+		DF163A25EBB37A0DC871076E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,7 +641,7 @@
 		};
 		CE73CE7422A281DD00A05111 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A2968B2AC00BE5CE09CA667 /* Pods-TennisBusiness.debug.xcconfig */;
+			baseConfigurationReference = 34A5D2C3DBAA86A178014839 /* Pods-TennisBusiness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -639,7 +660,7 @@
 		};
 		CE73CE7522A281DD00A05111 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C801026047E4CE8E8173351D /* Pods-TennisBusiness.release.xcconfig */;
+			baseConfigurationReference = 71782DB39C0A3A93A051FFEE /* Pods-TennisBusiness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
