@@ -13,13 +13,20 @@ protocol CountriesDataManager {
 }
 
 final class CountriesDataManagerImp: CountriesDataManager {
-    var countries: [Country] = []
+    // MARK: - Properties
+    
+    let countries: [Country]
+    
+    
+    
+    // MARK: - Init
     
     init() {
         guard let url = Bundle.main.url(forResource: "Countries", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let jsonResult = try? JSONSerialization.jsonObject(with: data),
             let arrayData = jsonResult as? [[String: String]] else {
+                self.countries = []
             return
         }
         let countries: [Country] = arrayData.compactMap { dict in
