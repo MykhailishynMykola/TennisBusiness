@@ -8,11 +8,12 @@
 
 import PromiseKit
 import FirebaseFirestore
+import Swinject
 
 protocol DataManager {
     func getWorlds() -> Promise<[World]>
     
-    func createPlayer(with name: String, ability: Ability, worldIdentifier: String) -> Promise<Player>
+    func createPlayer(with name: String, surname: String, country: Country, ability: Ability, worldIdentifier: String) -> Promise<Player>
     func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String) -> Promise<Match>
     
     func setMatchResult(_ match: Match, worldIdentifier: String) -> Promise<Void>
@@ -20,18 +21,47 @@ protocol DataManager {
 
 
 
-class DataManagerImp: DataManager {
+final class DataManagerImp: DataManager, ResolverInitializable {
+    // MARK: - Properties
+    
+    private let countriesDataManager: CountriesDataManager
+    
+    
+    
+    // MARK: - Init
+    
+    init(countriesDataManager: CountriesDataManager) {
+        self.countriesDataManager = countriesDataManager
+    }
+    
+    
+    
+    // MARK: - ResolverInitializable
+    
+    convenience init?(resolver: Resolver) {
+        guard let countriesDataManager = resolver.resolve(CountriesDataManager.self) else {
+            print("Warning: Failed to initilize all needed dependencies!")
+            return nil
+        }
+        self.init(countriesDataManager: countriesDataManager)
+    }
+    
+    
+    
     // MARK: - DataManager
     
     func getWorlds() -> Promise<[World]> {
         return loadWorlds()
     }
     
-    func createPlayer(with name: String, ability: Ability, worldIdentifier: String) -> Promise<Player> {
+    func createPlayer(with name: String, surname: String, country: Country, ability: Ability, worldIdentifier: String) -> Promise<Player> {
         let abilityData: [String: Any] = ["skill": ability.skill.doubleValue,
                                       "serve": ability.serve.doubleValue,
                                       "return": ability.returnOfServe.doubleValue]
-        let newPlayerData: [String: Any] = ["name": name, "ability": abilityData]
+        let newPlayerData: [String: Any] = ["name": name,
+                                            "surname": surname,
+                                            "country": country.code,
+                                            "ability": abilityData]
         return Promise(resolvers: { (fulfill, reject) in
             var newPlayerReference: DocumentReference? = nil
             newPlayerReference = database.collection("worlds")
@@ -44,7 +74,7 @@ class DataManagerImp: DataManager {
                             if let error = error { reject(error) }
                             return
                     }
-                    let newPlayer = Player(identifier: newPlayerIdentifier, name: name, ability: ability)
+                    let newPlayer = Player(identifier: newPlayerIdentifier, name: name, surname: surname, ability: ability, country: country)
                     fulfill(newPlayer)
             }
         })
@@ -176,7 +206,7 @@ class DataManagerImp: DataManager {
     private func loadPlayer(from document: QueryDocumentSnapshot) -> Promise<Player> {
         return Promise(resolvers: { (fulfill, reject) in
             guard document.exists,
-                let player = Player(snapshot: document) else {
+                let player = Player(snapshot: document, countries: countriesDataManager.countries) else {
                     return reject(NSError.cancelledError())
             }
             fulfill(player)
