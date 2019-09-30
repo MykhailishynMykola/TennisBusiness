@@ -19,7 +19,7 @@ extension Player {
             let returnValue = abilityDict["return"] else {
                 return nil
         }
-        let countryCode = playerData["country"] as? String
+        let countryCode = playerData["countryCode"] as? String
         let country = countries.first(where: {$0.code == countryCode})
         let ability = Ability(skill: skillValue,
                               serve: serveValue,

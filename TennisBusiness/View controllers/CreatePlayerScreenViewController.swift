@@ -76,12 +76,15 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        guard countriesDataManager.countries.indices.contains(row) else  { return "" }
         return countriesDataManager.countries[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        countryField.text = countriesDataManager.countries[row].name
-        selectedCountry = countriesDataManager.countries[row]
+        guard countriesDataManager.countries.indices.contains(row) else { return }
+        let country = countriesDataManager.countries[row]
+        countryField.text = country.name
+        selectedCountry = country
     }
     
     
@@ -109,7 +112,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     }
     
     
-    //MARK: - Private
+    // MARK: - Private
     private func configuteTextField(_ textField: UITextField, with pickerView: UIPickerView) {
         pickerView.delegate = self
         pickerView.dataSource = self

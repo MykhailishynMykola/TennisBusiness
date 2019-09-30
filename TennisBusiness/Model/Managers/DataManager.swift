@@ -60,7 +60,7 @@ final class DataManagerImp: DataManager, ResolverInitializable {
                                       "return": ability.returnOfServe.doubleValue]
         let newPlayerData: [String: Any] = ["name": name,
                                             "surname": surname,
-                                            "country": country.code,
+                                            "countryCode": country.code,
                                             "ability": abilityData]
         return Promise(resolvers: { (fulfill, reject) in
             var newPlayerReference: DocumentReference? = nil

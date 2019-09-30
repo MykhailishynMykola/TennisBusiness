@@ -22,6 +22,6 @@ class Player {
     }
     
     var fullName: String {
-        return name + " " + surname
+        return "\(name) \(surname)"
     }
 }
