@@ -22,7 +22,7 @@ class PlayerTableViewCell: UITableViewCell {
     
     func update(with player: Player) {
         let ability = player.ability
-        nameLabel.text = player.name
+        nameLabel.text = player.fullName
         returnLabel.text = String(ability.returnOfServe.intValue)
         serveLabel.text = String(ability.serve.intValue)
         skillLabel.text = String(ability.skill.intValue)

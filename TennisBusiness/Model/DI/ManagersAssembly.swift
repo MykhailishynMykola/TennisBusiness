@@ -14,7 +14,7 @@ final class ManagersAssembly: Assembly {
     func assemble(container: Container) {
         container.register(CalculationManager.self) { CalculationManagerImp(resolver: $0)! }
             .inObjectScope(.container)
-        container.register(DataManager.self) { _ in DataManagerImp() }
+        container.register(DataManager.self) { DataManagerImp(resolver: $0)! }
         container.register(CountriesDataManager.self) { _ in CountriesDataManagerImp() }
             .inObjectScope(.container)
         container.register(NamesDataManager.self) { _ in NamesDataManagerImp() }
