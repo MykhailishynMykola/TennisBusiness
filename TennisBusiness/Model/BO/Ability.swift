@@ -7,9 +7,21 @@
 //
 
 class Ability {
+    // MARK: - Inner
+    
+    static var empty = Ability(skill: 0, serve: 0, returnOfServe: 0)
+    
+    
+    
+    // MARK: - Properties
+    
     var skill: AbilityValue
     var serve: AbilityValue
     var returnOfServe: AbilityValue
+    
+    
+    
+    // MARK: - Init
     
     init(skill: Double, serve: Double, returnOfServe: Double) {
         self.skill = AbilityValue(value: skill)

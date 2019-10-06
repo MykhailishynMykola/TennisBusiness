@@ -9,7 +9,6 @@
 import UIKit
 
 class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
-    
     // MARK: - Properties
     
     @IBOutlet private weak var currentTimeLabel: UILabel!

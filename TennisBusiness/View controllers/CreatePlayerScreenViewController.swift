@@ -20,6 +20,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     
     private var world: World?
     private var countriesDataManager: CountriesDataManager!
+    private var namesDataManager: NamesDataManager!
     private let countryPickerView = UIPickerView()
     private var selectedCountry: Country?
     
@@ -52,6 +53,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     override func setupDependencies() {
         super.setupDependencies()
         countriesDataManager = resolver.resolve(CountriesDataManager.self)
+        namesDataManager = resolver.resolve(NamesDataManager.self)
     }
     
     
@@ -68,7 +70,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     // MARK: - UIPickerViewDataSource
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -111,16 +113,24 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
         }
     }
     
+    @IBAction private func createRandomNamePressed(_ sender: Any) {
+        let playerName = namesDataManager.getRandomName()
+        nameField.text = playerName.name
+        surnameField.text = playerName.surname
+    }
+    
+    @objc private func countryPickerCancelled() {
+        view.endEditing(true)
+    }
+    
+    
     
     // MARK: - Private
+    
     private func configuteTextField(_ textField: UITextField, with pickerView: UIPickerView) {
         pickerView.delegate = self
         pickerView.dataSource = self
         textField.inputView = pickerView
         textField.inputAccessoryView = pickerToolbar
-    }
-    
-    @objc private func countryPickerCancelled() {
-        view.endEditing(true)
     }
 }
