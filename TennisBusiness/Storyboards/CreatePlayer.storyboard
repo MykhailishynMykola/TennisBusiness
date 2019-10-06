@@ -88,7 +88,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-4a-aFm">
                                 <rect key="frame" x="141.5" y="617" width="92" height="30"/>
-                                <color key="backgroundColor" red="0.99921449350000002" green="0.99942404029999998" blue="0.70510726319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Create player"/>
                                 <connections>
                                     <action selector="createPlayerPressed:" destination="P99-ol-DHz" eventType="touchUpInside" id="IZO-bg-jmp"/>
@@ -108,6 +108,14 @@
                                     <outlet property="delegate" destination="P99-ol-DHz" id="0Ms-hT-KFZ"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yj9-Ze-zYf">
+                                <rect key="frame" x="138" y="272.5" width="99" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Random name"/>
+                                <connections>
+                                    <action selector="createRandomNamePressed:" destination="P99-ol-DHz" eventType="touchUpInside" id="yMa-gY-b4N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -123,12 +131,14 @@
                             <constraint firstItem="9qk-7U-NMW" firstAttribute="leading" secondItem="BYR-Z1-Nz5" secondAttribute="leading" id="Daf-do-AOH"/>
                             <constraint firstItem="K5G-iQ-Iup" firstAttribute="top" secondItem="zKR-Yz-b6s" secondAttribute="bottom" constant="20" id="EbN-VW-9PE"/>
                             <constraint firstItem="pX2-fi-GSp" firstAttribute="trailing" secondItem="9qk-7U-NMW" secondAttribute="trailing" constant="20" id="GkZ-aw-9GI"/>
+                            <constraint firstItem="Yj9-Ze-zYf" firstAttribute="top" secondItem="obt-Bz-jQK" secondAttribute="bottom" constant="20" id="Jol-t9-VEM"/>
                             <constraint firstItem="zKR-Yz-b6s" firstAttribute="top" secondItem="DVk-Kc-IcR" secondAttribute="bottom" constant="20" id="Otp-aw-QCt"/>
                             <constraint firstItem="zKR-Yz-b6s" firstAttribute="leading" secondItem="pX2-fi-GSp" secondAttribute="leading" constant="20" id="PTZ-qK-my8"/>
                             <constraint firstItem="HMG-Fj-xaX" firstAttribute="leading" secondItem="bIB-1L-vnP" secondAttribute="trailing" constant="30" id="R3h-hO-4DX"/>
                             <constraint firstItem="obt-Bz-jQK" firstAttribute="leading" secondItem="HMG-Fj-xaX" secondAttribute="leading" id="XJy-N8-xOg"/>
                             <constraint firstItem="oOa-2i-IIH" firstAttribute="leading" secondItem="HMG-Fj-xaX" secondAttribute="leading" id="aLS-Hb-ouh"/>
                             <constraint firstItem="BYR-Z1-Nz5" firstAttribute="leading" secondItem="HMG-Fj-xaX" secondAttribute="leading" id="abj-vf-pBB"/>
+                            <constraint firstItem="Yj9-Ze-zYf" firstAttribute="centerX" secondItem="tqP-Rq-59R" secondAttribute="centerX" id="cP7-uz-yeU"/>
                             <constraint firstItem="gT7-3M-cG2" firstAttribute="leading" secondItem="pX2-fi-GSp" secondAttribute="leading" constant="20" id="d3n-it-Hph"/>
                             <constraint firstItem="BSV-4a-aFm" firstAttribute="centerX" secondItem="tqP-Rq-59R" secondAttribute="centerX" id="em0-vn-bik"/>
                             <constraint firstItem="hoL-ec-uan" firstAttribute="leading" secondItem="pX2-fi-GSp" secondAttribute="leading" constant="20" id="exx-HR-NR5"/>
