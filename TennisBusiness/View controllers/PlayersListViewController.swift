@@ -38,6 +38,7 @@ class PlayersListViewController: ScreenViewController {
 }
 
 // MARK: - UITableViewDataSource
+
 extension PlayersListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
@@ -55,6 +56,7 @@ extension PlayersListViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
+
 extension PlayersListViewController: UITableViewDelegate {
     
 }

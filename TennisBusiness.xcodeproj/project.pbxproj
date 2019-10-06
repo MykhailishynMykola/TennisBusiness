@@ -10,6 +10,9 @@
 		0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EFB823094AC900D76DB4 /* PlayersList.storyboard */; };
 		0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */; };
 		0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */; };
+		04A873EF234A0E0D00B416A5 /* MatchesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */; };
+		04A873F1234A104800B416A5 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F0234A104800B416A5 /* MatchesListViewController.swift */; };
+		04A873F3234A120B00B416A5 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */; };
 		2ECD159E776257E57A97E844 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */; };
 		CE04F152230808D10048771A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F151230808D10048771A /* DIContainer.swift */; };
 		CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15523080B6C0048771A /* ManagersAssembly.swift */; };
@@ -66,6 +69,9 @@
 		0489EFB823094AC900D76DB4 /* PlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayersList.storyboard; sourceTree = "<group>"; };
 		0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
 		0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchesList.storyboard; sourceTree = "<group>"; };
+		04A873F0234A104800B416A5 /* MatchesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListViewController.swift; sourceTree = "<group>"; };
+		04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		34A5D2C3DBAA86A178014839 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71782DB39C0A3A93A051FFEE /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 			children = (
 				CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */,
 				0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */,
+				04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 				CEFF017422B662850066EC76 /* CreatePlayer.storyboard */,
 				CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */,
 				0489EFB823094AC900D76DB4 /* PlayersList.storyboard */,
+				04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -201,12 +209,13 @@
 			children = (
 				CE73CE6622A281DC00A05111 /* MainViewController.swift */,
 				CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */,
-				CE3819EA22AA5E750038B173 /* UserMainViewController.swift */,
 				CE3819F022AA62460038B173 /* ScreenViewController.swift */,
+				CE3819EA22AA5E750038B173 /* UserMainViewController.swift */,
 				CE0845C822B10F550006AF31 /* WorldViewController.swift */,
 				CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */,
 				CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */,
 				0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */,
+				04A873F0234A104800B416A5 /* MatchesListViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -395,6 +404,7 @@
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
 				CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */,
 				CE26123923409D0900BB0D88 /* Last_names.json in Resources */,
+				04A873EF234A0E0D00B416A5 /* MatchesList.storyboard in Resources */,
 				CE26123A23409D0900BB0D88 /* First_names.json in Resources */,
 				CEA167EB22FF0716008EC5E9 /* Countries.json in Resources */,
 				CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */,
@@ -477,10 +487,12 @@
 				CE3819F322AA670F0038B173 /* AppConfig.swift in Sources */,
 				CE5B5B7A22A28C77006182FA /* Game.swift in Sources */,
 				CE26123C23409D5700BB0D88 /* NamesDataManager.swift in Sources */,
+				04A873F3234A120B00B416A5 /* MatchTableViewCell.swift in Sources */,
 				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
 				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
 				0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */,
+				04A873F1234A104800B416A5 /* MatchesListViewController.swift in Sources */,
 				CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */,
 				CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */,
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
