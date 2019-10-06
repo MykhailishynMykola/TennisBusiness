@@ -22,6 +22,11 @@ class Set {
         return games.filter { $0.status == .secondWin }.count
     }
     
+    var description: String {
+        return "\(gamesFirstWin):\(gamesSecondWin)"
+    }
+    
+    
     
     // MARK: - Init
     

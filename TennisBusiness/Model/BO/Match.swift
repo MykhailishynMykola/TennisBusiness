@@ -9,6 +9,17 @@
 import Foundation
 
 class Match {
+    // MARK: - Inner
+    
+    static private func restoreScore(from result: String, setsToWin: Int) -> [Set] {
+        let simulation = Match(identifier: "", firstPlayer: .empty, secondPlayer: .empty,
+                               setsToWin: setsToWin, eventDate: Date(), result: "")
+        simulation.simulate(result)
+        return simulation.sets
+    }
+    
+    
+    
     // MARK: - Properties
 
     let identifier: String
@@ -20,6 +31,10 @@ class Match {
     
     var isFinished: Bool {
         return !result.isEmpty
+    }
+    
+    var resultDescription: String {
+        return sets.reduce("") { $0.isEmpty ? $1.description : "\($0) \($1.description)" }
     }
     
     private(set) var result: String
@@ -39,7 +54,12 @@ class Match {
         self.result = result
         let serveTurn: ServeTurn = Bool.random() ? .firstPlayer : .secondPlayer
         self.serveTurn = serveTurn
-        self.sets = [Set(identifier: 1, firstGameServeTurn: serveTurn)]
+        if result.isEmpty {
+            self.sets = [Set(identifier: 1, firstGameServeTurn: serveTurn)]
+        }
+        else {
+            self.sets = Match.restoreScore(from: result, setsToWin: setsToWin)
+        }
     }
     
     
@@ -51,19 +71,43 @@ class Match {
         while !isFinished {
             handleNext()
         }
-        return
     }
+    
     
     
     // MARK: - Private
     
-    private func handleNext() {
+    private func simulate(_ result: String) {
+        for char in result {
+            switch char {
+            case "f":
+                handleNext(.firstWin)
+            case "s":
+                handleNext(.secondWin)
+            default:
+                print("Error: Parsing issue in simulation process")
+                return
+            }
+        }
+    }
+    
+    /// Method could be used for score calcutation or restoring score from result.
+    ///
+    /// - Parameter predefinedResult: Used for restoring score from predefined result.
+    ///                               Could be skiped if result should be calcutated
+    private func handleNext(_ predefinedResult: Status? = nil) {
         guard let currentSet = sets.first(where: { $0.status == .inProgress }),
             let currentGame = currentSet.games.first(where: { $0.status == .inProgress }) else {
             print("Error: Can't find current set or game for match \(identifier)")
             return
         }
-        let nextResult = calculateNextResult()
+        let nextResult: Status
+        if let predefinedResult = predefinedResult {
+            nextResult = predefinedResult
+        }
+        else {
+            nextResult = calculateNextResult()
+        }
         let currentResult = nextResult == .firstWin ? "f" : "s"
         intermediateResult = "\(intermediateResult)\(currentResult)"
         guard !currentGame.isTiebreak else {
