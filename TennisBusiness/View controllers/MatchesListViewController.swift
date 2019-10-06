@@ -19,7 +19,7 @@ class MatchesListViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private var matches: [Match] = [] {
         didSet {

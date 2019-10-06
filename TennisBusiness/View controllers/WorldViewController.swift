@@ -80,7 +80,7 @@ class WorldViewController: ScreenViewController {
         playersListViewController.update(with: players)
     }
     
-    @IBAction func viewMatchesPressed(_ sender: Any) {
+    @IBAction private func viewMatchesPressed(_ sender: Any) {
         guard let matchesListViewController = presentViewController(withIdentifier: "MatchesList", fromNavigation: true) as? MatchesListViewController,
             let matches = world?.matches else {
                 return
