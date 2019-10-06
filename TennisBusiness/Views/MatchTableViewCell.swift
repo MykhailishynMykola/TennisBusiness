@@ -27,6 +27,6 @@ class MatchTableViewCell: UITableViewCell {
         
         firstPlayerLabel.text = match.firstPlayer.fullName
         secondPlayerLabel.text = match.secondPlayer.fullName
-        result.text = ""
+        result.text = match.resultDescription
     }
 }
