@@ -1,18 +1,18 @@
 //
-//  PlayersListViewController.swift
+//  MatchesListViewController.swift
 //  TennisBusiness
 //
-//  Created by Valeiia Tarasenko on 8/18/19.
+//  Created by Valeiia Tarasenko on 10/6/19.
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
 import UIKit
 
-class PlayersListViewController: ScreenViewController {
+class MatchesListViewController: UIViewController {
     // MARK: - Inner
     
     private struct Constants {
-        static let playerCellReuseIdentifier = "playerCell"
+        static let matchCellReuseIdentifier = "matchCell"
     }
 
     
@@ -21,7 +21,7 @@ class PlayersListViewController: ScreenViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private var players: [Player] = [] {
+    private var matches: [Match] = [] {
         didSet {
             guard isViewLoaded else { return }
             tableView.reloadData()
@@ -32,31 +32,31 @@ class PlayersListViewController: ScreenViewController {
     
     // MARK: - Public
     
-    func update(with players: [Player]) {
-        self.players = players
+    func update(with matches: [Match]) {
+        self.matches = matches
     }
 }
 
 // MARK: - UITableViewDataSource
 
-extension PlayersListViewController: UITableViewDataSource {
+extension MatchesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        return matches.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.playerCellReuseIdentifier) as? PlayerTableViewCell,
-            players.indices.contains(indexPath.row) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.matchCellReuseIdentifier) as? MatchTableViewCell,
+            matches.indices.contains(indexPath.row) else {
                 return UITableViewCell()
         }
-        let player = players[indexPath.row]
-        cell.update(with: player)
+        let match = matches[indexPath.row]
+        cell.update(with: match)
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
 
-extension PlayersListViewController: UITableViewDelegate {
+extension MatchesListViewController: UITableViewDelegate {
     
 }
