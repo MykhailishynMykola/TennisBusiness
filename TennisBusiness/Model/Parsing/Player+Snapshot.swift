@@ -16,14 +16,16 @@ extension Player {
             let abilityDict = playerData["ability"] as? [String: Double],
             let skillValue = abilityDict["skill"],
             let serveValue = abilityDict["serve"],
-            let returnValue = abilityDict["return"] else {
+            let returnValue = abilityDict["return"],
+            let countryBonusValue = abilityDict["countryBonus"] else {
                 return nil
         }
         let countryCode = playerData["countryCode"] as? String
         let country = countries.first(where: {$0.code == countryCode})
         let ability = Ability(skill: skillValue,
                               serve: serveValue,
-                              returnOfServe: returnValue)
+                              returnOfServe: returnValue,
+                              countryBonus: countryBonusValue)
         self.init(identifier: snapshot.documentID, name: name, surname: surname, ability: ability, country: country)
     }
 }
