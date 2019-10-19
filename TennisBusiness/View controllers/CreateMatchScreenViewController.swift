@@ -16,15 +16,18 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     @IBOutlet private weak var secondPlayerTextField: UITextField!
     @IBOutlet private weak var setsToWinTextField: UITextField!
     @IBOutlet private weak var dateTextField: UITextField!
+    @IBOutlet private weak var countryTextField: UITextField!
     
     private let firstPlayerPickerView = UIPickerView()
     private let secondPlayerPickerView = UIPickerView()
     private let setsToWinPickerView = UIPickerView()
     private let datePickerView = UIDatePicker()
+    private let countryPickerView = UIPickerView()
+    private var countriesDataManager: CountriesDataManager!
     
     private var world: World?
     private var timer: Timer?
-    private var selected: (firstPlayer: Player?, secondPlayer: Player?, setsToWin: Int?, date: Date?) = (nil, nil, nil, nil)
+    private var selected: (firstPlayer: Player?, secondPlayer: Player?, setsToWin: Int?, date: Date?, country: Country?) = (nil, nil, nil, nil, nil)
     
     private var datePickerToolbar: UIToolbar {
         let toolbar = UIToolbar()
@@ -49,10 +52,16 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
         configuteTextField(secondPlayerTextField, with: secondPlayerPickerView)
         configuteTextField(setsToWinTextField, with: setsToWinPickerView)
         configuteDateField(dateTextField, with: datePickerView)
+        configuteTextField(countryTextField, with: countryPickerView)
     
         timer = Timer.every(1) { [weak self] in
             self?.updateCurrentTime()
         }
+    }
+    
+    override func setupDependencies() {
+        super.setupDependencies()
+        countriesDataManager = resolver.resolve(CountriesDataManager.self)
     }
     
     
@@ -88,6 +97,9 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
         else if setsToWinTextField.inputView == pickerView {
             return GlobalConstants.setsToWinTypes
         }
+        else if countryTextField.inputView == pickerView {
+            return countriesDataManager.countries
+        }
         return []
     }
     
@@ -99,27 +111,34 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
         let source = getSource(by: pickerView)
         guard source.indices.contains(row) else { return nil }
         if let players = source as? [Player] {
-            return players[row].name
+            return players[row].fullName
         }
         else if let strings = source as? [Int] {
             return "\(strings[row])"
+        }
+        else if let countries = source as? [Country] {
+            return countries[row].name
         }
         return nil
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if firstPlayerTextField.inputView == pickerView {
-            firstPlayerTextField.text = world?.players[row].name
-            selected = (world?.players[row], selected.secondPlayer, selected.setsToWin, selected.date)
+            firstPlayerTextField.text = world?.players[row].fullName
+            selected = (world?.players[row], selected.secondPlayer, selected.setsToWin, selected.date, selected.country)
         }
         else if secondPlayerTextField.inputView == pickerView {
-            secondPlayerTextField.text = world?.players[row].name
-            selected = (selected.firstPlayer, world?.players[row], selected.setsToWin, selected.date)
+            secondPlayerTextField.text = world?.players[row].fullName
+            selected = (selected.firstPlayer, world?.players[row], selected.setsToWin, selected.date, selected.country)
         }
         else if setsToWinTextField.inputView == pickerView {
             let setsToWin = GlobalConstants.setsToWinTypes[row]
             setsToWinTextField.text = "\(setsToWin)"
-            selected = (selected.firstPlayer, selected.secondPlayer, setsToWin, selected.date)
+            selected = (selected.firstPlayer, selected.secondPlayer, setsToWin, selected.date, selected.country)
+        }
+        else if countryTextField.inputView == pickerView {
+            countryTextField.text = countriesDataManager.countries[row].name
+            selected = (selected.firstPlayer, selected.secondPlayer, selected.setsToWin, selected.date, countriesDataManager.countries[row])
         }
     }
     
@@ -161,7 +180,8 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
             let worldIdentifier = world?.identifier else {
                 return
         }
-        dataManager.createMatch(firstPlayer: firstPlayer, secondPlayer: secondPlayer, setsToWin: setsToWin, date: date, worldIdentifier: worldIdentifier)
+        let country = selected.country
+        dataManager.createMatch(firstPlayer: firstPlayer, secondPlayer: secondPlayer, setsToWin: setsToWin, date: date, worldIdentifier: worldIdentifier, country: country)
             .then { [weak self] match -> Void in
                 self?.world?.matches.append(match)
                 self?.navigationController?.popViewController(animated: true)
@@ -181,6 +201,6 @@ class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate
     }
     
     @objc private func datePickerChangedValue() {
-        selected = (selected.firstPlayer, selected.secondPlayer, selected.setsToWin, datePickerView.date)
+        selected = (selected.firstPlayer, selected.secondPlayer, selected.setsToWin, datePickerView.date, selected.country)
     }
 }

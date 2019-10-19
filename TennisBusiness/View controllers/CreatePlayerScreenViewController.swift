@@ -17,6 +17,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     @IBOutlet private weak var returnField: UITextField!
     @IBOutlet private weak var surnameField: UITextField!
     @IBOutlet private weak var countryField: UITextField!
+    @IBOutlet private weak var countryBonusField: UITextField!
     
     private var world: World?
     private var countriesDataManager: CountriesDataManager!
@@ -99,13 +100,15 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
             let skill = Double(skillField.text ?? ""),
             let serve = Double(serveField.text ?? ""),
             let returnOfServe = Double(returnField.text ?? ""),
+            let countryBonus = Double(countryBonusField.text ?? ""),
             let country = selectedCountry,
             let worldIdentifier = world?.identifier else {
                 return
         }
         let ability = Ability(skill: skill,
                               serve: serve,
-                              returnOfServe: returnOfServe)
+                              returnOfServe: returnOfServe,
+                              countryBonus: countryBonus)
         dataManager.createPlayer(with: name, surname: surname, country: country, ability: ability, worldIdentifier: worldIdentifier)
             .then { [weak self] player -> Void in
                 self?.world?.players.append(player)

@@ -9,7 +9,7 @@
 import FirebaseFirestore
 
 extension Match {
-    convenience init?(snapshot: QueryDocumentSnapshot, players: [Player]) {
+    convenience init?(snapshot: QueryDocumentSnapshot, players: [Player], countries: [Country]) {
         let matchData = snapshot.data()
         guard let setsToWin = matchData["setsToWin"] as? Int,
             let eventDate = matchData["eventDate"] as? Timestamp,
@@ -19,7 +19,9 @@ extension Match {
             let player2 = players.first(where: { $0.identifier == player2Identifier }) else {
                 return nil
         }
+        let countryCode = matchData["countryCode"] as? String
+        let country = countries.first(where: {$0.code == countryCode})
         let result = matchData["result"] as? String ?? ""
-        self.init(identifier: snapshot.documentID, firstPlayer: player1, secondPlayer: player2, setsToWin: setsToWin, eventDate: eventDate.dateValue(), result: result)
+        self.init(identifier: snapshot.documentID, firstPlayer: player1, secondPlayer: player2, setsToWin: setsToWin, eventDate: eventDate.dateValue(), result: result, country: country)
     }
 }
