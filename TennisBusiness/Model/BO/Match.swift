@@ -218,22 +218,16 @@ class Match {
         let skillDiff = firstPlayerAbility.skill.doubleValue - secondPlayerAbility.skill.doubleValue
         let serveDiff: Double
         let constantServeAdvantage: Double = 0.5
-        var countryBonusDiff: Double = 0
         if serveTurn.isFirstPlayerServe {
             serveDiff = constantServeAdvantage + firstPlayerAbility.serve.doubleValue - secondPlayerAbility.returnOfServe.doubleValue
         }
         else {
             serveDiff = -(constantServeAdvantage + secondPlayerAbility.serve.doubleValue - firstPlayerAbility.returnOfServe.doubleValue)
         }
-        if country == firstPlayer.country, country == secondPlayer.country {
-            countryBonusDiff = firstPlayerAbility.countryBonus.doubleValue - secondPlayerAbility.countryBonus.doubleValue
-        }
-        else if country == firstPlayer.country {
-            countryBonusDiff = firstPlayerAbility.countryBonus.doubleValue
-        }
-        else if country == secondPlayer.country {
-            countryBonusDiff = -secondPlayerAbility.countryBonus.doubleValue
-        }
+        let firstPlayerCountryBonus = country == firstPlayer.country ? firstPlayerAbility.countryBonus.doubleValue : 0
+        let secondPlayerCountryBonus = country == secondPlayer.country ? secondPlayerAbility.countryBonus.doubleValue : 0
+        let countryBonusDiff = firstPlayerCountryBonus - secondPlayerCountryBonus
+        
         let random = Int.random(from: 1, to: 100)
         let firstPlayerAdvantage = Double(random) + skillDiff * 10 + serveDiff * 10 + countryBonusDiff * 2
         return firstPlayerAdvantage > 50 ? .firstWin : .secondWin
