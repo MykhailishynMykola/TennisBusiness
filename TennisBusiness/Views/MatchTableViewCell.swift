@@ -15,6 +15,7 @@ class MatchTableViewCell: UITableViewCell {
     @IBOutlet private weak var firstPlayerLabel: UILabel!
     @IBOutlet private weak var secondPlayerLabel: UILabel!
     @IBOutlet private weak var result: UILabel!
+    @IBOutlet private weak var countryLabel: UILabel!
     
     
     
@@ -28,5 +29,6 @@ class MatchTableViewCell: UITableViewCell {
         firstPlayerLabel.text = match.firstPlayer.fullName
         secondPlayerLabel.text = match.secondPlayer.fullName
         result.text = match.resultDescription
+        countryLabel.text = match.country?.name
     }
 }

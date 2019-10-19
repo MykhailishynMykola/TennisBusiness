@@ -9,7 +9,7 @@
 class Ability {
     // MARK: - Inner
     
-    static var empty = Ability(skill: 0, serve: 0, returnOfServe: 0)
+    static var empty = Ability(skill: 0, serve: 0, returnOfServe: 0, countryBonus: 0)
     
     
     
@@ -18,21 +18,24 @@ class Ability {
     var skill: AbilityValue
     var serve: AbilityValue
     var returnOfServe: AbilityValue
+    var countryBonus: AbilityValue
     
     
     
     // MARK: - Init
     
-    init(skill: Double, serve: Double, returnOfServe: Double) {
+    init(skill: Double, serve: Double, returnOfServe: Double, countryBonus: Double) {
         self.skill = AbilityValue(value: skill)
         self.serve = AbilityValue(value: serve)
         self.returnOfServe = AbilityValue(value: returnOfServe)
+        self.countryBonus = AbilityValue(value: countryBonus)
     }
     
-    private init(skill: AbilityValue, serve: AbilityValue, returnOfServe: AbilityValue) {
+    private init(skill: AbilityValue, serve: AbilityValue, returnOfServe: AbilityValue, countryBonus: AbilityValue) {
         self.skill = skill
         self.serve = serve
         self.returnOfServe = returnOfServe
+        self.countryBonus = countryBonus
     }
 }
 

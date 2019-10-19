@@ -14,7 +14,7 @@ protocol DataManager {
     func getWorlds() -> Promise<[World]>
     
     func createPlayer(with name: String, surname: String, country: Country, ability: Ability, worldIdentifier: String) -> Promise<Player>
-    func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String) -> Promise<Match>
+    func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String, country: Country?) -> Promise<Match>
     
     func setMatchResult(_ match: Match, worldIdentifier: String) -> Promise<Void>
 }
@@ -57,7 +57,8 @@ final class DataManagerImp: DataManager, ResolverInitializable {
     func createPlayer(with name: String, surname: String, country: Country, ability: Ability, worldIdentifier: String) -> Promise<Player> {
         let abilityData: [String: Any] = ["skill": ability.skill.doubleValue,
                                       "serve": ability.serve.doubleValue,
-                                      "return": ability.returnOfServe.doubleValue]
+                                      "return": ability.returnOfServe.doubleValue,
+                                      "countryBonus": ability.countryBonus.doubleValue]
         let newPlayerData: [String: Any] = ["name": name,
                                             "surname": surname,
                                             "countryCode": country.code,
@@ -80,12 +81,13 @@ final class DataManagerImp: DataManager, ResolverInitializable {
         })
     }
     
-    func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String) -> Promise<Match> {
+    func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String, country: Country?) -> Promise<Match> {
         let newMatchData: [String: Any] = ["player1": firstPlayer.identifier,
                                            "player2": secondPlayer.identifier,
                                            "setsToWin": setsToWin,
                                            "eventDate": Timestamp(date: date),
-                                           "result": ""]
+                                           "result": "",
+                                           "countryCode": country?.code ?? ""]
         return Promise(resolvers: { (fulfill, reject) in
             var newMatchReference: DocumentReference? = nil
             newMatchReference = database.collection("worlds")
@@ -103,7 +105,8 @@ final class DataManagerImp: DataManager, ResolverInitializable {
                                          secondPlayer: secondPlayer,
                                          setsToWin: setsToWin,
                                          eventDate: date,
-                                         result: "")
+                                         result: "",
+                                         country: country)
                     fulfill(newMatch)
             }
         })
@@ -223,7 +226,7 @@ final class DataManagerImp: DataManager, ResolverInitializable {
                     guard let matchDocuments = matchesSnapshot?.documents else {
                         return reject(NSError.cancelledError())
                     }
-                    let matches = matchDocuments.compactMap { Match(snapshot: $0, players: players) }
+                    let matches = matchDocuments.compactMap { Match(snapshot: $0, players: players, countries: self.countriesDataManager.countries) }
                     fulfill(matches)
             }
         })

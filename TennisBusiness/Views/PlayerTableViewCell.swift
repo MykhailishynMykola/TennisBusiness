@@ -15,6 +15,7 @@ class PlayerTableViewCell: UITableViewCell {
     @IBOutlet private weak var returnLabel: UILabel!
     @IBOutlet private weak var serveLabel: UILabel!
     @IBOutlet private weak var skillLabel: UILabel!
+    @IBOutlet private weak var countryBonusLabel: UILabel!
     
     
     
@@ -23,8 +24,9 @@ class PlayerTableViewCell: UITableViewCell {
     func update(with player: Player) {
         let ability = player.ability
         nameLabel.text = player.fullName
-        returnLabel.text = String(ability.returnOfServe.intValue)
-        serveLabel.text = String(ability.serve.intValue)
-        skillLabel.text = String(ability.skill.intValue)
+        returnLabel.text = String(ability.returnOfServe.doubleValue)
+        serveLabel.text = String(ability.serve.doubleValue)
+        skillLabel.text = String(ability.skill.doubleValue)
+        countryBonusLabel.text = String(ability.countryBonus.doubleValue)
     }
 }

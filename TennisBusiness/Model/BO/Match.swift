@@ -13,7 +13,7 @@ class Match {
     
     static private func restoreScore(from result: String, setsToWin: Int) -> [Set] {
         let simulation = Match(identifier: "", firstPlayer: .empty, secondPlayer: .empty,
-                               setsToWin: setsToWin, eventDate: Date(), result: "")
+                               setsToWin: setsToWin, eventDate: Date(), result: "", country: nil)
         simulation.simulate(result)
         return simulation.sets
     }
@@ -28,6 +28,7 @@ class Match {
     let setsToWin: Int
     let eventDate: Date
     var serveTurn: ServeTurn
+    var country: Country?
     
     var isFinished: Bool {
         return !result.isEmpty
@@ -45,7 +46,7 @@ class Match {
     
     // MARK: - Init
     
-    init(identifier: String, firstPlayer: Player, secondPlayer: Player, setsToWin: Int, eventDate: Date, result: String) {
+    init(identifier: String, firstPlayer: Player, secondPlayer: Player, setsToWin: Int, eventDate: Date, result: String, country: Country?) {
         self.identifier = identifier
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer
@@ -54,6 +55,7 @@ class Match {
         self.result = result
         let serveTurn: ServeTurn = Bool.random() ? .firstPlayer : .secondPlayer
         self.serveTurn = serveTurn
+        self.country = country
         if result.isEmpty {
             self.sets = [Set(identifier: 1, firstGameServeTurn: serveTurn)]
         }
@@ -216,14 +218,24 @@ class Match {
         let skillDiff = firstPlayerAbility.skill.doubleValue - secondPlayerAbility.skill.doubleValue
         let serveDiff: Double
         let constantServeAdvantage: Double = 0.5
+        var countryBonusDiff: Double = 0
         if serveTurn.isFirstPlayerServe {
             serveDiff = constantServeAdvantage + firstPlayerAbility.serve.doubleValue - secondPlayerAbility.returnOfServe.doubleValue
         }
         else {
             serveDiff = -(constantServeAdvantage + secondPlayerAbility.serve.doubleValue - firstPlayerAbility.returnOfServe.doubleValue)
         }
+        if country == firstPlayer.country, country == secondPlayer.country {
+            countryBonusDiff = firstPlayerAbility.countryBonus.doubleValue - secondPlayerAbility.countryBonus.doubleValue
+        }
+        else if country == firstPlayer.country {
+            countryBonusDiff = firstPlayerAbility.countryBonus.doubleValue
+        }
+        else if country == secondPlayer.country {
+            countryBonusDiff = -secondPlayerAbility.countryBonus.doubleValue
+        }
         let random = Int.random(from: 1, to: 100)
-        let firstPlayerAdvantage = Double(random) + skillDiff * 10 + serveDiff * 10
+        let firstPlayerAdvantage = Double(random) + skillDiff * 10 + serveDiff * 10 + countryBonusDiff * 2
         return firstPlayerAdvantage > 50 ? .firstWin : .secondWin
     }
 }
