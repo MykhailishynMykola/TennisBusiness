@@ -17,6 +17,8 @@ final class ManagersAssembly: Assembly {
         container.register(DataManager.self) { DataManagerImp(resolver: $0)! }
         container.register(CountriesDataManager.self) { _ in CountriesDataManagerImp() }
             .inObjectScope(.container)
+        container.register(TournamentsManager.self) { TournamentsManagerImp(resolver: $0)! }
+            .inObjectScope(.container)
         container.register(NamesDataManager.self) { _ in NamesDataManagerImp() }
             .inObjectScope(.container)
     }
