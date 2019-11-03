@@ -16,17 +16,20 @@ class PlayerTableViewCell: UITableViewCell {
     @IBOutlet private weak var serveLabel: UILabel!
     @IBOutlet private weak var skillLabel: UILabel!
     @IBOutlet private weak var countryBonusLabel: UILabel!
+    @IBOutlet private weak var ageLabel: UILabel!
     
     
     
     // MARK: - Public
     
-    func update(with player: Player) {
+    func update(with player: Player, date: Date) {
         let ability = player.ability
         nameLabel.text = player.fullName
         returnLabel.text = String(ability.returnOfServe.doubleValue)
         serveLabel.text = String(ability.serve.doubleValue)
         skillLabel.text = String(ability.skill.doubleValue)
-        countryBonusLabel.text = String(ability.countryBonus.doubleValue)
+        countryBonusLabel.text =
+            String(ability.countryBonus.doubleValue)
+        ageLabel.text = "\(player.birthday.ageInt(to: date))"
     }
 }

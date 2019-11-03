@@ -77,7 +77,7 @@ class WorldViewController: ScreenViewController {
             let players = world?.players else {
                 return
         }
-        playersListViewController.update(with: players)
+        playersListViewController.update(with: players, date: world?.currentWorldDate ?? Date())
     }
     
     @IBAction private func viewMatchesPressed(_ sender: Any) {

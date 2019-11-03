@@ -27,13 +27,15 @@ class PlayersListViewController: ScreenViewController {
             tableView.reloadData()
         }
     }
+    private var worldDate = Date()
     
     
     
     // MARK: - Public
     
-    func update(with players: [Player]) {
+    func update(with players: [Player], date: Date) {
         self.players = players
+        self.worldDate = date
     }
 }
 
@@ -50,7 +52,7 @@ extension PlayersListViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         let player = players[indexPath.row]
-        cell.update(with: player)
+        cell.update(with: player, date: worldDate)
         return cell
     }
 }
