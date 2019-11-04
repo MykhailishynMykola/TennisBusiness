@@ -74,10 +74,11 @@ class WorldViewController: ScreenViewController {
     
     @IBAction private func viewPlayersPressed(_ sender: Any) {
         guard let playersListViewController = presentViewController(withIdentifier: "PlayersList", fromNavigation: true) as? PlayersListViewController,
-            let players = world?.players else {
+            let players = world?.players,
+            let world = world else {
                 return
         }
-        playersListViewController.update(with: players, date: world?.currentWorldDate ?? Date())
+        playersListViewController.update(with: players, world: world)
     }
     
     @IBAction private func viewMatchesPressed(_ sender: Any) {

@@ -22,7 +22,7 @@ class PlayerTableViewCell: UITableViewCell {
     
     // MARK: - Public
     
-    func update(with player: Player, date: Date) {
+    func update(with player: Player, date: Date?) {
         let ability = player.ability
         nameLabel.text = player.fullName
         returnLabel.text = String(ability.returnOfServe.doubleValue)
@@ -30,6 +30,7 @@ class PlayerTableViewCell: UITableViewCell {
         skillLabel.text = String(ability.skill.doubleValue)
         countryBonusLabel.text =
             String(ability.countryBonus.doubleValue)
-        ageLabel.text = "\(player.birthday.ageInt(to: date))"
+        guard let worldDate = date, let birthday = player.birthday else { return }
+        ageLabel.text = "\(birthday.age(from: worldDate))"
     }
 }

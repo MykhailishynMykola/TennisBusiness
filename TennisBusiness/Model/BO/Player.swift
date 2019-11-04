@@ -10,7 +10,7 @@ import Foundation
 class Player {
     // MARK: - Inner
     
-    static var empty = Player(identifier: "", name: "", surname: "", ability: .empty, country: nil, birthday: Date())
+    static var empty = Player(identifier: "", name: "", surname: "", ability: .empty, country: nil, birthday: nil)
     
     
     
@@ -21,13 +21,13 @@ class Player {
     let surname: String
     var ability: Ability
     let country: Country?
-    let birthday: Date
+    let birthday: Date?
     
     
     
     // MARK: - init
     
-    init(identifier: String, name: String, surname: String, ability: Ability, country: Country?, birthday: Date) {
+    init(identifier: String, name: String, surname: String, ability: Ability, country: Country?, birthday: Date?) {
         self.identifier = identifier
         self.name = name
         self.surname = surname

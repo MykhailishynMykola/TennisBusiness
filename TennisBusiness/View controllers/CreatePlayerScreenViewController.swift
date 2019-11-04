@@ -127,16 +127,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
         surnameField.text = playerName.surname
     }
     
-    @objc private func countryPickerCancelled() {
-        view.endEditing(true)
-    }
-    
-    @objc private func datePickerChangedValue() {
-        selectedDate = agePickerView.date
-        ageField.text = "\(agePickerView.date.ageInt(to: world?.currentWorldDate ?? Date()))"
-    }
-    
-    
+
     
     // MARK: - Private
     
@@ -153,5 +144,15 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
         pickerView.date = world?.currentWorldDate ?? Date()
         pickerView.addTarget(self, action: #selector(datePickerChangedValue), for: .valueChanged)
         textField.inputView = pickerView
+    }
+    
+    @objc private func countryPickerCancelled() {
+        view.endEditing(true)
+    }
+    
+    @objc private func datePickerChangedValue() {
+        selectedDate = agePickerView.date
+        guard let world = world else { return }
+        ageField.text = "\(agePickerView.date.age(from: world.currentWorldDate))"
     }
 }
