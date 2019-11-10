@@ -139,9 +139,10 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     }
     
     private func configuteDateField(_ textField: UITextField, with pickerView: UIDatePicker) {
+        guard let world = world else { return }
         textField.inputAccessoryView = pickerToolbar
         pickerView.datePickerMode = .date
-        pickerView.date = world?.currentWorldDate ?? Date()
+        pickerView.date = world.currentWorldDate
         pickerView.addTarget(self, action: #selector(datePickerChangedValue), for: .valueChanged)
         textField.inputView = pickerView
     }
