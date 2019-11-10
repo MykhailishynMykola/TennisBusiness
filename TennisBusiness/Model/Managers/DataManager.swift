@@ -17,6 +17,7 @@ protocol DataManager {
     func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String, country: Country?) -> Promise<Match>
     
     func setMatchResult(_ match: Match, worldIdentifier: String) -> Promise<Void>
+    func addTournaments(_ tournamentsData: [TournamentData], worldIdentifier: String) -> Promise<[Tournament]>
 }
 
 
@@ -56,9 +57,9 @@ final class DataManagerImp: DataManager, ResolverInitializable {
     
     func createPlayer(with name: String, surname: String, country: Country, ability: Ability, worldIdentifier: String) -> Promise<Player> {
         let abilityData: [String: Any] = ["skill": ability.skill.doubleValue,
-                                      "serve": ability.serve.doubleValue,
-                                      "return": ability.returnOfServe.doubleValue,
-                                      "countryBonus": ability.countryBonus.doubleValue]
+                                          "serve": ability.serve.doubleValue,
+                                          "return": ability.returnOfServe.doubleValue,
+                                          "countryBonus": ability.countryBonus.doubleValue]
         let newPlayerData: [String: Any] = ["name": name,
                                             "surname": surname,
                                             "countryCode": country.code,
@@ -129,6 +130,49 @@ final class DataManagerImp: DataManager, ResolverInitializable {
         })
     }
     
+    func addTournaments(_ tournamentsData: [TournamentData], worldIdentifier: String) -> Promise<[Tournament]> {
+        let promises: [Promise<Tournament>] = tournamentsData.map { tournamentData -> Promise<Tournament> in
+            let tournamentsRaw: [String: Any] = ["name": tournamentData.name,
+                                                 "city": tournamentData.city,
+                                                 "countryCode": tournamentData.country?.code ?? "",
+                                                 "week": tournamentData.week,
+                                                 "surface": tournamentData.surface.rawValue,
+                                                 "surfaceType": tournamentData.surfaceType.rawValue,
+                                                 "totalFinancialCommitment": tournamentData.totalFinancialCommitment,
+                                                 "points": tournamentData.points.rawValue,
+                                                 "drawSingle": tournamentData.draw.single,
+                                                 "drawDouble": tournamentData.draw.double,
+                                                 "startDate": Timestamp(date: tournamentData.startDate)]
+            return Promise(resolvers: { (fulfill, reject) in
+                var newTournamentReference: DocumentReference? = nil
+                newTournamentReference = database.collection("worlds")
+                    .document(worldIdentifier)
+                    .collection("tournaments")
+                    .addDocument(data: tournamentsRaw) { error in
+                        guard error == nil,
+                            let newTournamentIdentifier = newTournamentReference?.documentID else {
+                                print("Error: Failed to create a new tournament.")
+                                if let error = error { reject(error) }
+                                return
+                        }
+                        let newTournament = Tournament(identifier: newTournamentIdentifier,
+                                                       name: tournamentData.name,
+                                                       city: tournamentData.city,
+                                                       country: tournamentData.country,
+                                                       week: tournamentData.week,
+                                                       surface: tournamentData.surface,
+                                                       surfaceType: tournamentData.surfaceType,
+                                                       totalFinancialCommitment: tournamentData.totalFinancialCommitment,
+                                                       points: tournamentData.points,
+                                                       draw: tournamentData.draw,
+                                                       startDate: tournamentData.startDate)
+                        fulfill(newTournament)
+                }
+            })
+        }
+        return collectSuccesses(promises)
+    }
+    
     
     
     // MARK: - Private
@@ -160,6 +204,41 @@ final class DataManagerImp: DataManager, ResolverInitializable {
     }
     
     private func loadWorld(from document: QueryDocumentSnapshot) -> Promise<World> {
+        let worldIdentifier = document.documentID
+        return loadPlayers(from: document)
+            .then { [weak self] players -> Promise<(matches: [Match], players: [Player])> in
+                guard let `self` = self else { throw NSError.cancelledError() }
+                return self.loadMatches(forWorldIdentifier: worldIdentifier, players: players)
+                    .then { matches -> Promise<(matches: [Match], players: [Player])> in
+                        return Promise(value: (matches, players))
+                }
+            }
+            .then { [weak self] matches, players -> Promise<(matches: [Match], players: [Player], tournaments: [Tournament])> in
+                guard let `self` = self else { throw NSError.cancelledError() }
+                return self.loadTournaments(forWorldIdentifier: worldIdentifier)
+                    .then { tournaments -> Promise<(matches: [Match], players: [Player], tournaments: [Tournament])> in
+                        return Promise(value: (matches, players, tournaments))
+                }
+            }
+            .then { matches, players, tournaments -> Promise<World> in
+                let worldData = document.data()
+                guard let speed = worldData["speed"] as? Double,
+                    let createdAt = worldData["createdAt"] as? Timestamp,
+                    let name = worldData["name"] as? String else {
+                        throw NSError.cancelledError()
+                }
+                let newWorld = World(identifier: worldIdentifier,
+                                     name: name,
+                                     speed: speed,
+                                     createdAt: createdAt.dateValue(),
+                                     players: players,
+                                     matches: matches,
+                                     tournaments: tournaments)
+                return Promise(value: newWorld)
+        }
+    }
+    
+    private func loadPlayers(from document: QueryDocumentSnapshot) -> Promise<[Player]> {
         return Promise(resolvers: { (fulfill, reject) in
             guard document.exists else { throw NSError.cancelledError() }
             let playersReference = database
@@ -183,26 +262,6 @@ final class DataManagerImp: DataManager, ResolverInitializable {
                     playerPromises.append(self.loadPlayer(from: playerDocument))
                 }
                 return collectSuccesses(playerPromises)
-            }
-            .then { [weak self] players -> Promise<World> in
-                guard let `self` = self else { throw NSError.cancelledError() }
-                let worldIdentifier = document.documentID
-                return self.loadMatches(forWorldIdentifier: worldIdentifier, players: players)
-                    .then { matches -> Promise<World> in
-                        let worldData = document.data()
-                        guard let speed = worldData["speed"] as? Double,
-                            let createdAt = worldData["createdAt"] as? Timestamp,
-                            let name = worldData["name"] as? String else {
-                                throw NSError.cancelledError()
-                        }
-                        let newWorld = World(identifier: worldIdentifier,
-                                             name: name,
-                                             speed: speed,
-                                             createdAt: createdAt.dateValue(),
-                                             players: players,
-                                             matches: matches)
-                        return Promise(value: newWorld)
-                }
         }
     }
     
@@ -228,6 +287,22 @@ final class DataManagerImp: DataManager, ResolverInitializable {
                     }
                     let matches = matchDocuments.compactMap { Match(snapshot: $0, players: players, countries: self.countriesDataManager.countries) }
                     fulfill(matches)
+            }
+        })
+    }
+    
+    private func loadTournaments(forWorldIdentifier identifier: String) -> Promise<[Tournament]> {
+        return Promise(resolvers: { (fulfill, reject) in
+            database
+                .collection("worlds")
+                .document(identifier)
+                .collection("tournaments")
+                .getDocuments { (tournamentSnapshot, error) in
+                    guard let tournamentDocuments = tournamentSnapshot?.documents else {
+                        return reject(NSError.cancelledError())
+                    }
+                    let tournaments = tournamentDocuments.compactMap { Tournament(snapshot: $0, countries: self.countriesDataManager.countries) }
+                    fulfill(tournaments)
             }
         })
     }
