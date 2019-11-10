@@ -18,12 +18,15 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     @IBOutlet private weak var surnameField: UITextField!
     @IBOutlet private weak var countryField: UITextField!
     @IBOutlet private weak var countryBonusField: UITextField!
+    @IBOutlet private weak var ageField: UITextField!
     
     private var world: World?
     private var countriesDataManager: CountriesDataManager!
     private var namesDataManager: NamesDataManager!
     private let countryPickerView = UIPickerView()
     private var selectedCountry: Country?
+    private let agePickerView = UIDatePicker()
+    private var selectedDate: Date?
     
     private var pickerToolbar: UIToolbar {
         let toolbar = UIToolbar()
@@ -49,6 +52,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         configuteTextField(countryField, with: countryPickerView)
+        configuteDateField(ageField, with: agePickerView)
     }
     
     override func setupDependencies() {
@@ -102,14 +106,15 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
             let returnOfServe = Double(returnField.text ?? ""),
             let countryBonus = Double(countryBonusField.text ?? ""),
             let country = selectedCountry,
-            let worldIdentifier = world?.identifier else {
+            let worldIdentifier = world?.identifier,
+            let birthday = selectedDate else {
                 return
         }
         let ability = Ability(skill: skill,
                               serve: serve,
                               returnOfServe: returnOfServe,
                               countryBonus: countryBonus)
-        dataManager.createPlayer(with: name, surname: surname, country: country, ability: ability, worldIdentifier: worldIdentifier)
+        dataManager.createPlayer(with: name, surname: surname, country: country, birthday: birthday, ability: ability, worldIdentifier: worldIdentifier)
             .then { [weak self] player -> Void in
                 self?.world?.players.append(player)
                 self?.navigationController?.popViewController(animated: true)
@@ -122,11 +127,7 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
         surnameField.text = playerName.surname
     }
     
-    @objc private func countryPickerCancelled() {
-        view.endEditing(true)
-    }
-    
-    
+
     
     // MARK: - Private
     
@@ -135,5 +136,24 @@ class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegat
         pickerView.dataSource = self
         textField.inputView = pickerView
         textField.inputAccessoryView = pickerToolbar
+    }
+    
+    private func configuteDateField(_ textField: UITextField, with pickerView: UIDatePicker) {
+        guard let world = world else { return }
+        textField.inputAccessoryView = pickerToolbar
+        pickerView.datePickerMode = .date
+        pickerView.date = world.currentWorldDate
+        pickerView.addTarget(self, action: #selector(datePickerChangedValue), for: .valueChanged)
+        textField.inputView = pickerView
+    }
+    
+    @objc private func countryPickerCancelled() {
+        view.endEditing(true)
+    }
+    
+    @objc private func datePickerChangedValue() {
+        selectedDate = agePickerView.date
+        guard let world = world else { return }
+        ageField.text = "\(agePickerView.date.age(from: world.currentWorldDate))"
     }
 }

@@ -14,4 +14,11 @@ extension Date {
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         return dateFormatter.string(from: self)
     }
+    
+    func age(from date: Date) -> Int {
+        let calender = Calendar.current
+        let dateComponent = calender.dateComponents([.year], from: self, to: date)
+        guard let countYear = dateComponent.year else { return 0 }
+        return countYear
+    }
 }

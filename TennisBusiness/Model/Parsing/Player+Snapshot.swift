@@ -13,6 +13,7 @@ extension Player {
         let playerData = snapshot.data()
         guard let name = playerData["name"] as? String,
             let surname = playerData["surname"] as? String,
+            let birthday = playerData["birthday"] as? Timestamp,
             let abilityDict = playerData["ability"] as? [String: Double],
             let skillValue = abilityDict["skill"],
             let serveValue = abilityDict["serve"],
@@ -26,6 +27,6 @@ extension Player {
                               serve: serveValue,
                               returnOfServe: returnValue,
                               countryBonus: countryBonusValue)
-        self.init(identifier: snapshot.documentID, name: name, surname: surname, ability: ability, country: country)
+        self.init(identifier: snapshot.documentID, name: name, surname: surname, ability: ability, country: country, birthday: birthday.dateValue())
     }
 }

@@ -13,7 +13,7 @@ import Swinject
 protocol DataManager {
     func getWorlds() -> Promise<[World]>
     
-    func createPlayer(with name: String, surname: String, country: Country, ability: Ability, worldIdentifier: String) -> Promise<Player>
+    func createPlayer(with name: String, surname: String, country: Country, birthday: Date, ability: Ability, worldIdentifier: String) -> Promise<Player>
     func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String, country: Country?) -> Promise<Match>
     
     func setMatchResult(_ match: Match, worldIdentifier: String) -> Promise<Void>
@@ -54,7 +54,7 @@ final class DataManagerImp: DataManager, ResolverInitializable {
         return loadWorlds()
     }
     
-    func createPlayer(with name: String, surname: String, country: Country, ability: Ability, worldIdentifier: String) -> Promise<Player> {
+    func createPlayer(with name: String, surname: String, country: Country, birthday: Date, ability: Ability, worldIdentifier: String) -> Promise<Player> {
         let abilityData: [String: Any] = ["skill": ability.skill.doubleValue,
                                       "serve": ability.serve.doubleValue,
                                       "return": ability.returnOfServe.doubleValue,
@@ -62,6 +62,7 @@ final class DataManagerImp: DataManager, ResolverInitializable {
         let newPlayerData: [String: Any] = ["name": name,
                                             "surname": surname,
                                             "countryCode": country.code,
+                                            "birthday": birthday,
                                             "ability": abilityData]
         return Promise(resolvers: { (fulfill, reject) in
             var newPlayerReference: DocumentReference? = nil
@@ -75,7 +76,7 @@ final class DataManagerImp: DataManager, ResolverInitializable {
                             if let error = error { reject(error) }
                             return
                     }
-                    let newPlayer = Player(identifier: newPlayerIdentifier, name: name, surname: surname, ability: ability, country: country)
+                    let newPlayer = Player(identifier: newPlayerIdentifier, name: name, surname: surname, ability: ability, country: country, birthday: birthday)
                     fulfill(newPlayer)
             }
         })
