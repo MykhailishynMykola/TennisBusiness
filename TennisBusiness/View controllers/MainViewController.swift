@@ -33,7 +33,8 @@ class MainViewController: ScreenViewController {
                 UIApplication.shared.isIdleTimerDisabled = true
             }
             else {
-                self?.presentViewController(withIdentifier: "UserMain")
+//                self?.presentViewController(withIdentifier: "UserMain")
+                self?.presentViewController(withIdentifier: "Registration", fromNavigation: true)
             }
         }
     }

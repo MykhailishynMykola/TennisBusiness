@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041BE722237D61E0005288F2 /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BE721237D61E0005288F2 /* AuthDataManager.swift */; };
+		041BE724237D7706005288F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BE723237D7706005288F2 /* User.swift */; };
 		0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EFB823094AC900D76DB4 /* PlayersList.storyboard */; };
 		0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */; };
 		0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */; };
 		04A873EF234A0E0D00B416A5 /* MatchesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */; };
 		04A873F1234A104800B416A5 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F0234A104800B416A5 /* MatchesListViewController.swift */; };
 		04A873F3234A120B00B416A5 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */; };
+		04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B238F523780FBD0037DD73 /* RegistrationViewController.swift */; };
+		04B238F8237812630037DD73 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B238F7237812630037DD73 /* String+Convenience.swift */; };
+		04B8DEDC23780B1200C481D2 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B8DEDB23780B1200C481D2 /* Registration.storyboard */; };
 		2ECD159E776257E57A97E844 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */; };
 		CE04F152230808D10048771A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F151230808D10048771A /* DIContainer.swift */; };
 		CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15523080B6C0048771A /* ManagersAssembly.swift */; };
@@ -25,12 +30,12 @@
 		CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */; };
 		CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */; };
 		CE21631622D0CE11000A14BA /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631522D0CE11000A14BA /* GlobalConstants.swift */; };
-		CE26123E2340B05B00BB0D88 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123D2340B05B00BB0D88 /* Tournament.swift */; };
-		CE2612402340B0ED00BB0D88 /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123F2340B0ED00BB0D88 /* Surface.swift */; };
-		CE2612422340B44200BB0D88 /* TournamentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2612412340B44200BB0D88 /* TournamentsManager.swift */; };
 		CE26123923409D0900BB0D88 /* Last_names.json in Resources */ = {isa = PBXBuildFile; fileRef = CE26123723409D0900BB0D88 /* Last_names.json */; };
 		CE26123A23409D0900BB0D88 /* First_names.json in Resources */ = {isa = PBXBuildFile; fileRef = CE26123823409D0900BB0D88 /* First_names.json */; };
 		CE26123C23409D5700BB0D88 /* NamesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123B23409D5700BB0D88 /* NamesDataManager.swift */; };
+		CE26123E2340B05B00BB0D88 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123D2340B05B00BB0D88 /* Tournament.swift */; };
+		CE2612402340B0ED00BB0D88 /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123F2340B0ED00BB0D88 /* Surface.swift */; };
+		CE2612422340B44200BB0D88 /* TournamentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2612412340B44200BB0D88 /* TournamentsManager.swift */; };
 		CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */; };
 		CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819EA22AA5E750038B173 /* UserMainViewController.swift */; };
 		CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */; };
@@ -69,12 +74,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041BE721237D61E0005288F2 /* AuthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
+		041BE723237D7706005288F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0489EFB823094AC900D76DB4 /* PlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayersList.storyboard; sourceTree = "<group>"; };
 		0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
 		0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchesList.storyboard; sourceTree = "<group>"; };
 		04A873F0234A104800B416A5 /* MatchesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListViewController.swift; sourceTree = "<group>"; };
 		04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		04B238F523780FBD0037DD73 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		04B238F7237812630037DD73 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
+		04B8DEDB23780B1200C481D2 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		34A5D2C3DBAA86A178014839 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71782DB39C0A3A93A051FFEE /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,12 +99,12 @@
 		CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchScreenViewController.swift; sourceTree = "<group>"; };
 		CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateMatch.storyboard; sourceTree = "<group>"; };
 		CE21631522D0CE11000A14BA /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
-		CE26123D2340B05B00BB0D88 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
-		CE26123F2340B0ED00BB0D88 /* Surface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
-		CE2612412340B44200BB0D88 /* TournamentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsManager.swift; sourceTree = "<group>"; };
 		CE26123723409D0900BB0D88 /* Last_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Last_names.json; sourceTree = "<group>"; };
 		CE26123823409D0900BB0D88 /* First_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = First_names.json; sourceTree = "<group>"; };
 		CE26123B23409D5700BB0D88 /* NamesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesDataManager.swift; sourceTree = "<group>"; };
+		CE26123D2340B05B00BB0D88 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		CE26123F2340B0ED00BB0D88 /* Surface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
+		CE2612412340B44200BB0D88 /* TournamentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsManager.swift; sourceTree = "<group>"; };
 		CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EA22AA5E750038B173 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMain.storyboard; sourceTree = "<group>"; };
@@ -206,6 +216,7 @@
 				CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */,
 				0489EFB823094AC900D76DB4 /* PlayersList.storyboard */,
 				04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */,
+				04B8DEDB23780B1200C481D2 /* Registration.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -222,6 +233,7 @@
 				CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */,
 				0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */,
 				04A873F0234A104800B416A5 /* MatchesListViewController.swift */,
+				04B238F523780FBD0037DD73 /* RegistrationViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -252,6 +264,7 @@
 				CEA167EE22FF089D008EC5E9 /* Country.swift */,
 				CE26123D2340B05B00BB0D88 /* Tournament.swift */,
 				CE26123F2340B0ED00BB0D88 /* Surface.swift */,
+				041BE723237D7706005288F2 /* User.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -262,6 +275,7 @@
 				CE5B5B8022A2945B006182FA /* Int+Convenience.swift */,
 				CE3819F822ABDFB60038B173 /* Promise+Combinators.swift */,
 				CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */,
+				04B238F7237812630037DD73 /* String+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,6 +353,7 @@
 				CE0845C222B0FE710006AF31 /* DataManager.swift */,
 				CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */,
 				CE26123B23409D5700BB0D88 /* NamesDataManager.swift */,
+				041BE721237D61E0005288F2 /* AuthDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -413,6 +428,7 @@
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
 				CE73CE6A22A281DC00A05111 /* Main.storyboard in Resources */,
 				CE26123923409D0900BB0D88 /* Last_names.json in Resources */,
+				04B8DEDC23780B1200C481D2 /* Registration.storyboard in Resources */,
 				04A873EF234A0E0D00B416A5 /* MatchesList.storyboard in Resources */,
 				CE26123A23409D0900BB0D88 /* First_names.json in Resources */,
 				CEA167EB22FF0716008EC5E9 /* Countries.json in Resources */,
@@ -429,36 +445,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DF163A25EBB37A0DC871076E /* [CP] Check Pods Manifest.lock */ = {
@@ -500,6 +495,7 @@
 				04A873F3234A120B00B416A5 /* MatchTableViewCell.swift in Sources */,
 				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
+				04B238F8237812630037DD73 /* String+Convenience.swift in Sources */,
 				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
 				CE2612402340B0ED00BB0D88 /* Surface.swift in Sources */,
 				0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */,
@@ -509,8 +505,10 @@
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
 				CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */,
 				CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */,
+				041BE724237D7706005288F2 /* User.swift in Sources */,
 				CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */,
 				CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */,
+				041BE722237D61E0005288F2 /* AuthDataManager.swift in Sources */,
 				CE5B5B8122A2945B006182FA /* Int+Convenience.swift in Sources */,
 				CE21631622D0CE11000A14BA /* GlobalConstants.swift in Sources */,
 				CEFF017322B662430066EC76 /* CreatePlayerScreenViewController.swift in Sources */,
@@ -529,6 +527,7 @@
 				CE2612422340B44200BB0D88 /* TournamentsManager.swift in Sources */,
 				CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */,
 				CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */,
+				04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
 				CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */,
 				CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */,
