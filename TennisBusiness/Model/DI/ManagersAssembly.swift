@@ -21,5 +21,9 @@ final class ManagersAssembly: Assembly {
             .inObjectScope(.container)
         container.register(NamesDataManager.self) { _ in NamesDataManagerImp() }
             .inObjectScope(.container)
+        container.register(AuthDataManager.self) { _ in AuthDataManagerImp() }
+            .inObjectScope(.container)
+        container.register(AppState.self) { _ in AppState() }
+            .inObjectScope(.container)
     }
 }

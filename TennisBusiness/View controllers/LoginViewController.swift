@@ -1,14 +1,14 @@
 //
-//  RegistrationViewController.swift
+//  LoginViewController.swift
 //  TennisBusiness
 //
-//  Created by Valeiia Tarasenko on 11/10/19.
+//  Created by Valeiia Tarasenko on 11/15/19.
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
 import UIKit
 
-class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
+class LoginViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Properties
     
     @IBOutlet private weak var emailTextField: UITextField!
@@ -22,28 +22,26 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
-
+    
     override func setupDependencies() {
         super.setupDependencies()
         authDataManager = resolver.resolve(AuthDataManager.self)
     }
     
-    
-    
     // MARK: - Actions
     
-    @IBAction func registrationButtonTouchUpInside(_ sender: Any) {
+    @IBAction func loginButtonTouchUpInside(_ sender: Any) {
         guard let mail = emailTextField.text, mail.isValidEmail() else {
-            showErrorMessage(error: "Enter valid email")
-            return
+           showErrorMessage(error: "Enter valid email")
+           return
         }
         guard let password = passwordTextField.text, !password.isEmpty else {
-            showErrorMessage(error: "Enter password")
-            return
+           showErrorMessage(error: "Enter password")
+           return
         }
-        
-        authDataManager.createUser(with: mail, password: password)
+        authDataManager.signInFB(with: mail, password: password)
             .then { [weak self] user -> Void in
                 self?.appState.updateCurrentUser(user)
                 if user.admin {
@@ -57,6 +55,10 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
             .catch { [weak self] error in
                 self?.showErrorMessage(error: error.localizedDescription)
         }
+    }
+    
+    @IBAction func registrationButtonTouchUpInside(_ sender: Any) {
+        self.presentViewController(withIdentifier: "Registration", fromNavigation: true)
     }
     
     

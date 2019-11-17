@@ -14,6 +14,7 @@ class ScreenViewController: UIViewController {
     
     let resolver = DIContainer.defaultResolver
     var dataManager: DataManager!
+    var appState: AppState!
     
     
     
@@ -30,11 +31,13 @@ class ScreenViewController: UIViewController {
     
     func setupDependencies() {
         dataManager = resolver.resolve(DataManager.self)
+        appState = resolver.resolve(AppState.self)
     }
     
     @discardableResult func presentViewController(withIdentifier identifier: String, storyboardIdentifier: String? = nil, fromNavigation: Bool = false) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboardIdentifier ?? identifier, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: identifier)
+        controller.modalPresentationStyle = .fullScreen
         guard fromNavigation else {
             present(controller, animated: true, completion: nil)
             return controller
