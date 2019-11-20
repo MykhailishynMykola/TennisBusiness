@@ -6,14 +6,14 @@
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
-enum Surface {
+enum Surface: String {
     case hard
     case clay
     case grass
 }
 
 
-enum SurfaceLocationType {
+enum SurfaceLocationType: String {
     case indoor
     case outdoor
 }
