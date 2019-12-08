@@ -17,6 +17,8 @@ class World {
     let createdAt: Date
     var players: [Player]
     var matches: [Match]
+    var tournaments: [Tournament]
+    var lastCreatedTournamentDate: Date?
     
     var currentWorldDate: Date {
         let currentDate = Date()
@@ -28,13 +30,14 @@ class World {
     
     // MARK: - Init
     
-    init(identifier: String, name: String, speed: Double, createdAt: Date, players: [Player], matches: [Match]) {
+    init(identifier: String, name: String, speed: Double, createdAt: Date, players: [Player], matches: [Match], tournaments: [Tournament]) {
         self.identifier = identifier
         self.name = name
         self.speed = speed
         self.createdAt = createdAt
         self.players = players
         self.matches = matches
+        self.tournaments = tournaments
     }
 }
 

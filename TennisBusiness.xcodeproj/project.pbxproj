@@ -30,6 +30,8 @@
 		CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */; };
 		CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C822B10F550006AF31 /* WorldViewController.swift */; };
 		CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */; };
+		CE188684236EFA450025C30A /* TournamentPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE188683236EFA450025C30A /* TournamentPoints.swift */; };
+		CE188686236EFA9B0025C30A /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE188685236EFA9B0025C30A /* Tournament.swift */; };
 		CE21631022D0B4BE000A14BA /* Date+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */; };
 		CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */; };
 		CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */; };
@@ -37,9 +39,9 @@
 		CE26123923409D0900BB0D88 /* Last_names.json in Resources */ = {isa = PBXBuildFile; fileRef = CE26123723409D0900BB0D88 /* Last_names.json */; };
 		CE26123A23409D0900BB0D88 /* First_names.json in Resources */ = {isa = PBXBuildFile; fileRef = CE26123823409D0900BB0D88 /* First_names.json */; };
 		CE26123C23409D5700BB0D88 /* NamesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123B23409D5700BB0D88 /* NamesDataManager.swift */; };
-		CE26123E2340B05B00BB0D88 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123D2340B05B00BB0D88 /* Tournament.swift */; };
+		CE26123E2340B05B00BB0D88 /* TournamentTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123D2340B05B00BB0D88 /* TournamentTemplate.swift */; };
 		CE2612402340B0ED00BB0D88 /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123F2340B0ED00BB0D88 /* Surface.swift */; };
-		CE2612422340B44200BB0D88 /* TournamentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2612412340B44200BB0D88 /* TournamentsManager.swift */; };
+		CE2612422340B44200BB0D88 /* TournamentsTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2612412340B44200BB0D88 /* TournamentsTemplateManager.swift */; };
 		CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */; };
 		CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819EA22AA5E750038B173 /* UserMainViewController.swift */; };
 		CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */; };
@@ -65,6 +67,8 @@
 		CEA167EB22FF0716008EC5E9 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA167EA22FF0716008EC5E9 /* Countries.json */; };
 		CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */; };
 		CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA167EE22FF089D008EC5E9 /* Country.swift */; };
+		CEB5C35123782DDF00951C5F /* Tournament+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C35023782DDF00951C5F /* Tournament+Snapshot.swift */; };
+		CEB5C353237831EF00951C5F /* TournamentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C352237831EF00951C5F /* TournamentData.swift */; };
 		CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */; };
 		CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */; };
 		CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */; };
@@ -101,6 +105,8 @@
 		CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
 		CE0845C822B10F550006AF31 /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
 		CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorWorld.storyboard; sourceTree = "<group>"; };
+		CE188683236EFA450025C30A /* TournamentPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentPoints.swift; sourceTree = "<group>"; };
+		CE188685236EFA9B0025C30A /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Convenience.swift"; sourceTree = "<group>"; };
 		CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchScreenViewController.swift; sourceTree = "<group>"; };
 		CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateMatch.storyboard; sourceTree = "<group>"; };
@@ -108,9 +114,9 @@
 		CE26123723409D0900BB0D88 /* Last_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Last_names.json; sourceTree = "<group>"; };
 		CE26123823409D0900BB0D88 /* First_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = First_names.json; sourceTree = "<group>"; };
 		CE26123B23409D5700BB0D88 /* NamesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesDataManager.swift; sourceTree = "<group>"; };
-		CE26123D2340B05B00BB0D88 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		CE26123D2340B05B00BB0D88 /* TournamentTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTemplate.swift; sourceTree = "<group>"; };
 		CE26123F2340B0ED00BB0D88 /* Surface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
-		CE2612412340B44200BB0D88 /* TournamentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsManager.swift; sourceTree = "<group>"; };
+		CE2612412340B44200BB0D88 /* TournamentsTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTemplateManager.swift; sourceTree = "<group>"; };
 		CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EA22AA5E750038B173 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMain.storyboard; sourceTree = "<group>"; };
@@ -138,6 +144,8 @@
 		CEA167EA22FF0716008EC5E9 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesDataManager.swift; sourceTree = "<group>"; };
 		CEA167EE22FF089D008EC5E9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		CEB5C35023782DDF00951C5F /* Tournament+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tournament+Snapshot.swift"; sourceTree = "<group>"; };
+		CEB5C352237831EF00951C5F /* TournamentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentData.swift; sourceTree = "<group>"; };
 		CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Snapshot.swift"; sourceTree = "<group>"; };
 		CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -266,10 +274,13 @@
 				CE3819F422AA67270038B173 /* GeneralConfig.swift */,
 				CE21631522D0CE11000A14BA /* GlobalConstants.swift */,
 				CEA167EE22FF089D008EC5E9 /* Country.swift */,
-				CE26123D2340B05B00BB0D88 /* Tournament.swift */,
+				CE26123D2340B05B00BB0D88 /* TournamentTemplate.swift */,
+				CE188683236EFA450025C30A /* TournamentPoints.swift */,
+				CE188685236EFA9B0025C30A /* Tournament.swift */,
 				CE26123F2340B0ED00BB0D88 /* Surface.swift */,
 				041BE723237D7706005288F2 /* User.swift */,
 				040453D8237ECBD400AABE7A /* AppState.swift */,
+				CEB5C352237831EF00951C5F /* TournamentData.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -347,6 +358,7 @@
 				CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */,
 				CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */,
 				040453D6237EB09100AABE7A /* User+Snapshot.swift */,
+				CEB5C35023782DDF00951C5F /* Tournament+Snapshot.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -354,7 +366,7 @@
 		CEFF017822B687C00066EC76 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				CE2612412340B44200BB0D88 /* TournamentsManager.swift */,
+				CE2612412340B44200BB0D88 /* TournamentsTemplateManager.swift */,
 				CEFF017622B687B40066EC76 /* CalculationManager.swift */,
 				CE0845C222B0FE710006AF31 /* DataManager.swift */,
 				CEA167EC22FF085B008EC5E9 /* CountriesDataManager.swift */,
@@ -491,7 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE26123E2340B05B00BB0D88 /* Tournament.swift in Sources */,
+				CE26123E2340B05B00BB0D88 /* TournamentTemplate.swift in Sources */,
 				CE5B5B7822A28C4F006182FA /* Set.swift in Sources */,
 				CE04F152230808D10048771A /* DIContainer.swift in Sources */,
 				CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */,
@@ -505,6 +517,7 @@
 				04B238F8237812630037DD73 /* String+Convenience.swift in Sources */,
 				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
 				CE2612402340B0ED00BB0D88 /* Surface.swift in Sources */,
+				CE188684236EFA450025C30A /* TournamentPoints.swift in Sources */,
 				0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */,
 				040453D5237EA91200AABE7A /* LoginViewController.swift in Sources */,
 				04A873F1234A104800B416A5 /* MatchesListViewController.swift in Sources */,
@@ -531,13 +544,16 @@
 				CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */,
 				CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
+				CE188686236EFA9B0025C30A /* Tournament.swift in Sources */,
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
-				CE2612422340B44200BB0D88 /* TournamentsManager.swift in Sources */,
+				CEB5C353237831EF00951C5F /* TournamentData.swift in Sources */,
+				CE2612422340B44200BB0D88 /* TournamentsTemplateManager.swift in Sources */,
 				CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */,
 				CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */,
 				04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
 				CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */,
+				CEB5C35123782DDF00951C5F /* Tournament+Snapshot.swift in Sources */,
 				CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */,
 				CE3819F522AA67270038B173 /* GeneralConfig.swift in Sources */,
 				CE3819F122AA62460038B173 /* ScreenViewController.swift in Sources */,

@@ -29,10 +29,13 @@ final class AuthDataManagerImp: AuthDataManager {
                 fulfill(user)
             }
         })
-        .then { user -> Promise<User> in
-            return self.createFBUser(user: user).then { () -> Promise<User> in
-                return Promise(value: user)
-            }
+            .then { [weak self] (user: User) -> Promise<User> in
+                guard let `self` = self else {
+                    return Promise(error: NSError.cancelledError())
+                }
+                return self.createFBUser(user: user).then { () -> Promise<User> in
+                    return Promise(value: user)
+                }
         }
     }
     
@@ -58,7 +61,7 @@ final class AuthDataManagerImp: AuthDataManager {
     // MARK: - Private
     
     private func createFBUser(user: User) -> Promise<Void> {
-        return Promise<Void>(resolvers: { (fulfill, reject) in
+        return Promise(resolvers: { (fulfill, reject) in
             let newUser: [String: Any] = ["email": user.email,
                                           "admin": false]
             return database
@@ -76,7 +79,7 @@ final class AuthDataManagerImp: AuthDataManager {
     }
     
     private func loadUser(with identifier: String) -> Promise<User> {
-        return Promise<User>(resolvers: { (fulfill, reject) in
+        return Promise(resolvers: { (fulfill, reject) in
             let userReference = database
                   .collection("users")
                   .document(identifier)
