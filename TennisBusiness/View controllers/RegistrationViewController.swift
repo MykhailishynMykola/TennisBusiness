@@ -31,7 +31,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     
     
-    //MARK: - UITextFieldDelegate
+    // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
@@ -51,7 +51,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     private func showErrorMessage(error: String) {
         let alertController = UIAlertController(title: "Error!", message: error, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
     
