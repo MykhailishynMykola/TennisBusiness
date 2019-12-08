@@ -50,9 +50,7 @@ final class AuthDataManagerImp: AuthDataManager {
             }
         })
         .then { identifier -> Promise<User> in
-            return self.loadUser(with: identifier).then { user -> Promise<User> in
-                return Promise(value: user)
-            }
+            return self.loadUser(with: identifier)
         }
     }
 

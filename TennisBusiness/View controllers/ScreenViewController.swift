@@ -13,8 +13,8 @@ class ScreenViewController: UIViewController {
     // MARK: - Properties
     
     let resolver = DIContainer.defaultResolver
-    var dataManager: DataManager!
-    var appState: AppState!
+    private(set) var dataManager: DataManager!
+    private(set) var appState: AppState!
     
     
     
@@ -37,8 +37,8 @@ class ScreenViewController: UIViewController {
     @discardableResult func presentViewController(withIdentifier identifier: String, storyboardIdentifier: String? = nil, fromNavigation: Bool = false) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboardIdentifier ?? identifier, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: identifier)
-        controller.modalPresentationStyle = .fullScreen
         guard fromNavigation else {
+            controller.modalPresentationStyle = .fullScreen
             present(controller, animated: true, completion: nil)
             return controller
         }
