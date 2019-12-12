@@ -13,12 +13,22 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var registrationButton: UIButton!
     
     private var authDataManager: AuthDataManager!
     
     
     
     // MARK: - Overrides
+    
+    override func viewDidLoad() {
+        super.setupDependencies()
+        emailTextField.addBottomBorder()
+        passwordTextField.addBottomBorder()
+        loginButton.setRoundedButtonWithColor(background: .appColor, title: .title)
+        registrationButton.setRoundedButtonWithColor(background: .callToAction, title: .title)
+    }
     
     override func setupDependencies() {
         super.setupDependencies()
@@ -80,6 +90,6 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     }
     
     @IBAction private func registrationButtonTouchUpInside(_ sender: Any) {
-        presentViewController(withIdentifier: "Registration", fromNavigation: true)
+        presentViewController(withIdentifier: "Registration", fromNavigation: false)
     }
 }

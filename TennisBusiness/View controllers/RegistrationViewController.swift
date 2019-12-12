@@ -13,6 +13,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var registrationButton: UIButton!
     
     private var authDataManager: AuthDataManager!
     
@@ -22,6 +23,9 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.addBottomBorder()
+        passwordTextField.addBottomBorder()
+        registrationButton.setRoundedButtonWithColor(background: .appColor, title: .title)
     }
 
     override func setupDependencies() {
@@ -82,5 +86,9 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
             .catch { [weak self] error in
                 self?.showErrorMessage(error: error.localizedDescription)
         }
+    }
+    
+    @IBAction private func closeButtonTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
