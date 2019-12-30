@@ -13,6 +13,8 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var confirmPasswordTextField: UITextField!
+    @IBOutlet private weak var registrationButton: UIButton!
     
     private var authDataManager: AuthDataManager!
     
@@ -22,6 +24,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registrationButton.configureButton(background: .appColor, title: .title, cornerRadius: 20)
     }
 
     override func setupDependencies() {
@@ -37,8 +40,10 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
         }
-        
         if textField == passwordTextField {
+            confirmPasswordTextField.becomeFirstResponder()
+        }
+        if textField == confirmPasswordTextField {
             view.endEditing(true)
         }
         return true
@@ -67,6 +72,11 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
             showErrorMessage(error: "Enter password")
             return
         }
+        guard let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty,
+            password == confirmPassword else {
+            showErrorMessage(error: "Your password and confirmation password do not match")
+            return
+        }
         
         authDataManager.createUser(with: mail, password: password)
             .then { [weak self] user -> Void in
@@ -82,5 +92,9 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
             .catch { [weak self] error in
                 self?.showErrorMessage(error: error.localizedDescription)
         }
+    }
+    
+    @IBAction private func closeButtonTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

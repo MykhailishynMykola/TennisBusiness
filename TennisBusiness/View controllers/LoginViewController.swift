@@ -13,12 +13,20 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var registrationButton: UIButton!
     
     private var authDataManager: AuthDataManager!
     
     
     
     // MARK: - Overrides
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loginButton.configureButton(background: .appColor, title: .title, cornerRadius: 20)
+        registrationButton.configureButton(background: .callToAction, title: .title, cornerRadius: 20)
+    }
     
     override func setupDependencies() {
         super.setupDependencies()
@@ -63,6 +71,7 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
            showErrorMessage(error: "Enter password")
            return
         }
+        
         authDataManager.signInFB(with: mail, password: password)
             .then { [weak self] user -> Void in
                 self?.appState.updateCurrentUser(user)
@@ -80,6 +89,6 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     }
     
     @IBAction private func registrationButtonTouchUpInside(_ sender: Any) {
-        presentViewController(withIdentifier: "Registration", fromNavigation: true)
+        presentViewController(withIdentifier: "Registration", fromNavigation: false)
     }
 }

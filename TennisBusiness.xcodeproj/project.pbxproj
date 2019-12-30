@@ -13,6 +13,19 @@
 		040453D9237ECBD400AABE7A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040453D8237ECBD400AABE7A /* AppState.swift */; };
 		041BE722237D61E0005288F2 /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BE721237D61E0005288F2 /* AuthDataManager.swift */; };
 		041BE724237D7706005288F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BE723237D7706005288F2 /* User.swift */; };
+		041F5427239E345100085FAF /* UIColor+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F5426239E345100085FAF /* UIColor+Convenience.swift */; };
+		041F5429239E348700085FAF /* UITextField+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F5428239E348700085FAF /* UITextField+Convenience.swift */; };
+		041F542C239F819100085FAF /* UIButton+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F542B239F819100085FAF /* UIButton+Convenience.swift */; };
+		046A16BB23A7724E00CEEDBB /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F5424239E31D300085FAF /* OpenSans-Bold.ttf */; };
+		046A16BC23A7725000CEEDBB /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F5421239E31D200085FAF /* OpenSans-BoldItalic.ttf */; };
+		046A16BD23A7725700CEEDBB /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F541F239E31D200085FAF /* OpenSans-ExtraBold.ttf */; };
+		046A16BE23A7725A00CEEDBB /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F5422239E31D200085FAF /* OpenSans-ExtraBoldItalic.ttf */; };
+		046A16BF23A7725C00CEEDBB /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F541E239E31D200085FAF /* OpenSans-Italic.ttf */; };
+		046A16C023A7726000CEEDBB /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F5420239E31D200085FAF /* OpenSans-Light.ttf */; };
+		046A16C123A7726200CEEDBB /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F5425239E31D300085FAF /* OpenSans-LightItalic.ttf */; };
+		046A16C223A7726B00CEEDBB /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F541C239E31D200085FAF /* OpenSans-Regular.ttf */; };
+		046A16C323A7726D00CEEDBB /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F5423239E31D300085FAF /* OpenSans-Semibold.ttf */; };
+		046A16C423A7727000CEEDBB /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F541D239E31D200085FAF /* OpenSans-SemiboldItalic.ttf */; };
 		0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EFB823094AC900D76DB4 /* PlayersList.storyboard */; };
 		0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */; };
 		0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */; };
@@ -86,6 +99,19 @@
 		040453D8237ECBD400AABE7A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		041BE721237D61E0005288F2 /* AuthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
 		041BE723237D7706005288F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		041F541C239E31D200085FAF /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		041F541D239E31D200085FAF /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		041F541E239E31D200085FAF /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		041F541F239E31D200085FAF /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		041F5420239E31D200085FAF /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		041F5421239E31D200085FAF /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		041F5422239E31D200085FAF /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		041F5423239E31D300085FAF /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		041F5424239E31D300085FAF /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		041F5425239E31D300085FAF /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		041F5426239E345100085FAF /* UIColor+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
+		041F5428239E348700085FAF /* UITextField+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Convenience.swift"; sourceTree = "<group>"; };
+		041F542B239F819100085FAF /* UIButton+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Convenience.swift"; sourceTree = "<group>"; };
 		0489EFB823094AC900D76DB4 /* PlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayersList.storyboard; sourceTree = "<group>"; };
 		0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
 		0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +194,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041F541B239E31C400085FAF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				041F5424239E31D300085FAF /* OpenSans-Bold.ttf */,
+				041F5421239E31D200085FAF /* OpenSans-BoldItalic.ttf */,
+				041F541F239E31D200085FAF /* OpenSans-ExtraBold.ttf */,
+				041F5422239E31D200085FAF /* OpenSans-ExtraBoldItalic.ttf */,
+				041F541E239E31D200085FAF /* OpenSans-Italic.ttf */,
+				041F5420239E31D200085FAF /* OpenSans-Light.ttf */,
+				041F5425239E31D300085FAF /* OpenSans-LightItalic.ttf */,
+				041F541C239E31D200085FAF /* OpenSans-Regular.ttf */,
+				041F5423239E31D300085FAF /* OpenSans-Semibold.ttf */,
+				041F541D239E31D200085FAF /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		68FE1D342568E247DC03C03E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +335,9 @@
 				CE3819F822ABDFB60038B173 /* Promise+Combinators.swift */,
 				CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */,
 				04B238F7237812630037DD73 /* String+Convenience.swift */,
+				041F5426239E345100085FAF /* UIColor+Convenience.swift */,
+				041F5428239E348700085FAF /* UITextField+Convenience.swift */,
+				041F542B239F819100085FAF /* UIButton+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +377,7 @@
 		CEA167E922FF06FD008EC5E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				041F541B239E31C400085FAF /* Fonts */,
 				CEA167EA22FF0716008EC5E9 /* Countries.json */,
 				CE26123823409D0900BB0D88 /* First_names.json */,
 				CE26123723409D0900BB0D88 /* Last_names.json */,
@@ -438,19 +485,29 @@
 			files = (
 				040453D3237EA86300AABE7A /* Login.storyboard in Resources */,
 				CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */,
+				046A16BB23A7724E00CEEDBB /* OpenSans-Bold.ttf in Resources */,
 				CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */,
 				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
 				0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */,
+				046A16C423A7727000CEEDBB /* OpenSans-SemiboldItalic.ttf in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
+				046A16BC23A7725000CEEDBB /* OpenSans-BoldItalic.ttf in Resources */,
 				CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */,
+				046A16C023A7726000CEEDBB /* OpenSans-Light.ttf in Resources */,
 				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
+				046A16C323A7726D00CEEDBB /* OpenSans-Semibold.ttf in Resources */,
+				046A16BE23A7725A00CEEDBB /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				046A16BD23A7725700CEEDBB /* OpenSans-ExtraBold.ttf in Resources */,
+				046A16BF23A7725C00CEEDBB /* OpenSans-Italic.ttf in Resources */,
 				CE26123923409D0900BB0D88 /* Last_names.json in Resources */,
+				046A16C123A7726200CEEDBB /* OpenSans-LightItalic.ttf in Resources */,
 				04B8DEDC23780B1200C481D2 /* Registration.storyboard in Resources */,
 				04A873EF234A0E0D00B416A5 /* MatchesList.storyboard in Resources */,
 				CE26123A23409D0900BB0D88 /* First_names.json in Resources */,
 				CEA167EB22FF0716008EC5E9 /* Countries.json in Resources */,
 				CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */,
+				046A16C223A7726B00CEEDBB /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +584,7 @@
 				CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */,
 				CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */,
 				041BE724237D7706005288F2 /* User.swift in Sources */,
+				041F5427239E345100085FAF /* UIColor+Convenience.swift in Sources */,
 				CE3819F722AA67670038B173 /* AppConfig+Snapshot.swift in Sources */,
 				CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */,
 				041BE722237D61E0005288F2 /* AuthDataManager.swift in Sources */,
@@ -544,11 +602,13 @@
 				CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */,
 				CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
+				041F542C239F819100085FAF /* UIButton+Convenience.swift in Sources */,
 				CE188686236EFA9B0025C30A /* Tournament.swift in Sources */,
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
 				CEB5C353237831EF00951C5F /* TournamentData.swift in Sources */,
 				CE2612422340B44200BB0D88 /* TournamentsTemplateManager.swift in Sources */,
 				CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */,
+				041F5429239E348700085FAF /* UITextField+Convenience.swift in Sources */,
 				CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */,
 				04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
