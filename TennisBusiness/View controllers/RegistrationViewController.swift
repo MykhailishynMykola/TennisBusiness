@@ -13,6 +13,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var confirmPasswordTextField: UITextField!
     @IBOutlet private weak var registrationButton: UIButton!
     
     private var authDataManager: AuthDataManager!
@@ -23,9 +24,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.addBottomBorder()
-        passwordTextField.addBottomBorder()
-        registrationButton.setRoundedButtonWithColor(background: .appColor, title: .title)
+        registrationButton.configureButton(background: .appColor, title: .title, cornerRadius: 20)
     }
 
     override func setupDependencies() {
@@ -41,8 +40,10 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
         }
-        
         if textField == passwordTextField {
+            confirmPasswordTextField.becomeFirstResponder()
+        }
+        if textField == confirmPasswordTextField {
             view.endEditing(true)
         }
         return true
@@ -69,6 +70,11 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
         }
         guard let password = passwordTextField.text, !password.isEmpty else {
             showErrorMessage(error: "Enter password")
+            return
+        }
+        guard let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty,
+            password == confirmPassword else {
+            showErrorMessage(error: "Your password and confirmation password do not match")
             return
         }
         

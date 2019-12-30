@@ -9,10 +9,11 @@
 import UIKit
 
 extension UIButton {
-    func setRoundedButtonWithColor(background: UIColor, title: UIColor) {
+    func configureButton(background: UIColor, title: UIColor, cornerRadius: CGFloat) {
         backgroundColor = background
         setTitleColor(title, for: .normal)
         layer.masksToBounds = false
-        layer.cornerRadius = 20
+        layer.cornerRadius = cornerRadius
+        titleLabel?.font = UIFont(name: "OpenSans-Bold", size: 16)
     }
 }

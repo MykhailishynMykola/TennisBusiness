@@ -23,11 +23,9 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Overrides
     
     override func viewDidLoad() {
-        super.setupDependencies()
-        emailTextField.addBottomBorder()
-        passwordTextField.addBottomBorder()
-        loginButton.setRoundedButtonWithColor(background: .appColor, title: .title)
-        registrationButton.setRoundedButtonWithColor(background: .callToAction, title: .title)
+        super.viewDidLoad()
+        loginButton.configureButton(background: .appColor, title: .title, cornerRadius: 20)
+        registrationButton.configureButton(background: .callToAction, title: .title, cornerRadius: 20)
     }
     
     override func setupDependencies() {
@@ -73,6 +71,7 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
            showErrorMessage(error: "Enter password")
            return
         }
+        
         authDataManager.signInFB(with: mail, password: password)
             .then { [weak self] user -> Void in
                 self?.appState.updateCurrentUser(user)

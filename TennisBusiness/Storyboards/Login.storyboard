@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOm-mu-PyH">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
         </array>
@@ -18,61 +21,129 @@
             <objects>
                 <viewController storyboardIdentifier="Login" id="nOm-mu-PyH" customClass="LoginViewController" customModule="TennisBusiness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23A-Ht-Ldd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="T88-HF-OTU">
-                                <rect key="frame" x="50" y="209.5" width="275" height="248"/>
+                                <rect key="frame" x="133.5" y="101.5" width="400" height="172"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="fi0-RZ-znF">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="108"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fi0-RZ-znF">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="92"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fxa-Gs-k1o">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="34"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="nOm-mu-PyH" id="KfX-up-su2"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rIW-OM-LiI">
-                                                <rect key="frame" x="0.0" y="74" width="275" height="34"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="nOm-mu-PyH" id="UXb-3t-VBw"/>
-                                                </connections>
-                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-t6-6cc">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="36"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fxa-Gs-k1o">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="30"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="hvg-oj-FIf"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                                <color key="value" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="nOm-mu-PyH" id="KfX-up-su2"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xik-FV-6GA">
+                                                        <rect key="frame" x="0.0" y="35" width="400" height="1"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="x2N-sn-bNH"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Fxa-Gs-k1o" firstAttribute="top" secondItem="RBl-t6-6cc" secondAttribute="top" id="ZLU-ce-dmH"/>
+                                                    <constraint firstItem="Fxa-Gs-k1o" firstAttribute="leading" secondItem="RBl-t6-6cc" secondAttribute="leading" id="aDv-vp-HYf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xik-FV-6GA" secondAttribute="bottom" id="h9q-jT-Szk"/>
+                                                    <constraint firstItem="xik-FV-6GA" firstAttribute="leading" secondItem="RBl-t6-6cc" secondAttribute="leading" id="pGp-4r-Gbd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xik-FV-6GA" secondAttribute="trailing" id="sR6-Ki-0WS"/>
+                                                    <constraint firstItem="xik-FV-6GA" firstAttribute="top" secondItem="Fxa-Gs-k1o" secondAttribute="bottom" constant="5" id="tBB-x2-E6N"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Fxa-Gs-k1o" secondAttribute="trailing" id="yVd-yu-ldq"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcF-cx-Sqr">
+                                                <rect key="frame" x="0.0" y="56" width="400" height="36"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rIW-OM-LiI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="30"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ZMA-Ya-5cB"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                                <color key="value" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="nOm-mu-PyH" id="UXb-3t-VBw"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQm-Kc-wvx">
+                                                        <rect key="frame" x="0.0" y="35" width="400" height="1"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="Uah-Jy-So9"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="rIW-OM-LiI" firstAttribute="top" secondItem="OcF-cx-Sqr" secondAttribute="top" id="27G-fP-wUB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qQm-Kc-wvx" secondAttribute="bottom" id="JKY-JR-r98"/>
+                                                    <constraint firstItem="qQm-Kc-wvx" firstAttribute="leading" secondItem="OcF-cx-Sqr" secondAttribute="leading" id="Kh6-w7-BPe"/>
+                                                    <constraint firstItem="qQm-Kc-wvx" firstAttribute="top" secondItem="rIW-OM-LiI" secondAttribute="bottom" constant="5" id="cyi-g6-rJ3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rIW-OM-LiI" secondAttribute="trailing" id="taR-cX-COe"/>
+                                                    <constraint firstItem="rIW-OM-LiI" firstAttribute="leading" secondItem="OcF-cx-Sqr" secondAttribute="leading" id="vje-63-hzR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qQm-Kc-wvx" secondAttribute="trailing" id="zCH-Im-xnX"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="RBl-t6-6cc" secondAttribute="trailing" id="QrS-YC-1EH"/>
+                                            <constraint firstItem="RBl-t6-6cc" firstAttribute="top" secondItem="fi0-RZ-znF" secondAttribute="top" id="i9a-s0-ghB"/>
+                                            <constraint firstItem="RBl-t6-6cc" firstAttribute="leading" secondItem="fi0-RZ-znF" secondAttribute="leading" id="vdd-Gh-Y3C"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-DV-hhV">
-                                        <rect key="frame" x="0.0" y="148" width="275" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-DV-hhV">
+                                        <rect key="frame" x="0.0" y="132" width="400" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaY-hh-Gwh">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="190" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="z5K-PI-Miw"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
                                                     <action selector="loginButtonTouchUpInside:" destination="nOm-mu-PyH" eventType="touchUpInside" id="oxE-gS-yc5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-0X-SNs">
-                                                <rect key="frame" x="0.0" y="60" width="275" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-0X-SNs">
+                                                <rect key="frame" x="210" y="0.0" width="190" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fcF-aH-RLc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                <state key="normal" title="Registration"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
+                                                <state key="normal" title="Sign up"/>
                                                 <connections>
                                                     <action selector="registrationButtonTouchUpInside:" destination="nOm-mu-PyH" eventType="touchUpInside" id="mJ6-8d-oSA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="7sz-0X-SNs" firstAttribute="width" secondItem="oaY-hh-Gwh" secondAttribute="width" id="kSL-RS-eId"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -81,18 +152,37 @@
                                     <constraint firstItem="fi0-RZ-znF" firstAttribute="top" secondItem="T88-HF-OTU" secondAttribute="top" id="WI7-RL-ORn"/>
                                     <constraint firstItem="fi0-RZ-znF" firstAttribute="leading" secondItem="T88-HF-OTU" secondAttribute="leading" id="cwB-iD-4rE"/>
                                     <constraint firstAttribute="bottom" secondItem="qZ2-DV-hhV" secondAttribute="bottom" id="pWh-WY-Zkm"/>
+                                    <constraint firstAttribute="width" constant="400" id="qGX-3O-s1C"/>
                                     <constraint firstItem="qZ2-DV-hhV" firstAttribute="leading" secondItem="T88-HF-OTU" secondAttribute="leading" id="zhP-xZ-Cxn"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="qGX-3O-s1C"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="T88-HF-OTU" firstAttribute="centerX" secondItem="23A-Ht-Ldd" secondAttribute="centerX" id="Ow3-dE-dk8"/>
+                            <constraint firstItem="T88-HF-OTU" firstAttribute="centerX" secondItem="23A-Ht-Ldd" secondAttribute="centerX" id="Pmd-jy-xdW"/>
                             <constraint firstItem="T88-HF-OTU" firstAttribute="centerY" secondItem="23A-Ht-Ldd" secondAttribute="centerY" id="UvT-0p-3sD"/>
                             <constraint firstItem="aLf-uI-I1Y" firstAttribute="trailing" secondItem="T88-HF-OTU" secondAttribute="trailing" constant="50" id="Y9D-v7-spq"/>
                             <constraint firstItem="T88-HF-OTU" firstAttribute="leading" secondItem="aLf-uI-I1Y" secondAttribute="leading" constant="50" id="qw8-KR-01j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aLf-uI-I1Y"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Y9D-v7-spq"/>
+                                <exclude reference="qw8-KR-01j"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="Y9D-v7-spq"/>
+                                <include reference="Pmd-jy-xdW"/>
+                                <exclude reference="qw8-KR-01j"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Fxa-Gs-k1o" id="kDm-4C-CMQ"/>
@@ -103,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lk9-rN-mPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="95"/>
+            <point key="canvasLocation" x="45.600000000000001" y="94.902548725637189"/>
         </scene>
     </scenes>
 </document>
