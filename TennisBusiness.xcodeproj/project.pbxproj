@@ -91,9 +91,9 @@
 		CEB5C353237831EF00951C5F /* TournamentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C352237831EF00951C5F /* TournamentData.swift */; };
 		CEBB635623CB4C7E0070A219 /* CALayer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB635523CB4C7E0070A219 /* CALayer+Convenience.swift */; };
 		CEBB635823CB53330070A219 /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB635723CB53330070A219 /* UIView+Convenience.swift */; };
+		CEBB635C23CB6A960070A219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB635B23CB6A960070A219 /* GoogleService-Info.plist */; };
 		CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */; };
 		CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */; };
-		CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */; };
 		CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */; };
 		CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935F22A559520060BF70 /* Player+Snapshot.swift */; };
 		CEFF017322B662430066EC76 /* ModeratorCreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017222B662430066EC76 /* ModeratorCreatePlayerViewController.swift */; };
@@ -193,9 +193,9 @@
 		CEB5C352237831EF00951C5F /* TournamentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentData.swift; sourceTree = "<group>"; };
 		CEBB635523CB4C7E0070A219 /* CALayer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Convenience.swift"; sourceTree = "<group>"; };
 		CEBB635723CB53330070A219 /* UIView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
+		CEBB635B23CB6A960070A219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Snapshot.swift"; sourceTree = "<group>"; };
-		CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServeTurn.swift; sourceTree = "<group>"; };
 		CEE4935F22A559520060BF70 /* Player+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Snapshot.swift"; sourceTree = "<group>"; };
 		CEFF017222B662430066EC76 /* ModeratorCreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorCreatePlayerViewController.swift; sourceTree = "<group>"; };
@@ -439,11 +439,11 @@
 		CEA167E922FF06FD008EC5E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEBB635B23CB6A960070A219 /* GoogleService-Info.plist */,
 				041F541B239E31C400085FAF /* Fonts */,
 				CEA167EA22FF0716008EC5E9 /* Countries.json */,
 				CE26123823409D0900BB0D88 /* First_names.json */,
 				CE26123723409D0900BB0D88 /* Last_names.json */,
-				CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */,
 				CE73CE6B22A281DD00A05111 /* Assets.xcassets */,
 				CE73CE7022A281DD00A05111 /* Info.plist */,
 			);
@@ -560,6 +560,7 @@
 				046A16C023A7726000CEEDBB /* OpenSans-Light.ttf in Resources */,
 				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
+				CEBB635C23CB6A960070A219 /* GoogleService-Info.plist in Resources */,
 				046A16C323A7726D00CEEDBB /* OpenSans-Semibold.ttf in Resources */,
 				046A16BE23A7725A00CEEDBB /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				046A16BD23A7725700CEEDBB /* OpenSans-ExtraBold.ttf in Resources */,
