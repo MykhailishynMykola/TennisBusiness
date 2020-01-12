@@ -1,3 +1,4 @@
 Pods/
 Podfile.lock
-GoogleService-Info.plist
+TennisBusiness/Resources/GoogleService-Info.plist
+xcuserdata/
