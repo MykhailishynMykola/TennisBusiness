@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  TennisBusiness
+
+  Created by Nikolay Mikhailishin on 12/30/19.
+  Copyright © 2019 nikolay.mihailishin. All rights reserved.
+*/
+
+"KEY_LOGIN" = "Войти";
+"KEY_SIGNUP" = "Регистрация";
+"KEY_EMAIL" = "E-mail";
+"KEY_PASSWORD" = "Пароль";
+"KEY_CONFIRM_PASSWORD" = "Подтверждение пароля";
+"KEY_OK" = "Ок";
+"KEY_ERROR_TITLE" = "Ошибка!";
+"KEY_ERROR_WRONG_EMAIL" = "Введите корректный e-mail";
+"KEY_ERROR_WRONG_PASSWORD" = "Введите пароль";
+"KEY_ERROR_WRONG_CONFIRMATION_PASSWORD" = "Пароли не совпадают";

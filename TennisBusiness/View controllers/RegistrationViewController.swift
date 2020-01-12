@@ -24,7 +24,10 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registrationButton.configureButton(background: .appColor, title: .title, cornerRadius: 20)
+        emailTextField.placeholder = localized("KEY_EMAIL")
+        passwordTextField.placeholder = localized("KEY_PASSWORD")
+        confirmPasswordTextField.placeholder = localized("KEY_CONFIRM_PASSWORD")
+        registrationButton.configureButton(backgroundColor: .primary, titleColor: .title, title: localized("KEY_SIGNUP"), cornerRadius: 20)
     }
 
     override func setupDependencies() {
@@ -54,8 +57,8 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Private
     
     private func showErrorMessage(error: String) {
-        let alertController = UIAlertController(title: "Error!", message: error, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let alertController = UIAlertController(title: localized("KEY_ERROR_TITLE"), message: error, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: localized("KEY_OK"), style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
     
@@ -64,17 +67,17 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction private func registrationButtonTouchUpInside(_ sender: Any) {
-        guard let mail = emailTextField.text, mail.isValidEmail() else {
-            showErrorMessage(error: "Enter valid email")
+        guard let mail = emailTextField.text, mail.isValidEmail(), !mail.isEmpty  else {
+            showErrorMessage(error: localized("KEY_ERROR_WRONG_EMAIL"))
             return
         }
         guard let password = passwordTextField.text, !password.isEmpty else {
-            showErrorMessage(error: "Enter password")
+            showErrorMessage(error: localized("KEY_ERROR_WRONG_PASSWORD"))
             return
         }
         guard let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty,
             password == confirmPassword else {
-            showErrorMessage(error: "Your password and confirmation password do not match")
+            showErrorMessage(error: localized("KEY_ERROR_WRONG_CONFIRMATION_PASSWORD"))
             return
         }
         

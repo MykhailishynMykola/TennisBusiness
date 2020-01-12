@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIColor {
-    static var appColor: UIColor {
+    static var primary: UIColor {
         return #colorLiteral(red: 0.1254901961, green: 0.7176470588, blue: 0.7843137255, alpha: 1)
     }
     
-    static var callToAction: UIColor {
+    static var secondary: UIColor {
         return #colorLiteral(red: 0.9843137255, green: 0.3019607843, blue: 0.2666666667, alpha: 1)
     }
     
