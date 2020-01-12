@@ -43,6 +43,8 @@
 		CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */; };
 		CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C822B10F550006AF31 /* WorldViewController.swift */; };
 		CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */; };
+		CE16290D23B9FD0600E96862 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE16290B23B9FD0600E96862 /* Localizable.strings */; };
+		CE16291123BA4EFB00E96862 /* NSLocalizedString+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16291023BA4EFB00E96862 /* NSLocalizedString+Convenience.swift */; };
 		CE188684236EFA450025C30A /* TournamentPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE188683236EFA450025C30A /* TournamentPoints.swift */; };
 		CE188686236EFA9B0025C30A /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE188685236EFA9B0025C30A /* Tournament.swift */; };
 		CE21631022D0B4BE000A14BA /* Date+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */; };
@@ -131,6 +133,11 @@
 		CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
 		CE0845C822B10F550006AF31 /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
 		CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorWorld.storyboard; sourceTree = "<group>"; };
+		CE16290A23B9FCA200E96862 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE16290C23B9FD0600E96862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = TennisBusiness/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE16290E23B9FD6E00E96862 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = TennisBusiness/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE16290F23B9FD8600E96862 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = TennisBusiness/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE16291023BA4EFB00E96862 /* NSLocalizedString+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLocalizedString+Convenience.swift"; sourceTree = "<group>"; };
 		CE188683236EFA450025C30A /* TournamentPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentPoints.swift; sourceTree = "<group>"; };
 		CE188685236EFA9B0025C30A /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Convenience.swift"; sourceTree = "<group>"; };
@@ -338,6 +345,7 @@
 				041F5426239E345100085FAF /* UIColor+Convenience.swift */,
 				041F5428239E348700085FAF /* UITextField+Convenience.swift */,
 				041F542B239F819100085FAF /* UIButton+Convenience.swift */,
+				CE16291023BA4EFB00E96862 /* NSLocalizedString+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 		CE73CE5822A281DC00A05111 = {
 			isa = PBXGroup;
 			children = (
+				CE16290B23B9FD0600E96862 /* Localizable.strings */,
 				CE73CE6322A281DC00A05111 /* TennisBusiness */,
 				CE73CE6222A281DC00A05111 /* Products */,
 				BF9B84293D9DC289DF4F2D18 /* Pods */,
@@ -467,6 +476,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE73CE5822A281DC00A05111;
 			productRefGroup = CE73CE6222A281DC00A05111 /* Products */;
@@ -492,6 +502,7 @@
 				046A16C423A7727000CEEDBB /* OpenSans-SemiboldItalic.ttf in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
 				046A16BC23A7725000CEEDBB /* OpenSans-BoldItalic.ttf in Resources */,
+				CE16290D23B9FD0600E96862 /* Localizable.strings in Resources */,
 				CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */,
 				046A16C023A7726000CEEDBB /* OpenSans-Light.ttf in Resources */,
 				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
@@ -613,6 +624,7 @@
 				04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
 				CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */,
+				CE16291123BA4EFB00E96862 /* NSLocalizedString+Convenience.swift in Sources */,
 				CEB5C35123782DDF00951C5F /* Tournament+Snapshot.swift in Sources */,
 				CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */,
 				CE3819F522AA67270038B173 /* GeneralConfig.swift in Sources */,
@@ -623,10 +635,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CE16290B23B9FD0600E96862 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE16290C23B9FD0600E96862 /* Base */,
+				CE16290E23B9FD6E00E96862 /* en */,
+				CE16290F23B9FD8600E96862 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CE73CE6D22A281DD00A05111 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CE73CE6E22A281DD00A05111 /* Base */,
+				CE16290A23B9FCA200E96862 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -638,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -699,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

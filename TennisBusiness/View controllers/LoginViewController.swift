@@ -24,8 +24,10 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.configureButton(background: .appColor, title: .title, cornerRadius: 20)
-        registrationButton.configureButton(background: .callToAction, title: .title, cornerRadius: 20)
+        emailTextField.placeholder = localized("KEY_EMAIL")
+        passwordTextField.placeholder = localized("KEY_PASSWORD")
+        loginButton.configureButton(backgroundColor: .primary, titleColor: .title, title: localized("KEY_LOGIN"), cornerRadius: 20)
+        registrationButton.configureButton(backgroundColor: .secondary, titleColor: .title, title: localized("KEY_SIGNUP"), cornerRadius: 20)
     }
     
     override func setupDependencies() {
@@ -53,8 +55,8 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Private
     
     private func showErrorMessage(error: String) {
-        let alertController = UIAlertController(title: "Error!", message: error, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let alertController = UIAlertController(title: localized("KEY_ERROR_TITLE"), message: error, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: localized("KEY_OK"), style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
     
@@ -63,12 +65,12 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction private func loginButtonTouchUpInside(_ sender: Any) {
-        guard let mail = emailTextField.text, mail.isValidEmail() else {
-           showErrorMessage(error: "Enter valid email")
+        guard let mail = emailTextField.text, mail.isValidEmail(), !mail.isEmpty else {
+           showErrorMessage(error: localized("KEY_ERROR_WRONG_EMAIL"))
            return
         }
         guard let password = passwordTextField.text, !password.isEmpty else {
-           showErrorMessage(error: "Enter password")
+           showErrorMessage(error: localized("KEY_ERROR_WRONG_PASSWORD"))
            return
         }
         
