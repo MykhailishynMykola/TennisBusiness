@@ -1,5 +1,5 @@
 //
-//  PlayersListViewController.swift
+//  ModeratorPlayersListViewController.swift
 //  TennisBusiness
 //
 //  Created by Valeiia Tarasenko on 8/18/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayersListViewController: ScreenViewController {
+class ModeratorPlayersListViewController: ScreenViewController {
     // MARK: - Inner
     
     private struct Constants {
@@ -41,13 +41,13 @@ class PlayersListViewController: ScreenViewController {
 
 // MARK: - UITableViewDataSource
 
-extension PlayersListViewController: UITableViewDataSource {
+extension ModeratorPlayersListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.playerCellReuseIdentifier) as? PlayerTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.playerCellReuseIdentifier) as? ModeratorPlayerTableViewCell,
             players.indices.contains(indexPath.row) else {
                 return UITableViewCell()
         }
@@ -59,6 +59,6 @@ extension PlayersListViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension PlayersListViewController: UITableViewDelegate {
+extension ModeratorPlayersListViewController: UITableViewDelegate {
     
 }

@@ -26,12 +26,12 @@
 		046A16C223A7726B00CEEDBB /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F541C239E31D200085FAF /* OpenSans-Regular.ttf */; };
 		046A16C323A7726D00CEEDBB /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F5423239E31D300085FAF /* OpenSans-Semibold.ttf */; };
 		046A16C423A7727000CEEDBB /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041F541D239E31D200085FAF /* OpenSans-SemiboldItalic.ttf */; };
-		0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EFB823094AC900D76DB4 /* PlayersList.storyboard */; };
-		0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */; };
-		0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */; };
-		04A873EF234A0E0D00B416A5 /* MatchesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */; };
-		04A873F1234A104800B416A5 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F0234A104800B416A5 /* MatchesListViewController.swift */; };
-		04A873F3234A120B00B416A5 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */; };
+		0489EFB923094AC900D76DB4 /* ModeratorPlayersList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EFB823094AC900D76DB4 /* ModeratorPlayersList.storyboard */; };
+		0489EFBB23094DAA00D76DB4 /* ModeratorPlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBA23094DAA00D76DB4 /* ModeratorPlayersListViewController.swift */; };
+		0489EFBD23094EE600D76DB4 /* ModeratorPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EFBC23094EE600D76DB4 /* ModeratorPlayerTableViewCell.swift */; };
+		04A873EF234A0E0D00B416A5 /* ModeratorMatchesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A873EE234A0E0D00B416A5 /* ModeratorMatchesList.storyboard */; };
+		04A873F1234A104800B416A5 /* ModeratorMatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F0234A104800B416A5 /* ModeratorMatchesListViewController.swift */; };
+		04A873F3234A120B00B416A5 /* ModeratorMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A873F2234A120B00B416A5 /* ModeratorMatchTableViewCell.swift */; };
 		04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B238F523780FBD0037DD73 /* RegistrationViewController.swift */; };
 		04B238F8237812630037DD73 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B238F7237812630037DD73 /* String+Convenience.swift */; };
 		04B8DEDC23780B1200C481D2 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B8DEDB23780B1200C481D2 /* Registration.storyboard */; };
@@ -40,17 +40,22 @@
 		CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15523080B6C0048771A /* ManagersAssembly.swift */; };
 		CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15723080BE10048771A /* ResolverInitializable.swift */; };
 		CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C222B0FE710006AF31 /* DataManager.swift */; };
-		CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */; };
-		CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C822B10F550006AF31 /* WorldViewController.swift */; };
+		CE0845C722B103FC0006AF31 /* ModeratorWorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C622B103FC0006AF31 /* ModeratorWorldTableViewCell.swift */; };
+		CE0845C922B10F550006AF31 /* ModeratorWorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0845C822B10F550006AF31 /* ModeratorWorldViewController.swift */; };
 		CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */; };
 		CE16290D23B9FD0600E96862 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE16290B23B9FD0600E96862 /* Localizable.strings */; };
 		CE16291123BA4EFB00E96862 /* NSLocalizedString+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16291023BA4EFB00E96862 /* NSLocalizedString+Convenience.swift */; };
 		CE188684236EFA450025C30A /* TournamentPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE188683236EFA450025C30A /* TournamentPoints.swift */; };
 		CE188686236EFA9B0025C30A /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE188685236EFA9B0025C30A /* Tournament.swift */; };
 		CE21631022D0B4BE000A14BA /* Date+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */; };
-		CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */; };
-		CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */; };
+		CE21631222D0B689000A14BA /* ModeratorCreateMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631122D0B689000A14BA /* ModeratorCreateMatchViewController.swift */; };
+		CE21631422D0B6D8000A14BA /* ModeratorCreateMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE21631322D0B6D8000A14BA /* ModeratorCreateMatch.storyboard */; };
 		CE21631622D0CE11000A14BA /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21631522D0CE11000A14BA /* GlobalConstants.swift */; };
+		CE25FFAA23CB32B7006A3830 /* ChooseWorld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE25FFA923CB32B7006A3830 /* ChooseWorld.storyboard */; };
+		CE25FFAC23CB3300006A3830 /* ChooseWorldScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25FFAB23CB3300006A3830 /* ChooseWorldScreenViewController.swift */; };
+		CE25FFAE23CB33EC006A3830 /* ChooseWorldLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25FFAD23CB33EC006A3830 /* ChooseWorldLayoutViewController.swift */; };
+		CE25FFB123CB34FD006A3830 /* ChooseWorldLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25FFB023CB34FD006A3830 /* ChooseWorldLayoutController.swift */; };
+		CE25FFB623CB3E43006A3830 /* ChooseWorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25FFB523CB3E43006A3830 /* ChooseWorldTableViewCell.swift */; };
 		CE26123923409D0900BB0D88 /* Last_names.json in Resources */ = {isa = PBXBuildFile; fileRef = CE26123723409D0900BB0D88 /* Last_names.json */; };
 		CE26123A23409D0900BB0D88 /* First_names.json in Resources */ = {isa = PBXBuildFile; fileRef = CE26123823409D0900BB0D88 /* First_names.json */; };
 		CE26123C23409D5700BB0D88 /* NamesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123B23409D5700BB0D88 /* NamesDataManager.swift */; };
@@ -84,13 +89,15 @@
 		CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA167EE22FF089D008EC5E9 /* Country.swift */; };
 		CEB5C35123782DDF00951C5F /* Tournament+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C35023782DDF00951C5F /* Tournament+Snapshot.swift */; };
 		CEB5C353237831EF00951C5F /* TournamentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C352237831EF00951C5F /* TournamentData.swift */; };
+		CEBB635623CB4C7E0070A219 /* CALayer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB635523CB4C7E0070A219 /* CALayer+Convenience.swift */; };
+		CEBB635823CB53330070A219 /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB635723CB53330070A219 /* UIView+Convenience.swift */; };
 		CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */; };
 		CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */; };
 		CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */; };
 		CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */; };
 		CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935F22A559520060BF70 /* Player+Snapshot.swift */; };
-		CEFF017322B662430066EC76 /* CreatePlayerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */; };
-		CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFF017422B662850066EC76 /* CreatePlayer.storyboard */; };
+		CEFF017322B662430066EC76 /* ModeratorCreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017222B662430066EC76 /* ModeratorCreatePlayerViewController.swift */; };
+		CEFF017522B662850066EC76 /* ModeratorCreatePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFF017422B662850066EC76 /* ModeratorCreatePlayer.storyboard */; };
 		CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017622B687B40066EC76 /* CalculationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,12 +121,12 @@
 		041F5426239E345100085FAF /* UIColor+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
 		041F5428239E348700085FAF /* UITextField+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Convenience.swift"; sourceTree = "<group>"; };
 		041F542B239F819100085FAF /* UIButton+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Convenience.swift"; sourceTree = "<group>"; };
-		0489EFB823094AC900D76DB4 /* PlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayersList.storyboard; sourceTree = "<group>"; };
-		0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
-		0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
-		04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchesList.storyboard; sourceTree = "<group>"; };
-		04A873F0234A104800B416A5 /* MatchesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListViewController.swift; sourceTree = "<group>"; };
-		04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		0489EFB823094AC900D76DB4 /* ModeratorPlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorPlayersList.storyboard; sourceTree = "<group>"; };
+		0489EFBA23094DAA00D76DB4 /* ModeratorPlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorPlayersListViewController.swift; sourceTree = "<group>"; };
+		0489EFBC23094EE600D76DB4 /* ModeratorPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		04A873EE234A0E0D00B416A5 /* ModeratorMatchesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMatchesList.storyboard; sourceTree = "<group>"; };
+		04A873F0234A104800B416A5 /* ModeratorMatchesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMatchesListViewController.swift; sourceTree = "<group>"; };
+		04A873F2234A120B00B416A5 /* ModeratorMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMatchTableViewCell.swift; sourceTree = "<group>"; };
 		04B238F523780FBD0037DD73 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		04B238F7237812630037DD73 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		04B8DEDB23780B1200C481D2 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
@@ -130,8 +137,8 @@
 		CE04F15523080B6C0048771A /* ManagersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersAssembly.swift; sourceTree = "<group>"; };
 		CE04F15723080BE10048771A /* ResolverInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverInitializable.swift; sourceTree = "<group>"; };
 		CE0845C222B0FE710006AF31 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
-		CE0845C822B10F550006AF31 /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
+		CE0845C622B103FC0006AF31 /* ModeratorWorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorWorldTableViewCell.swift; sourceTree = "<group>"; };
+		CE0845C822B10F550006AF31 /* ModeratorWorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorWorldViewController.swift; sourceTree = "<group>"; };
 		CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorWorld.storyboard; sourceTree = "<group>"; };
 		CE16290A23B9FCA200E96862 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CE16290C23B9FD0600E96862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = TennisBusiness/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -141,9 +148,14 @@
 		CE188683236EFA450025C30A /* TournamentPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentPoints.swift; sourceTree = "<group>"; };
 		CE188685236EFA9B0025C30A /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		CE21630F22D0B4BE000A14BA /* Date+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Convenience.swift"; sourceTree = "<group>"; };
-		CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchScreenViewController.swift; sourceTree = "<group>"; };
-		CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateMatch.storyboard; sourceTree = "<group>"; };
+		CE21631122D0B689000A14BA /* ModeratorCreateMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorCreateMatchViewController.swift; sourceTree = "<group>"; };
+		CE21631322D0B6D8000A14BA /* ModeratorCreateMatch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorCreateMatch.storyboard; sourceTree = "<group>"; };
 		CE21631522D0CE11000A14BA /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		CE25FFA923CB32B7006A3830 /* ChooseWorld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseWorld.storyboard; sourceTree = "<group>"; };
+		CE25FFAB23CB3300006A3830 /* ChooseWorldScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorldScreenViewController.swift; sourceTree = "<group>"; };
+		CE25FFAD23CB33EC006A3830 /* ChooseWorldLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorldLayoutViewController.swift; sourceTree = "<group>"; };
+		CE25FFB023CB34FD006A3830 /* ChooseWorldLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorldLayoutController.swift; sourceTree = "<group>"; };
+		CE25FFB523CB3E43006A3830 /* ChooseWorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorldTableViewCell.swift; sourceTree = "<group>"; };
 		CE26123723409D0900BB0D88 /* Last_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Last_names.json; sourceTree = "<group>"; };
 		CE26123823409D0900BB0D88 /* First_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = First_names.json; sourceTree = "<group>"; };
 		CE26123B23409D5700BB0D88 /* NamesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesDataManager.swift; sourceTree = "<group>"; };
@@ -179,13 +191,15 @@
 		CEA167EE22FF089D008EC5E9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CEB5C35023782DDF00951C5F /* Tournament+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tournament+Snapshot.swift"; sourceTree = "<group>"; };
 		CEB5C352237831EF00951C5F /* TournamentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentData.swift; sourceTree = "<group>"; };
+		CEBB635523CB4C7E0070A219 /* CALayer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Convenience.swift"; sourceTree = "<group>"; };
+		CEBB635723CB53330070A219 /* UIView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Snapshot.swift"; sourceTree = "<group>"; };
 		CEE4935A22A52C280060BF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServeTurn.swift; sourceTree = "<group>"; };
 		CEE4935F22A559520060BF70 /* Player+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Snapshot.swift"; sourceTree = "<group>"; };
-		CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerScreenViewController.swift; sourceTree = "<group>"; };
-		CEFF017422B662850066EC76 /* CreatePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePlayer.storyboard; sourceTree = "<group>"; };
+		CEFF017222B662430066EC76 /* ModeratorCreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorCreatePlayerViewController.swift; sourceTree = "<group>"; };
+		CEFF017422B662850066EC76 /* ModeratorCreatePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorCreatePlayer.storyboard; sourceTree = "<group>"; };
 		CEFF017622B687B40066EC76 /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,26 +273,67 @@
 		CE0845C522B103D50006AF31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE0845C622B103FC0006AF31 /* WorldTableViewCell.swift */,
-				0489EFBC23094EE600D76DB4 /* PlayerTableViewCell.swift */,
-				04A873F2234A120B00B416A5 /* MatchTableViewCell.swift */,
+				CE25FFB223CB387F006A3830 /* Moderator */,
+				CE25FFB523CB3E43006A3830 /* ChooseWorldTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE25FFAF23CB346F006A3830 /* ChooseWorld */ = {
+			isa = PBXGroup;
+			children = (
+				CE25FFAB23CB3300006A3830 /* ChooseWorldScreenViewController.swift */,
+				CE25FFB023CB34FD006A3830 /* ChooseWorldLayoutController.swift */,
+				CE25FFAD23CB33EC006A3830 /* ChooseWorldLayoutViewController.swift */,
+			);
+			path = ChooseWorld;
+			sourceTree = "<group>";
+		};
+		CE25FFB223CB387F006A3830 /* Moderator */ = {
+			isa = PBXGroup;
+			children = (
+				CE0845C622B103FC0006AF31 /* ModeratorWorldTableViewCell.swift */,
+				0489EFBC23094EE600D76DB4 /* ModeratorPlayerTableViewCell.swift */,
+				04A873F2234A120B00B416A5 /* ModeratorMatchTableViewCell.swift */,
+			);
+			path = Moderator;
+			sourceTree = "<group>";
+		};
+		CE25FFB323CB388E006A3830 /* Moderator */ = {
+			isa = PBXGroup;
+			children = (
+				CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */,
+				CEFF017222B662430066EC76 /* ModeratorCreatePlayerViewController.swift */,
+				CE21631122D0B689000A14BA /* ModeratorCreateMatchViewController.swift */,
+				0489EFBA23094DAA00D76DB4 /* ModeratorPlayersListViewController.swift */,
+				04A873F0234A104800B416A5 /* ModeratorMatchesListViewController.swift */,
+				CE0845C822B10F550006AF31 /* ModeratorWorldViewController.swift */,
+			);
+			path = Moderator;
+			sourceTree = "<group>";
+		};
+		CE25FFB423CB3D25006A3830 /* Moderator */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF017422B662850066EC76 /* ModeratorCreatePlayer.storyboard */,
+				CE21631322D0B6D8000A14BA /* ModeratorCreateMatch.storyboard */,
+				CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */,
+				04A873EE234A0E0D00B416A5 /* ModeratorMatchesList.storyboard */,
+				0489EFB823094AC900D76DB4 /* ModeratorPlayersList.storyboard */,
+				CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */,
+			);
+			path = Moderator;
 			sourceTree = "<group>";
 		};
 		CE3819E622AA5D080038B173 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CE25FFB423CB3D25006A3830 /* Moderator */,
 				CE73CE6D22A281DD00A05111 /* LaunchScreen.storyboard */,
-				CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */,
 				CE3819EE22AA61B30038B173 /* UserMain.storyboard */,
-				CE0845CC22B1107D0006AF31 /* ModeratorWorld.storyboard */,
-				CEFF017422B662850066EC76 /* CreatePlayer.storyboard */,
-				CE21631322D0B6D8000A14BA /* CreateMatch.storyboard */,
-				0489EFB823094AC900D76DB4 /* PlayersList.storyboard */,
-				04A873EE234A0E0D00B416A5 /* MatchesList.storyboard */,
 				04B8DEDB23780B1200C481D2 /* Registration.storyboard */,
 				040453D2237EA86300AABE7A /* Login.storyboard */,
+				CE25FFA923CB32B7006A3830 /* ChooseWorld.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -286,14 +341,10 @@
 		CE3819E722AA5D8B0038B173 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */,
+				CE25FFB323CB388E006A3830 /* Moderator */,
+				CE25FFAF23CB346F006A3830 /* ChooseWorld */,
 				CE3819F022AA62460038B173 /* ScreenViewController.swift */,
 				CE3819EA22AA5E750038B173 /* UserMainViewController.swift */,
-				CE0845C822B10F550006AF31 /* WorldViewController.swift */,
-				CEFF017222B662430066EC76 /* CreatePlayerScreenViewController.swift */,
-				CE21631122D0B689000A14BA /* CreateMatchScreenViewController.swift */,
-				0489EFBA23094DAA00D76DB4 /* PlayersListViewController.swift */,
-				04A873F0234A104800B416A5 /* MatchesListViewController.swift */,
 				04B238F523780FBD0037DD73 /* RegistrationViewController.swift */,
 				040453D4237EA91200AABE7A /* LoginViewController.swift */,
 			);
@@ -346,6 +397,8 @@
 				041F5428239E348700085FAF /* UITextField+Convenience.swift */,
 				041F542B239F819100085FAF /* UIButton+Convenience.swift */,
 				CE16291023BA4EFB00E96862 /* NSLocalizedString+Convenience.swift */,
+				CEBB635523CB4C7E0070A219 /* CALayer+Convenience.swift */,
+				CEBB635723CB53330070A219 /* UIView+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,11 +547,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				040453D3237EA86300AABE7A /* Login.storyboard in Resources */,
-				CE21631422D0B6D8000A14BA /* CreateMatch.storyboard in Resources */,
+				CE21631422D0B6D8000A14BA /* ModeratorCreateMatch.storyboard in Resources */,
 				046A16BB23A7724E00CEEDBB /* OpenSans-Bold.ttf in Resources */,
 				CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */,
 				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
-				0489EFB923094AC900D76DB4 /* PlayersList.storyboard in Resources */,
+				0489EFB923094AC900D76DB4 /* ModeratorPlayersList.storyboard in Resources */,
 				046A16C423A7727000CEEDBB /* OpenSans-SemiboldItalic.ttf in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
 				046A16BC23A7725000CEEDBB /* OpenSans-BoldItalic.ttf in Resources */,
@@ -512,12 +565,13 @@
 				046A16BD23A7725700CEEDBB /* OpenSans-ExtraBold.ttf in Resources */,
 				046A16BF23A7725C00CEEDBB /* OpenSans-Italic.ttf in Resources */,
 				CE26123923409D0900BB0D88 /* Last_names.json in Resources */,
+				CE25FFAA23CB32B7006A3830 /* ChooseWorld.storyboard in Resources */,
 				046A16C123A7726200CEEDBB /* OpenSans-LightItalic.ttf in Resources */,
 				04B8DEDC23780B1200C481D2 /* Registration.storyboard in Resources */,
-				04A873EF234A0E0D00B416A5 /* MatchesList.storyboard in Resources */,
+				04A873EF234A0E0D00B416A5 /* ModeratorMatchesList.storyboard in Resources */,
 				CE26123A23409D0900BB0D88 /* First_names.json in Resources */,
 				CEA167EB22FF0716008EC5E9 /* Countries.json in Resources */,
-				CEFF017522B662850066EC76 /* CreatePlayer.storyboard in Resources */,
+				CEFF017522B662850066EC76 /* ModeratorCreatePlayer.storyboard in Resources */,
 				046A16C223A7726B00CEEDBB /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,28 +625,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE25FFAC23CB3300006A3830 /* ChooseWorldScreenViewController.swift in Sources */,
 				CE26123E2340B05B00BB0D88 /* TournamentTemplate.swift in Sources */,
 				CE5B5B7822A28C4F006182FA /* Set.swift in Sources */,
 				CE04F152230808D10048771A /* DIContainer.swift in Sources */,
+				CEBB635823CB53330070A219 /* UIView+Convenience.swift in Sources */,
 				CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */,
 				CE3819F322AA670F0038B173 /* AppConfig.swift in Sources */,
 				CE5B5B7A22A28C77006182FA /* Game.swift in Sources */,
 				040453D9237ECBD400AABE7A /* AppState.swift in Sources */,
 				CE26123C23409D5700BB0D88 /* NamesDataManager.swift in Sources */,
-				04A873F3234A120B00B416A5 /* MatchTableViewCell.swift in Sources */,
+				04A873F3234A120B00B416A5 /* ModeratorMatchTableViewCell.swift in Sources */,
 				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
 				04B238F8237812630037DD73 /* String+Convenience.swift in Sources */,
 				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
 				CE2612402340B0ED00BB0D88 /* Surface.swift in Sources */,
 				CE188684236EFA450025C30A /* TournamentPoints.swift in Sources */,
-				0489EFBD23094EE600D76DB4 /* PlayerTableViewCell.swift in Sources */,
+				0489EFBD23094EE600D76DB4 /* ModeratorPlayerTableViewCell.swift in Sources */,
 				040453D5237EA91200AABE7A /* LoginViewController.swift in Sources */,
-				04A873F1234A104800B416A5 /* MatchesListViewController.swift in Sources */,
+				CE25FFB123CB34FD006A3830 /* ChooseWorldLayoutController.swift in Sources */,
+				04A873F1234A104800B416A5 /* ModeratorMatchesListViewController.swift in Sources */,
 				CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */,
 				CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */,
 				CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */,
-				CE0845C922B10F550006AF31 /* WorldViewController.swift in Sources */,
+				CE0845C922B10F550006AF31 /* ModeratorWorldViewController.swift in Sources */,
 				CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */,
 				041BE724237D7706005288F2 /* User.swift in Sources */,
 				041F5427239E345100085FAF /* UIColor+Convenience.swift in Sources */,
@@ -601,29 +658,32 @@
 				041BE722237D61E0005288F2 /* AuthDataManager.swift in Sources */,
 				CE5B5B8122A2945B006182FA /* Int+Convenience.swift in Sources */,
 				CE21631622D0CE11000A14BA /* GlobalConstants.swift in Sources */,
-				CEFF017322B662430066EC76 /* CreatePlayerScreenViewController.swift in Sources */,
+				CEFF017322B662430066EC76 /* ModeratorCreatePlayerViewController.swift in Sources */,
 				CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */,
 				CE21631022D0B4BE000A14BA /* Date+Convenience.swift in Sources */,
 				CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */,
 				CE5B5B7E22A290A1006182FA /* Status.swift in Sources */,
 				CE5B5B7022A289F3006182FA /* World.swift in Sources */,
 				CE5B5B7622A28B85006182FA /* Ability.swift in Sources */,
-				0489EFBB23094DAA00D76DB4 /* PlayersListViewController.swift in Sources */,
+				0489EFBB23094DAA00D76DB4 /* ModeratorPlayersListViewController.swift in Sources */,
 				040453D7237EB09100AABE7A /* User+Snapshot.swift in Sources */,
 				CE04F15823080BE10048771A /* ResolverInitializable.swift in Sources */,
-				CE21631222D0B689000A14BA /* CreateMatchScreenViewController.swift in Sources */,
+				CE21631222D0B689000A14BA /* ModeratorCreateMatchViewController.swift in Sources */,
 				CE5B5B7C22A28D7E006182FA /* Point.swift in Sources */,
 				041F542C239F819100085FAF /* UIButton+Convenience.swift in Sources */,
 				CE188686236EFA9B0025C30A /* Tournament.swift in Sources */,
 				CE5B5B7222A28A9B006182FA /* Match.swift in Sources */,
+				CE25FFB623CB3E43006A3830 /* ChooseWorldTableViewCell.swift in Sources */,
+				CE25FFAE23CB33EC006A3830 /* ChooseWorldLayoutViewController.swift in Sources */,
 				CEB5C353237831EF00951C5F /* TournamentData.swift in Sources */,
 				CE2612422340B44200BB0D88 /* TournamentsTemplateManager.swift in Sources */,
 				CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */,
 				041F5429239E348700085FAF /* UITextField+Convenience.swift in Sources */,
 				CE3819F922ABDFB60038B173 /* Promise+Combinators.swift in Sources */,
+				CEBB635623CB4C7E0070A219 /* CALayer+Convenience.swift in Sources */,
 				04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */,
 				CE5B5B7422A28B18006182FA /* Player.swift in Sources */,
-				CE0845C722B103FC0006AF31 /* WorldTableViewCell.swift in Sources */,
+				CE0845C722B103FC0006AF31 /* ModeratorWorldTableViewCell.swift in Sources */,
 				CE16291123BA4EFB00E96862 /* NSLocalizedString+Convenience.swift in Sources */,
 				CEB5C35123782DDF00951C5F /* Tournament+Snapshot.swift in Sources */,
 				CE73CE6522A281DC00A05111 /* AppDelegate.swift in Sources */,

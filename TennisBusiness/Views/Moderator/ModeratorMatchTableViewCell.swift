@@ -1,5 +1,5 @@
 //
-//  MatchTableViewCell.swift
+//  ModeratorMatchTableViewCell.swift
 //  TennisBusiness
 //
 //  Created by Valeiia Tarasenko on 10/6/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MatchTableViewCell: UITableViewCell {
+class ModeratorMatchTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     @IBOutlet private weak var dateLabel: UILabel!

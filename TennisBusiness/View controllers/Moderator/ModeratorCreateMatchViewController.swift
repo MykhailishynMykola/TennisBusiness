@@ -1,5 +1,5 @@
 //
-//  CreateMatchScreenViewController.swift
+//  ModeratorCreateMatchViewController.swift
 //  TennisBusiness
 //
 //  Created by Nikolay Mikhailishin on 7/6/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateMatchScreenViewController: ScreenViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class ModeratorCreateMatchViewController: ScreenViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     // MARK: - Properties
     
     @IBOutlet private weak var currentTimeLabel: UILabel!
