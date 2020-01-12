@@ -84,6 +84,7 @@
 		CEA167EF22FF089D008EC5E9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA167EE22FF089D008EC5E9 /* Country.swift */; };
 		CEB5C35123782DDF00951C5F /* Tournament+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C35023782DDF00951C5F /* Tournament+Snapshot.swift */; };
 		CEB5C353237831EF00951C5F /* TournamentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C352237831EF00951C5F /* TournamentData.swift */; };
+		CEBB635C23CB6A960070A219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB635B23CB6A960070A219 /* GoogleService-Info.plist */; };
 		CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */; };
 		CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */; };
 		CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */; };
@@ -178,6 +179,7 @@
 		CEA167EE22FF089D008EC5E9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CEB5C35023782DDF00951C5F /* Tournament+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tournament+Snapshot.swift"; sourceTree = "<group>"; };
 		CEB5C352237831EF00951C5F /* TournamentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentData.swift; sourceTree = "<group>"; };
+		CEBB635B23CB6A960070A219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Snapshot.swift"; sourceTree = "<group>"; };
 		CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServeTurn.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		CEA167E922FF06FD008EC5E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEBB635B23CB6A960070A219 /* GoogleService-Info.plist */,
 				041F541B239E31C400085FAF /* Fonts */,
 				CEA167EA22FF0716008EC5E9 /* Countries.json */,
 				CE26123823409D0900BB0D88 /* First_names.json */,
@@ -503,6 +506,7 @@
 				046A16C023A7726000CEEDBB /* OpenSans-Light.ttf in Resources */,
 				CE0845CD22B1107D0006AF31 /* ModeratorWorld.storyboard in Resources */,
 				CE3819EF22AA61B30038B173 /* UserMain.storyboard in Resources */,
+				CEBB635C23CB6A960070A219 /* GoogleService-Info.plist in Resources */,
 				046A16C323A7726D00CEEDBB /* OpenSans-Semibold.ttf in Resources */,
 				046A16BE23A7725A00CEEDBB /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				046A16BD23A7725700CEEDBB /* OpenSans-ExtraBold.ttf in Resources */,
