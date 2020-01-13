@@ -19,10 +19,10 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Properties
     
     @IBOutlet private weak var registrationButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var emailView: TextField!
-    @IBOutlet weak var passwordView: TextField!
-    @IBOutlet weak var confirmPasswordView: TextField!
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var emailView: TextField!
+    @IBOutlet private weak var passwordView: TextField!
+    @IBOutlet private weak var confirmPasswordView: TextField!
     
     private var authDataManager: AuthDataManager!
     
@@ -94,17 +94,17 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     }
     
     @objc private func keyboardWillShown(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        guard let userInfo = notification.userInfo,
+            var keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        var contentInset = self.scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height + Constants.scrollInset + TextField.Constants.bottomLineInset
         scrollView.contentInset = contentInset
     }
     
     @objc private func keyboardWillBeHidden(notification: NSNotification) {
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        let contentInset: UIEdgeInsets = .zero
         scrollView.contentInset = contentInset
     }
     

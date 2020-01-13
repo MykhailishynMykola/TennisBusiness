@@ -19,8 +19,8 @@ class TextField: UIView {
     
     // MARK: - Properties
     
-    var textField: UITextField = UITextField()
-    var bottomLine: UIView = UIView()
+    let textField = UITextField()
+    let bottomLine = UIView()
     
     
     
