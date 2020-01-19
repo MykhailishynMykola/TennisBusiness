@@ -11,9 +11,6 @@
         <array key="OpenSans-Bold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -30,90 +27,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fi0-RZ-znF">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="92"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-t6-6cc">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yag-vZ-FSE" customClass="TextField" customModule="TennisBusiness" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="36"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fxa-Gs-k1o">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="30"/>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="hvg-oj-FIf"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                                <color key="value" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="nOm-mu-PyH" id="KfX-up-su2"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xik-FV-6GA">
-                                                        <rect key="frame" x="0.0" y="35" width="400" height="1"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="x2N-sn-bNH"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="Fxa-Gs-k1o" firstAttribute="top" secondItem="RBl-t6-6cc" secondAttribute="top" id="ZLU-ce-dmH"/>
-                                                    <constraint firstItem="Fxa-Gs-k1o" firstAttribute="leading" secondItem="RBl-t6-6cc" secondAttribute="leading" id="aDv-vp-HYf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="xik-FV-6GA" secondAttribute="bottom" id="h9q-jT-Szk"/>
-                                                    <constraint firstItem="xik-FV-6GA" firstAttribute="leading" secondItem="RBl-t6-6cc" secondAttribute="leading" id="pGp-4r-Gbd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="xik-FV-6GA" secondAttribute="trailing" id="sR6-Ki-0WS"/>
-                                                    <constraint firstItem="xik-FV-6GA" firstAttribute="top" secondItem="Fxa-Gs-k1o" secondAttribute="bottom" constant="5" id="tBB-x2-E6N"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Fxa-Gs-k1o" secondAttribute="trailing" id="yVd-yu-ldq"/>
+                                                    <constraint firstAttribute="height" constant="36" id="8mx-97-yHO"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcF-cx-Sqr">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRO-XH-1fZ" customClass="TextField" customModule="TennisBusiness" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="56" width="400" height="36"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rIW-OM-LiI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="30"/>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="ZMA-Ya-5cB"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                                <color key="value" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="nOm-mu-PyH" id="UXb-3t-VBw"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQm-Kc-wvx">
-                                                        <rect key="frame" x="0.0" y="35" width="400" height="1"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="Uah-Jy-So9"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="rIW-OM-LiI" firstAttribute="top" secondItem="OcF-cx-Sqr" secondAttribute="top" id="27G-fP-wUB"/>
-                                                    <constraint firstAttribute="bottom" secondItem="qQm-Kc-wvx" secondAttribute="bottom" id="JKY-JR-r98"/>
-                                                    <constraint firstItem="qQm-Kc-wvx" firstAttribute="leading" secondItem="OcF-cx-Sqr" secondAttribute="leading" id="Kh6-w7-BPe"/>
-                                                    <constraint firstItem="qQm-Kc-wvx" firstAttribute="top" secondItem="rIW-OM-LiI" secondAttribute="bottom" constant="5" id="cyi-g6-rJ3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="rIW-OM-LiI" secondAttribute="trailing" id="taR-cX-COe"/>
-                                                    <constraint firstItem="rIW-OM-LiI" firstAttribute="leading" secondItem="OcF-cx-Sqr" secondAttribute="leading" id="vje-63-hzR"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qQm-Kc-wvx" secondAttribute="trailing" id="zCH-Im-xnX"/>
+                                                    <constraint firstAttribute="height" constant="36" id="3or-8z-dUr"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="RBl-t6-6cc" secondAttribute="trailing" id="QrS-YC-1EH"/>
-                                            <constraint firstItem="RBl-t6-6cc" firstAttribute="top" secondItem="fi0-RZ-znF" secondAttribute="top" id="i9a-s0-ghB"/>
-                                            <constraint firstItem="RBl-t6-6cc" firstAttribute="leading" secondItem="fi0-RZ-znF" secondAttribute="leading" id="vdd-Gh-Y3C"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-DV-hhV">
                                         <rect key="frame" x="0.0" y="132" width="400" height="40"/>
@@ -185,9 +113,9 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="Fxa-Gs-k1o" id="kDm-4C-CMQ"/>
+                        <outlet property="emailView" destination="Yag-vZ-FSE" id="Lnb-IJ-nSM"/>
                         <outlet property="loginButton" destination="oaY-hh-Gwh" id="E5t-th-xLq"/>
-                        <outlet property="passwordTextField" destination="rIW-OM-LiI" id="aVU-cD-d5k"/>
+                        <outlet property="passwordView" destination="FRO-XH-1fZ" id="bdY-ee-j9q"/>
                         <outlet property="registrationButton" destination="7sz-0X-SNs" id="j5O-wu-cDG"/>
                     </connections>
                 </viewController>

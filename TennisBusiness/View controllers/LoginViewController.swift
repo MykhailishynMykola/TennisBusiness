@@ -11,10 +11,10 @@ import UIKit
 class LoginViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Properties
     
-    @IBOutlet private weak var emailTextField: UITextField!
-    @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var registrationButton: UIButton!
+    @IBOutlet private weak var emailView: TextField!
+    @IBOutlet private weak var passwordView: TextField!
     
     private var authDataManager: AuthDataManager!
     
@@ -24,10 +24,20 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.placeholder = localized("KEY_EMAIL")
-        passwordTextField.placeholder = localized("KEY_PASSWORD")
+        hideKeyboardWhenTappedAround()
         loginButton.configureButton(backgroundColor: .primary, titleColor: .title, title: localized("KEY_LOGIN"), cornerRadius: 20)
         registrationButton.configureButton(backgroundColor: .secondary, titleColor: .title, title: localized("KEY_SIGNUP"), cornerRadius: 20)
+        emailView.textField.placeholder = localized("KEY_EMAIL")
+        emailView.textField.keyboardType = .emailAddress
+        emailView.textField.returnKeyType = .next
+        emailView.textField.autocorrectionType = .no
+        emailView.textField.delegate = self
+        
+        passwordView.textField.placeholder = localized("KEY_PASSWORD")
+        passwordView.textField.returnKeyType = .done
+        passwordView.textField.isSecureTextEntry = true
+        passwordView.textField.textContentType = .newPassword
+        passwordView.textField.delegate = self
     }
     
     override func setupDependencies() {
@@ -40,12 +50,13 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailTextField {
-            passwordTextField.becomeFirstResponder()
+        if textField == emailView.textField {
+            passwordView.textField.becomeFirstResponder()
         }
         
-        if textField == passwordTextField {
+        if textField == passwordView.textField {
             view.endEditing(true)
+            loginButtonTouchUpInside(textField)
         }
         return true
     }
@@ -65,11 +76,11 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction private func loginButtonTouchUpInside(_ sender: Any) {
-        guard let mail = emailTextField.text, mail.isValidEmail(), !mail.isEmpty else {
+        guard let mail = emailView.textField.text, mail.isValidEmail(), !mail.isEmpty else {
            showErrorMessage(error: localized("KEY_ERROR_WRONG_EMAIL"))
            return
         }
-        guard let password = passwordTextField.text, !password.isEmpty else {
+        guard let password = passwordView.textField.text, !password.isEmpty else {
            showErrorMessage(error: localized("KEY_ERROR_WRONG_PASSWORD"))
            return
         }
