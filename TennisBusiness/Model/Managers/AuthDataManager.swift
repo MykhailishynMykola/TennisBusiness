@@ -13,6 +13,7 @@ import Firebase
 protocol AuthDataManager {
     func createUser(with mail: String, password: String) -> Promise<User>
     func signInFB(with mail: String, password: String) -> Promise<User>
+    func resetPassword(with mail: String) -> Promise<Void>
 }
 
 final class AuthDataManagerImp: AuthDataManager {
@@ -52,6 +53,17 @@ final class AuthDataManagerImp: AuthDataManager {
         .then { identifier -> Promise<User> in
             return self.loadUser(with: identifier)
         }
+    }
+    
+    func resetPassword(with mail: String) -> Promise<Void>  {
+        return Promise(resolvers: { (fulfill, reject) in
+            Auth.auth().sendPasswordReset(withEmail: mail) { error in
+                if let error = error {
+                    reject(error)
+                }
+                fulfill(())
+            }
+        })
     }
 
     

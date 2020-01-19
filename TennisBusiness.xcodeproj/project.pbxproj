@@ -36,6 +36,8 @@
 		04B238F623780FBD0037DD73 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B238F523780FBD0037DD73 /* RegistrationViewController.swift */; };
 		04B238F8237812630037DD73 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B238F7237812630037DD73 /* String+Convenience.swift */; };
 		04B8DEDC23780B1200C481D2 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B8DEDB23780B1200C481D2 /* Registration.storyboard */; };
+		04E13C9F23D463D100E474A2 /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E13C9E23D463D000E474A2 /* ResetPassword.storyboard */; };
+		04E13CA123D465E000E474A2 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E13CA023D465E000E474A2 /* ResetPasswordViewController.swift */; };
 		2ECD159E776257E57A97E844 /* Pods_TennisBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */; };
 		CE04F152230808D10048771A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F151230808D10048771A /* DIContainer.swift */; };
 		CE04F15623080B6C0048771A /* ManagersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F15523080B6C0048771A /* ManagersAssembly.swift */; };
@@ -122,16 +124,18 @@
 		041F5426239E345100085FAF /* UIColor+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
 		041F5428239E348700085FAF /* UITextField+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Convenience.swift"; sourceTree = "<group>"; };
 		041F542B239F819100085FAF /* UIButton+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Convenience.swift"; sourceTree = "<group>"; };
+		043CD33A23CB3B490094B601 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		0489EFB823094AC900D76DB4 /* ModeratorPlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorPlayersList.storyboard; sourceTree = "<group>"; };
 		0489EFBA23094DAA00D76DB4 /* ModeratorPlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorPlayersListViewController.swift; sourceTree = "<group>"; };
 		0489EFBC23094EE600D76DB4 /* ModeratorPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		04A873EE234A0E0D00B416A5 /* ModeratorMatchesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMatchesList.storyboard; sourceTree = "<group>"; };
 		04A873F0234A104800B416A5 /* ModeratorMatchesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMatchesListViewController.swift; sourceTree = "<group>"; };
 		04A873F2234A120B00B416A5 /* ModeratorMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMatchTableViewCell.swift; sourceTree = "<group>"; };
-		043CD33A23CB3B490094B601 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		04B238F523780FBD0037DD73 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		04B238F7237812630037DD73 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		04B8DEDB23780B1200C481D2 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		04E13C9E23D463D000E474A2 /* ResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
+		04E13CA023D465E000E474A2 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		34A5D2C3DBAA86A178014839 /* Pods-TennisBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		67F6955B1B1A0A18D9A19A1E /* Pods_TennisBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71782DB39C0A3A93A051FFEE /* Pods-TennisBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBusiness/Pods-TennisBusiness.release.xcconfig"; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 				04B8DEDB23780B1200C481D2 /* Registration.storyboard */,
 				040453D2237EA86300AABE7A /* Login.storyboard */,
 				CE25FFA923CB32B7006A3830 /* ChooseWorld.storyboard */,
+				04E13C9E23D463D000E474A2 /* ResetPassword.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				CE3819EA22AA5E750038B173 /* UserMainViewController.swift */,
 				04B238F523780FBD0037DD73 /* RegistrationViewController.swift */,
 				040453D4237EA91200AABE7A /* LoginViewController.swift */,
+				04E13CA023D465E000E474A2 /* ResetPasswordViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -550,10 +556,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				040453D3237EA86300AABE7A /* Login.storyboard in Resources */,
+				04E13C9F23D463D100E474A2 /* ResetPassword.storyboard in Resources */,
 				CE21631422D0B6D8000A14BA /* ModeratorCreateMatch.storyboard in Resources */,
 				046A16BB23A7724E00CEEDBB /* OpenSans-Bold.ttf in Resources */,
 				CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */,
-				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
 				0489EFB923094AC900D76DB4 /* ModeratorPlayersList.storyboard in Resources */,
 				046A16C423A7727000CEEDBB /* OpenSans-SemiboldItalic.ttf in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
@@ -632,6 +638,7 @@
 				CE25FFAC23CB3300006A3830 /* ChooseWorldScreenViewController.swift in Sources */,
 				CE26123E2340B05B00BB0D88 /* TournamentTemplate.swift in Sources */,
 				CE5B5B7822A28C4F006182FA /* Set.swift in Sources */,
+				04E13CA123D465E000E474A2 /* ResetPasswordViewController.swift in Sources */,
 				CE04F152230808D10048771A /* DIContainer.swift in Sources */,
 				CEBB635823CB53330070A219 /* UIView+Convenience.swift in Sources */,
 				CE0845C322B0FE710006AF31 /* DataManager.swift in Sources */,

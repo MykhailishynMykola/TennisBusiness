@@ -40,6 +40,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
         emailView.textField.keyboardType = .emailAddress
         emailView.textField.returnKeyType = .next
         emailView.textField.autocorrectionType = .no
+        emailView.textField.autocapitalizationType = .none
         emailView.textField.delegate = self
         
         passwordView.textField.placeholder = localized("KEY_PASSWORD")
@@ -61,6 +62,10 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
         authDataManager = resolver.resolve(AuthDataManager.self)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
     
     // MARK: - UITextFieldDelegate
@@ -82,12 +87,6 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     // MARK: - Private
     
-    private func showErrorMessage(error: String) {
-        let alertController = UIAlertController(title: localized("KEY_ERROR_TITLE"), message: error, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: localized("KEY_OK"), style: .default, handler: nil))
-        present(alertController, animated: true, completion: nil)
-    }
-    
     private func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -95,7 +94,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     @objc private func keyboardWillShown(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
-            var keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+            var keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
         
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
         var contentInset = self.scrollView.contentInset
@@ -114,16 +113,16 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
     
     @IBAction private func registrationButtonTouchUpInside(_ sender: Any) {
         guard let mail = emailView.textField.text, mail.isValidEmail(), !mail.isEmpty  else {
-            showErrorMessage(error: localized("KEY_ERROR_WRONG_EMAIL"))
+            showErrorMessageKey("KEY_ERROR_WRONG_EMAIL")
             return
         }
         guard let password = passwordView.textField.text, !password.isEmpty else {
-            showErrorMessage(error: localized("KEY_ERROR_WRONG_PASSWORD"))
+            showErrorMessageKey("KEY_ERROR_WRONG_PASSWORD")
             return
         }
         guard let confirmPassword = confirmPasswordView.textField.text, !confirmPassword.isEmpty,
             password == confirmPassword else {
-            showErrorMessage(error: localized("KEY_ERROR_WRONG_CONFIRMATION_PASSWORD"))
+            showErrorMessageKey("KEY_ERROR_WRONG_CONFIRMATION_PASSWORD")
             return
         }
         
@@ -139,7 +138,7 @@ class RegistrationViewController: ScreenViewController, UITextFieldDelegate {
                 }
             }
             .catch { [weak self] error in
-                self?.showErrorMessage(error: error.localizedDescription)
+                self?.showErrorMessage(error.localizedDescription)
         }
     }
     

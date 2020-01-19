@@ -58,6 +58,16 @@ class ScreenViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    func showErrorMessage(_ message: String) {
+        let alertController = UIAlertController(title: localized("KEY_ERROR_TITLE"), message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: localized("KEY_OK"), style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showErrorMessageKey(_ key: String) {
+        return showErrorMessage(localized(key))
+    }
+    
     
     
     // MARK: - Private
