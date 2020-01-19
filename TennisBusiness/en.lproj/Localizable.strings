@@ -6,6 +6,7 @@
   Copyright © 2019 nikolay.mihailishin. All rights reserved.
 */
 
+
 "KEY_LOGIN" = "Login";
 "KEY_SIGNUP" = "Sign up";
 "KEY_EMAIL" = "Email";

@@ -1,5 +1,5 @@
 //
-//  PlayerTableViewCell.swift
+//  ModeratorPlayerTableViewCell.swift
 //  TennisBusiness
 //
 //  Created by Valeiia Tarasenko on 8/18/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerTableViewCell: UITableViewCell {
+class ModeratorPlayerTableViewCell: UITableViewCell {
     // MARK: - Properties
 
     @IBOutlet private weak var nameLabel: UILabel!

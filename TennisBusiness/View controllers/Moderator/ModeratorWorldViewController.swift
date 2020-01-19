@@ -1,5 +1,5 @@
 //
-//  WorldViewController.swift
+//  ModeratorWorldViewController.swift
 //  TennisBusiness
 //
 //  Created by Nikolay Mikhailishin on 6/12/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorldViewController: ScreenViewController {
+class ModeratorWorldViewController: ScreenViewController {
     // MARK: - Properties
     
     @IBOutlet private weak var nameLabel: UILabel!
@@ -57,7 +57,7 @@ class WorldViewController: ScreenViewController {
     // MARK: - Actions
     
     @IBAction private func createMatchPressed(_ sender: Any) {
-        guard let createMatchController = presentViewController(withIdentifier: "CreateMatch", fromNavigation: true) as? CreateMatchScreenViewController,
+        guard let createMatchController = presentViewController(withIdentifier: "ModeratorCreateMatch", fromNavigation: true) as? ModeratorCreateMatchViewController,
             let world = world else {
                 return
         }
@@ -65,7 +65,7 @@ class WorldViewController: ScreenViewController {
     }
     
     @IBAction private func createPlayerPressed(_ sender: Any) {
-        guard let createPlayerController = presentViewController(withIdentifier: "CreatePlayer", fromNavigation: true) as? CreatePlayerScreenViewController,
+        guard let createPlayerController = presentViewController(withIdentifier: "ModeratorCreatePlayer", fromNavigation: true) as? ModeratorCreatePlayerViewController,
             let world = world else {
             return
         }
@@ -73,7 +73,7 @@ class WorldViewController: ScreenViewController {
     }
     
     @IBAction private func viewPlayersPressed(_ sender: Any) {
-        guard let playersListViewController = presentViewController(withIdentifier: "PlayersList", fromNavigation: true) as? PlayersListViewController,
+        guard let playersListViewController = presentViewController(withIdentifier: "ModeratorPlayersList", fromNavigation: true) as? ModeratorPlayersListViewController,
             let players = world?.players,
             let world = world else {
                 return
@@ -82,7 +82,7 @@ class WorldViewController: ScreenViewController {
     }
     
     @IBAction private func viewMatchesPressed(_ sender: Any) {
-        guard let matchesListViewController = presentViewController(withIdentifier: "MatchesList", fromNavigation: true) as? MatchesListViewController,
+        guard let matchesListViewController = presentViewController(withIdentifier: "ModeratorMatchesList", fromNavigation: true) as? ModeratorMatchesListViewController,
             let matches = world?.matches else {
                 return
         }

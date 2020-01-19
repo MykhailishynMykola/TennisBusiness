@@ -1,5 +1,5 @@
 //
-//  MatchesListViewController.swift
+//  ModeratorMatchesListViewController.swift
 //  TennisBusiness
 //
 //  Created by Valeiia Tarasenko on 10/6/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MatchesListViewController: UIViewController {
+class ModeratorMatchesListViewController: UIViewController {
     // MARK: - Inner
     
     private struct Constants {
@@ -37,15 +37,16 @@ class MatchesListViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
 
-extension MatchesListViewController: UITableViewDataSource {
+
+// MARK: - UITableViewDataSource
+extension ModeratorMatchesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matches.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.matchCellReuseIdentifier) as? MatchTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.matchCellReuseIdentifier) as? ModeratorMatchTableViewCell,
             matches.indices.contains(indexPath.row) else {
                 return UITableViewCell()
         }
@@ -55,8 +56,9 @@ extension MatchesListViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
 
-extension MatchesListViewController: UITableViewDelegate {
+
+// MARK: - UITableViewDelegate
+extension ModeratorMatchesListViewController: UITableViewDelegate {
     
 }

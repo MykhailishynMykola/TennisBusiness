@@ -56,7 +56,7 @@ class ModeratorMainViewController: ScreenViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.worldCellReuseIdentifier) as? WorldTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.worldCellReuseIdentifier) as? ModeratorWorldTableViewCell,
             worlds.indices.contains(indexPath.row) else {
                 return UITableViewCell()
         }
@@ -74,7 +74,7 @@ class ModeratorMainViewController: ScreenViewController, UITableViewDelegate, UI
             return
         }
         let selectedWorld = worlds[indexPath.row]
-        guard let worldController = presentViewController(withIdentifier: "ModeratorWorld", fromNavigation: true) as? WorldViewController else {
+        guard let worldController = presentViewController(withIdentifier: "ModeratorWorld", fromNavigation: true) as? ModeratorWorldViewController else {
             return
         }
         worldController.update(with: selectedWorld)

@@ -54,7 +54,7 @@ func == (lhs: World, rhs: World) -> Bool {
 
 // MARK: - Hashable
 extension World: Hashable {
-    var hashValue: Int {
-        return "\(identifier)-\(speed)-\(createdAt)".hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine("\(identifier)-\(speed)-\(createdAt)")
     }
 }

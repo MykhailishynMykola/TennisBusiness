@@ -1,5 +1,5 @@
 //
-//  WorldTableViewCell.swift
+//  ModeratorWorldTableViewCell.swift
 //  TennisBusiness
 //
 //  Created by Nikolay Mikhailishin on 6/12/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorldTableViewCell: UITableViewCell {
+class ModeratorWorldTableViewCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     
     func update(with world: World) {

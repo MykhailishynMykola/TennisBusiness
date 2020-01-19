@@ -25,7 +25,7 @@ final class AuthDataManagerImp: AuthDataManager {
                     reject(error)
                 }
                 guard let authUser = result?.user else { return reject(NSError.cancelledError())}
-                let user = User(identifier: authUser.uid, email: mail, admin: false)
+                let user = User(identifier: authUser.uid, email: mail, admin: false, relatedPlayerInfos: [])
                 fulfill(user)
             }
         })
@@ -81,16 +81,23 @@ final class AuthDataManagerImp: AuthDataManager {
             let userReference = database
                   .collection("users")
                   .document(identifier)
-                userReference.getDocument { (userSnapshot, error) in
+            userReference.getDocument { (userSnapshot, error) in
+                if let error = error {
+                    return reject(error)
+                }
+                guard let document = userSnapshot, document.exists else {
+                    return reject(NSError.cancelledError())
+                }
+                userReference.collection("relatedPlayerInfos").getDocuments { (infosSnapshot, error) in
                     if let error = error {
                         return reject(error)
                     }
-                    guard let document = userSnapshot, document.exists,
-                        let user = User(snapshot: document) else {
-                          return reject(NSError.cancelledError())
-                  }
-                  fulfill(user)
-              }
+                    guard let user = User(snapshot: document, infosSnapshot: infosSnapshot?.documents ?? []) else {
+                        return reject(NSError.cancelledError())
+                    }
+                    fulfill(user)
+                }
+            }
         })
     }
 }

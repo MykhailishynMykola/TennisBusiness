@@ -88,13 +88,16 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
         authDataManager.signInFB(with: mail, password: password)
             .then { [weak self] user -> Void in
                 self?.appState.updateCurrentUser(user)
-                if user.admin {
+                guard !user.admin else {
                     self?.presentViewController(withIdentifier: "ModeratorMain", fromNavigation: true)
                     UIApplication.shared.isIdleTimerDisabled = true
+                    return
                 }
-                else {
-                    self?.presentViewController(withIdentifier: "UserMain")
+                if user.relatedPlayerInfos.isEmpty {
+                    self?.presentViewController(withIdentifier: "ChooseWorld")
+                    return
                 }
+                self?.presentViewController(withIdentifier: "UserMain")
             }
             .catch { [weak self] error in
                 self?.showErrorMessage(error: error.localizedDescription)

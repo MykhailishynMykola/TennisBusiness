@@ -1,5 +1,5 @@
 //
-//  CreatePlayerScreenViewController.swift
+//  ModeratorCreatePlayerViewController.swift
 //  TennisBusiness
 //
 //  Created by Nikolay Mikhailishin on 6/16/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePlayerScreenViewController: ScreenViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class ModeratorCreatePlayerViewController: ScreenViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     // MARK: - Properties
     
     @IBOutlet private weak var nameField: UITextField!
