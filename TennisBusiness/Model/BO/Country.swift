@@ -6,7 +6,7 @@
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
-class Country: Equatable {
+class Country: Equatable, Codable {
     // MARK: - Properties
     
     let name: String

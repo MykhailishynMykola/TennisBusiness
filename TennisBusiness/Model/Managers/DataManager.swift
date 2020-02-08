@@ -9,6 +9,7 @@
 import PromiseKit
 import FirebaseFirestore
 import Swinject
+import CodableFirebase
 
 protocol DataManager {
     func getWorlds() -> Promise<[World]>
@@ -58,7 +59,7 @@ final class DataManagerImp: DataManager, ResolverInitializable {
     func createPlayer(with name: String, surname: String, country: Country, birthday: Date, ability: Ability, worldIdentifier: String) -> Promise<Player> {
         let abilityData: [String: Any] = ["skill": ability.skill.doubleValue,
                                           "serve": ability.serve.doubleValue,
-                                          "return": ability.returnOfServe.doubleValue,
+                                          "returnOfServe": ability.returnOfServe.doubleValue,
                                           "countryBonus": ability.countryBonus.doubleValue]
         let newPlayerData: [String: Any] = ["name": name,
                                             "surname": surname,
@@ -77,15 +78,16 @@ final class DataManagerImp: DataManager, ResolverInitializable {
                             if let error = error { reject(error) }
                             return
                     }
-                    let newPlayer = Player(identifier: newPlayerIdentifier, name: name, surname: surname, ability: ability, country: country, birthday: birthday)
+                    let newPlayer = Player(documentID: newPlayerIdentifier, name: name, surname: surname, ability: ability, countryCode: country.code, birthday: Timestamp(date: birthday))
+                    newPlayer.country = country
                     fulfill(newPlayer)
             }
         })
     }
     
     func createMatch(firstPlayer: Player, secondPlayer: Player, setsToWin: Int, date: Date, worldIdentifier: String, country: Country?) -> Promise<Match> {
-        let newMatchData: [String: Any] = ["player1": firstPlayer.identifier,
-                                           "player2": secondPlayer.identifier,
+        let newMatchData: [String: Any] = ["player1": firstPlayer.documentID,
+                                           "player2": secondPlayer.documentID,
                                            "setsToWin": setsToWin,
                                            "eventDate": Timestamp(date: date),
                                            "result": "",
@@ -268,10 +270,13 @@ final class DataManagerImp: DataManager, ResolverInitializable {
     
     private func loadPlayer(from document: QueryDocumentSnapshot) -> Promise<Player> {
         return Promise(resolvers: { (fulfill, reject) in
-            guard document.exists,
-                let player = Player(snapshot: document, countries: countriesDataManager.countries) else {
-                    return reject(NSError.cancelledError())
+            guard document.exists else {
+               return reject(NSError.cancelledError())
             }
+            guard let player = Player.decode(from: document) else {
+                return reject(NSError.cancelledError())
+            }
+            player.country = countriesDataManager.countries.first(where: { $0.code == player.countryCode })
             fulfill(player)
         })
     }

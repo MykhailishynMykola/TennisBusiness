@@ -30,7 +30,7 @@ class ModeratorPlayerTableViewCell: UITableViewCell {
         skillLabel.text = String(ability.skill.doubleValue)
         countryBonusLabel.text =
             String(ability.countryBonus.doubleValue)
-        guard let worldDate = date, let birthday = player.birthday else { return }
+        guard let worldDate = date, let birthday = player.birthdayDate else { return }
         ageLabel.text = "\(birthday.age(from: worldDate))"
     }
 }

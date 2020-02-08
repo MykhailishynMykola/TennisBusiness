@@ -6,7 +6,7 @@
 //  Copyright © 2019 nikolay.mihailishin. All rights reserved.
 //
 
-class Ability {
+class Ability: Codable {
     // MARK: - Inner
     
     static var empty = Ability(skill: 0, serve: 0, returnOfServe: 0, countryBonus: 0)
@@ -36,6 +36,32 @@ class Ability {
         self.serve = serve
         self.returnOfServe = returnOfServe
         self.countryBonus = countryBonus
+    }
+    
+    
+    
+    // MARK: - Protocols
+    // MARK: Codable
+    
+    private enum CodingKeys: String, CodingKey {
+        case skill, serve, returnOfServe, countryBonus
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(skill.doubleValue, forKey: .skill)
+        try container.encode(serve.doubleValue, forKey: .serve)
+        try container.encode(returnOfServe.doubleValue, forKey: .returnOfServe)
+        try container.encode(countryBonus.doubleValue, forKey: .countryBonus)
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let skillValue = try container.decode(Double.self, forKey: .skill)
+        let serveValue = try container.decode(Double.self, forKey: .serve)
+        let returnOfServeValue = try container.decode(Double.self, forKey: .returnOfServe)
+        let countryBonusValue = try container.decode(Double.self, forKey: .countryBonus)
+        self.init(skill: skillValue, serve: serveValue, returnOfServe: returnOfServeValue, countryBonus: countryBonusValue)
     }
 }
 

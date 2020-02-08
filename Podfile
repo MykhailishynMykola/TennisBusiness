@@ -11,5 +11,6 @@ pod 'Firebase/Firestore'
 pod 'PromiseKit/CorePromise', '~> 4.5.2'
 pod 'Swinject'
 pod 'Firebase/Auth'
+pod 'CodableFirebase'
 
 end

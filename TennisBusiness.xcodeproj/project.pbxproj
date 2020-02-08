@@ -63,6 +63,7 @@
 		CE26123E2340B05B00BB0D88 /* TournamentTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123D2340B05B00BB0D88 /* TournamentTemplate.swift */; };
 		CE2612402340B0ED00BB0D88 /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26123F2340B0ED00BB0D88 /* Surface.swift */; };
 		CE2612422340B44200BB0D88 /* TournamentsTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2612412340B44200BB0D88 /* TournamentsTemplateManager.swift */; };
+		CE32B7F723EEDED00026C8BF /* CodableFirebase+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32B7F623EEDED00026C8BF /* CodableFirebase+Convenience.swift */; };
 		CE3819E922AA5E340038B173 /* ModeratorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */; };
 		CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3819EA22AA5E750038B173 /* UserMainViewController.swift */; };
 		CE3819ED22AA61770038B173 /* ModeratorMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */; };
@@ -96,7 +97,6 @@
 		CECE3DBE22A7EA5700398E96 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */; };
 		CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */; };
 		CEE4935D22A52D1D0060BF70 /* ServeTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */; };
-		CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4935F22A559520060BF70 /* Player+Snapshot.swift */; };
 		CEFF017322B662430066EC76 /* ModeratorCreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017222B662430066EC76 /* ModeratorCreatePlayerViewController.swift */; };
 		CEFF017522B662850066EC76 /* ModeratorCreatePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFF017422B662850066EC76 /* ModeratorCreatePlayer.storyboard */; };
 		CEFF017722B687B40066EC76 /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF017622B687B40066EC76 /* CalculationManager.swift */; };
@@ -122,13 +122,13 @@
 		041F5426239E345100085FAF /* UIColor+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
 		041F5428239E348700085FAF /* UITextField+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Convenience.swift"; sourceTree = "<group>"; };
 		041F542B239F819100085FAF /* UIButton+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Convenience.swift"; sourceTree = "<group>"; };
+		043CD33A23CB3B490094B601 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		0489EFB823094AC900D76DB4 /* ModeratorPlayersList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorPlayersList.storyboard; sourceTree = "<group>"; };
 		0489EFBA23094DAA00D76DB4 /* ModeratorPlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorPlayersListViewController.swift; sourceTree = "<group>"; };
 		0489EFBC23094EE600D76DB4 /* ModeratorPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		04A873EE234A0E0D00B416A5 /* ModeratorMatchesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMatchesList.storyboard; sourceTree = "<group>"; };
 		04A873F0234A104800B416A5 /* ModeratorMatchesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMatchesListViewController.swift; sourceTree = "<group>"; };
 		04A873F2234A120B00B416A5 /* ModeratorMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMatchTableViewCell.swift; sourceTree = "<group>"; };
-		043CD33A23CB3B490094B601 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		04B238F523780FBD0037DD73 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		04B238F7237812630037DD73 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		04B8DEDB23780B1200C481D2 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 		CE26123D2340B05B00BB0D88 /* TournamentTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTemplate.swift; sourceTree = "<group>"; };
 		CE26123F2340B0ED00BB0D88 /* Surface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
 		CE2612412340B44200BB0D88 /* TournamentsTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTemplateManager.swift; sourceTree = "<group>"; };
+		CE32B7F623EEDED00026C8BF /* CodableFirebase+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodableFirebase+Convenience.swift"; sourceTree = "<group>"; };
 		CE3819E822AA5E340038B173 /* ModeratorMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EA22AA5E750038B173 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		CE3819EC22AA61770038B173 /* ModeratorMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorMain.storyboard; sourceTree = "<group>"; };
@@ -199,7 +200,6 @@
 		CECE3DBD22A7EA5700398E96 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Snapshot.swift"; sourceTree = "<group>"; };
 		CEE4935C22A52D1D0060BF70 /* ServeTurn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServeTurn.swift; sourceTree = "<group>"; };
-		CEE4935F22A559520060BF70 /* Player+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Snapshot.swift"; sourceTree = "<group>"; };
 		CEFF017222B662430066EC76 /* ModeratorCreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorCreatePlayerViewController.swift; sourceTree = "<group>"; };
 		CEFF017422B662850066EC76 /* ModeratorCreatePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModeratorCreatePlayer.storyboard; sourceTree = "<group>"; };
 		CEFF017622B687B40066EC76 /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
@@ -402,6 +402,7 @@
 				CE16291023BA4EFB00E96862 /* NSLocalizedString+Convenience.swift */,
 				CEBB635523CB4C7E0070A219 /* CALayer+Convenience.swift */,
 				CEBB635723CB53330070A219 /* UIView+Convenience.swift */,
+				CE32B7F623EEDED00026C8BF /* CodableFirebase+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,7 +467,6 @@
 		CEE4935E22A559340060BF70 /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
-				CEE4935F22A559520060BF70 /* Player+Snapshot.swift */,
 				CECE3DBF22A7EB5F00398E96 /* Match+Snapshot.swift */,
 				CE3819F622AA67670038B173 /* AppConfig+Snapshot.swift */,
 				040453D6237EB09100AABE7A /* User+Snapshot.swift */,
@@ -553,7 +553,6 @@
 				CE21631422D0B6D8000A14BA /* ModeratorCreateMatch.storyboard in Resources */,
 				046A16BB23A7724E00CEEDBB /* OpenSans-Bold.ttf in Resources */,
 				CE73CE6F22A281DD00A05111 /* LaunchScreen.storyboard in Resources */,
-				CEE4935B22A52C280060BF70 /* GoogleService-Info.plist in Resources */,
 				0489EFB923094AC900D76DB4 /* ModeratorPlayersList.storyboard in Resources */,
 				046A16C423A7727000CEEDBB /* OpenSans-SemiboldItalic.ttf in Resources */,
 				CE73CE6C22A281DD00A05111 /* Assets.xcassets in Resources */,
@@ -641,7 +640,6 @@
 				040453D9237ECBD400AABE7A /* AppState.swift in Sources */,
 				CE26123C23409D5700BB0D88 /* NamesDataManager.swift in Sources */,
 				04A873F3234A120B00B416A5 /* ModeratorMatchTableViewCell.swift in Sources */,
-				CEE4936022A559520060BF70 /* Player+Snapshot.swift in Sources */,
 				CE5B5B6D22A289CF006182FA /* SwiftyTimer.swift in Sources */,
 				04B238F8237812630037DD73 /* String+Convenience.swift in Sources */,
 				CEA167ED22FF085B008EC5E9 /* CountriesDataManager.swift in Sources */,
@@ -666,6 +664,7 @@
 				CEFF017322B662430066EC76 /* ModeratorCreatePlayerViewController.swift in Sources */,
 				CE3819EB22AA5E750038B173 /* UserMainViewController.swift in Sources */,
 				CE21631022D0B4BE000A14BA /* Date+Convenience.swift in Sources */,
+				CE32B7F723EEDED00026C8BF /* CodableFirebase+Convenience.swift in Sources */,
 				CECE3DC022A7EB5F00398E96 /* Match+Snapshot.swift in Sources */,
 				CE5B5B7E22A290A1006182FA /* Status.swift in Sources */,
 				CE5B5B7022A289F3006182FA /* World.swift in Sources */,

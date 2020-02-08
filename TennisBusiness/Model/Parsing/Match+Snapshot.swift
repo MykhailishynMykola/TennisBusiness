@@ -15,8 +15,8 @@ extension Match {
             let eventDate = matchData["eventDate"] as? Timestamp,
             let player1Identifier = matchData["player1"] as? String,
             let player2Identifier = matchData["player2"] as? String,
-            let player1 = players.first(where: { $0.identifier == player1Identifier }),
-            let player2 = players.first(where: { $0.identifier == player2Identifier }) else {
+            let player1 = players.first(where: { $0.documentID == player1Identifier }),
+            let player2 = players.first(where: { $0.documentID == player2Identifier }) else {
                 return nil
         }
         let countryCode = matchData["countryCode"] as? String
