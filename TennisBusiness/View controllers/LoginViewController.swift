@@ -101,8 +101,7 @@ class LoginViewController: ScreenViewController, UITextFieldDelegate {
     }
     
     @objc private func keyboardWillBeHidden(notification: NSNotification) {
-        let contentInset: UIEdgeInsets = .zero
-        scrollView.contentInset = contentInset
+        scrollView.contentInset = .zero
     }
     
     

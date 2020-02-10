@@ -87,9 +87,9 @@ class ResetPasswordViewController: ScreenViewController, UITextFieldDelegate {
     }
 
     @objc private func keyboardWillBeHidden(notification: NSNotification) {
-       let contentInset: UIEdgeInsets = .zero
-       scrollView.contentInset = contentInset
+       scrollView.contentInset = .zero
     }
+    
     
     
     // MARK: - Actions
@@ -100,16 +100,15 @@ class ResetPasswordViewController: ScreenViewController, UITextFieldDelegate {
            return
         }
         authDataManager.resetPassword(with: mail)
-        .then { [weak self] () -> Void in
-            self?.dismiss(animated: true, completion: nil)
-        }
-        .catch { [weak self] error in
-            self?.showErrorMessage(error.localizedDescription)
+            .then { [weak self] () -> Void in
+                self?.dismiss(animated: true, completion: nil)
+            }
+            .catch { [weak self] error in
+                self?.showErrorMessage(error.localizedDescription)
         }
     }
     
     @IBAction private func closeButtonTouchUpInside(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
